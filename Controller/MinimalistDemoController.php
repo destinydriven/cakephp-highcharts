@@ -22,53 +22,52 @@ class MinimalistDemoController extends HighChartsAppController
 	{
 		$chartData = array
 				(
-					7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6
+				       7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6
 				);
 				
 		$chartName = 'Column Chart';
 		
 		$mychart = $this->HighCharts->create
-										 (
-											$chartName,
-											array
-											(
-												'type' => 'column',
-												'exporting' => TRUE
-											)
-										 );
+						 (
+							$chartName,
+							array
+							(
+								'type' => 'column',
+								'exporting' => TRUE
+							)
+						 );
 
 	
-	   $this->HighCharts->setChartParams
+	        $this->HighCharts->setChartParams
 			(
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'columnwrapper',  // div to display chart inside
-					'chartWidth'				=> 800,
-					'chartHeight'				=> 600,					
-					'title'						=> 'Monthly Sales Summary',
-					
+					'renderTo'			=> 'columnwrapper',  // div to display chart inside
+					'chartWidth'			=> 800,
+					'chartHeight'			=> 600,					
+					'title'				=> 'Monthly Sales Summary',
 					'xAxisLabelsEnabled' 		=> TRUE,				
-					'xAxisCategories'           => array(
-														'Jan', 
-														'Feb', 
-														'Mar', 
-														'Apr', 
-														'May', 
-														'Jun',
-														'Jul', 
-														'Aug', 
-														'Sep', 
-														'Oct', 
-														'Nov', 
-														'Dec'													
-									              ),				
-					'yAxisTitleText' 			=> 'Units',									
-					'enableAutoStep' => FALSE							
+					'xAxisCategories'           	=> array(
+										'Jan', 
+										'Feb', 
+										'Mar', 
+										'Apr', 
+										'May', 
+										'Jun',
+										'Jul', 
+										'Aug', 
+										'Sep', 
+										'Oct', 
+										'Nov', 
+										'Dec'													
+									             ),				
+					'yAxisTitleText' 		=> 'Units',									
+					'enableAutoStep' 		=> FALSE							
 				) 
 			);
 		
-        $series = $this->HighCharts->addChartSeries();
+        	$series = $this->HighCharts->addChartSeries();
 		
 		$series->addName('Example Online Store')->addData($chartData);
 
