@@ -44,9 +44,9 @@
 						'<< Back to index',
 						array
 						(
-							'plugin'		=> 'high_charts',
+							'plugin'	=> 'high_charts',
 							'controller'	=> 'high_charts_demo',
-							'action'		=> 'index'
+							'action'	=> 'index'
 						)
 					);
 			}
