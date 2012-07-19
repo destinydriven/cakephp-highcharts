@@ -14,7 +14,7 @@
 <div class="chart">
 	<p>Bar Chart</p>
 	
-	<div id="barwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
+    <div id="barwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
     <div class="clear"></div>	
 	
 	<?php echo $this->HighCharts->render('Bar Chart'); ?>
