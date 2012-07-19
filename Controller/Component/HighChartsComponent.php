@@ -27,7 +27,7 @@
 
 class HighChartsComponent extends Component {	
 	
-    public $components = array('Session');
+    	public $components = array('Session');
    
 	public $controller;
 	public $defaultSettings = array('title' => 'HighCharts Sample Title');
@@ -169,7 +169,7 @@ class HighChartsComponent extends Component {
 		
 	}
 
-	/**
+        /**
 	 * Sets chart parameters.
 	 *
 	 * @param string $name Chart name.
@@ -266,8 +266,8 @@ class HighChartsComponent extends Component {
 			$this->charts[$name]->title->y = $params['titleY'];
 		}
 
-        // legend options
-        if (isset($params['legendEnabled']))
+        	// legend options
+        	if (isset($params['legendEnabled']))
 		{
 			$this->charts[$name]->legend->enabled = $params['legendEnabled'];
 		}
@@ -489,15 +489,15 @@ class HighChartsComponent extends Component {
 	}
 	
 	
-  /** create a series for your chart
-   * 
-   * @return HighRollerSeriesData object
-   */
-  public function addChartSeries(){  	
-    	return new HighRollerSeriesData();
-  }
+	/** create a series for your chart
+	  * 
+	  * @return HighRollerSeriesData object
+	  */
+	 public function addChartSeries(){  	
+	   	return new HighRollerSeriesData();
+	 }
   
-   /**
+   	/**
 	 * Utility function for parameter restructuring.
 	 *
 	 * Restructures cake-like data (arrays) into a HighChart-like array
