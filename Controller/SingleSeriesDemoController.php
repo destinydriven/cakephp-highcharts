@@ -76,7 +76,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'				=> 20
+					'titleX'				=> 20,
 					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
