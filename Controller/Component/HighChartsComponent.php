@@ -27,7 +27,7 @@
 
 class HighChartsComponent extends Component {	
 	
-    	public $components = array('Session');
+    public $components = array('Session');
    
 	public $controller;
 	public $defaultSettings = array('title' => 'HighCharts Sample Title');
@@ -240,6 +240,10 @@ class HighChartsComponent extends Component {
 		if (isset($params['title']))
 		{
 			$this->charts[$name]->title->text = $params['title'];
+		}
+		if (isset($params['subtitle']))
+		{
+			$this->charts[$name]->subtitle->text = $params['subtitle'];
 		}		
 		if (isset($params['titleAlign']))
 		{
@@ -321,14 +325,25 @@ class HighChartsComponent extends Component {
 		{
 			$this->charts[$name]->plotOptions->line->pointInterval = $params['plotOptionsLinePointInterval'];
 		}
+		if (isset($params['plotOptionsSeriesStacking']))
+		{
+			$this->charts[$name]->plotOptions->series->stacking = $params['plotOptionsSeriesStacking'];
+		}
+		if (isset($params['plotOptionsShowInLegend']))
+		{
+			$this->charts[$name]->plotOptions->series->showInLegend = $params['plotOptionsShowInLegend'];
+		}
+        if (isset($params['plotOptionsFillColor']))
+		{
+			$this->charts[$name]->plotOptions->area->fillColor = $params['plotOptionsFillColor'];
+		}
+
 		
 		// X axis options
 		if (isset($params['xAxisCategories']))
 		{	
 			$this->charts[$name]->xAxis->categories = $params['xAxisCategories'];
-		}
-		
-		
+		}		
 		if (isset($params['xAxisType']))
 		{
 			$this->charts[$name]->xAxis->type = $params['xAxisType'];
@@ -454,7 +469,7 @@ class HighChartsComponent extends Component {
 		// Credits settings
 		if (isset($params['creditsEnabled']) && $params['creditsEnabled'] === FALSE )
 		{
-			$this->charts[$name]->credits = FALSE;
+			$this->charts[$name]->credits->enabled = FALSE;
 		}
 		else
 		{

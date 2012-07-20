@@ -12,11 +12,11 @@
  */
 ?>
 <div class="chart">
-	<p>Bar Chart</p>
+	<p>Stacked Bar Chart</p>
 	
 	<div id="barwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
     <div class="clear"></div>	
 	
-	<?php echo $this->HighCharts->render('Bar Chart'); ?>
+	<?php echo $this->HighCharts->render('Stacked Bar Chart'); ?>
 
 </div>

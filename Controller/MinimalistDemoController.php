@@ -43,36 +43,76 @@ class MinimalistDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'			=> 'columnwrapper',  // div to display chart inside
+					'renderTo'				=> 'columnwrapper',  // div to display chart inside
 					'chartWidth'			=> 800,
 					'chartHeight'			=> 600,					
-					'title'				=> 'Monthly Sales Summary',
-					'xAxisLabelsEnabled' 		=> TRUE,				
-					'xAxisCategories'           	=> array(
-										'Jan', 
-										'Feb', 
-										'Mar', 
-										'Apr', 
-										'May', 
-										'Jun',
-										'Jul', 
-										'Aug', 
-										'Sep', 
-										'Oct', 
-										'Nov', 
-										'Dec'													
-									             ),				
+					'title'					=> 'Monthly Sales Summary',
+					'subtitle'				=> 'Source: World Bank',
+					'xAxisLabelsEnabled' 	=> TRUE,				
+					'xAxisCategories'       => array( 'Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug',	'Sep','Oct','Nov','Dec'),				
 					'yAxisTitleText' 		=> 'Units',									
-					'enableAutoStep' 		=> FALSE							
+					'enableAutoStep' 		=> FALSE,
+					'creditsEnabled'		=> FALSE						
 				) 
 			);
 		
-        	$series = $this->HighCharts->addChartSeries();
+        $series = $this->HighCharts->addChartSeries();
 		
 		$series->addName('Example Online Store')->addData($chartData);
 
 		$mychart->addSeries($series);	
 		
+	}
+
+	public function pie()
+	{
+		$chartData = array(
+				array(
+					'name' => 'Chrome',
+		                     	'y' => 45.0,
+		                     	'sliced' => true,
+		                     	'selected' => true
+				     ),
+				array('IE', 26.8),
+				array('Firefox', 12.8),
+				array('Safari', 8.5),
+				array('Opera', 6.2),
+				array('Others', 0.7)
+			);
+				
+		$chartName = 'Pie Chart';
+		
+		$pieChart = $this->HighCharts->create
+						 (
+							$chartName,
+							array
+							(
+								'type' => 'pie',
+								'exporting' => TRUE 
+							)
+						 );
+
+	
+	   	$this->HighCharts->setChartParams
+			(
+				$chartName,
+				array
+				(
+					'renderTo'					=> 'piewrapper',  // div to display chart inside
+					'chartWidth'				=> 800,
+					'chartHeight'				=> 600,					
+					'title'						=> 'Browser Usage Statistics',
+					'plotOptionsShowInLegend'	=> TRUE,					
+                    'creditsEnabled' 			=> FALSE
+							
+				) 
+			);
+		
+        $series = $this->HighCharts->addChartSeries();
+		
+		$series->addName('Browser Share')->addData($chartData);
+						
+		$pieChart->addSeries($series);
 	}
 
 	

@@ -12,11 +12,11 @@
  */
 ?>
 <div class="chart">
-	<h3>A Very Humble Column Chart Example</h3>
+	<h3>Stacked Column Chart</h3>
 	
 	<div id="columnwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
     <div class="clear"></div>	
 	
-	<?php echo $this->HighCharts->render('Column Chart'); ?>
+	<?php echo $this->HighCharts->render('Stacked Column Chart'); ?>
 
 </div>
