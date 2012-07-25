@@ -30,7 +30,7 @@ class StackedDemoController extends HighChartsAppController
 	{
 
 		$johnData = array( 5,3,4,7,2 );
-		$janeData =	array( 2,2,3,2,1 );
+		$janeData = array( 2,2,3,2,1 );
 		$joeData  = array( 3,4,4,2,5 );
 				
 		$chartName = 'Stacked Bar Chart';
@@ -111,8 +111,7 @@ class StackedDemoController extends HighChartsAppController
 				'xAxisCategories'       	=> array( 'Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas' ),				
 				'yAxisTitleText' 		=> 'Total Fruit Consumption',									
 				'enableAutoStep' 		=> FALSE,
-				'creditsEnabled'		=> FALSE,
-				'plotOptionsSeriesStacking' => 'normal'						
+				'creditsEnabled'		=> FALSE,					
 				'plotOptionsSeriesStacking' 	=> 'normal' // other options is 'percent'						
 			) 
 		);
@@ -153,17 +152,17 @@ class StackedDemoController extends HighChartsAppController
 			$chartName,
 			array
 			(
-				'renderTo'				=> 'columnwrapper',  // div to display chart inside
+				'renderTo'			=> 'columnwrapper',  // div to display chart inside
 				'chartWidth'			=> 800,
 				'chartHeight'			=> 600,
-				'title'					=> 'Stacked Percentage Column Chart',
-				'subtitle'				=> 'Source: World Bank',
-				'xAxisLabelsEnabled' 	=> TRUE,
-				'xAxisCategories'       => array( 'Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas' ),
+				'title'				=> 'Stacked Percentage Column Chart',
+				'subtitle'			=> 'Source: World Bank',
+				'xAxisLabelsEnabled' 		=> TRUE,
+				'xAxisCategories'       	=> array( 'Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas' ),
 				'yAxisTitleText' 		=> 'Total Fruit Consumption',
 				'enableAutoStep' 		=> FALSE,
 				'creditsEnabled'		=> FALSE,
-				'plotOptionsSeriesStacking' => 'percent'
+				'plotOptionsSeriesStacking' 	=> 'percent'
 			)
 		);
 
