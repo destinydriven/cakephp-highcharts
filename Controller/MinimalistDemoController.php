@@ -44,17 +44,23 @@ class MinimalistDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'				=> 'columnwrapper',  // div to display chart inside
-					'chartWidth'			=> 800,
-					'chartHeight'			=> 600,					
-					'title'					=> 'Monthly Sales Summary',
-					'subtitle'				=> 'Source: World Bank',
+					'renderTo'		=> 'columnwrapper',  // div to display chart inside
+					'chartWidth'		=> 800,
+					'chartHeight'		=> 600,					
+					'title'			=> 'Monthly Sales Summary',
+					'subtitle'		=> 'Source: World Bank',
 					'xAxisLabelsEnabled' 	=> TRUE,				
 					'xAxisCategories'       => array( 'Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug',	'Sep','Oct','Nov','Dec'),				
+<<<<<<< HEAD
 					'yAxisTitleText' 		=> 'Units',									
 					'enableAutoStep' 		=> FALSE,
 					'creditsEnabled'		=> FALSE,
 					'exportingEnabled'		=> TRUE							
+=======
+					'yAxisTitleText' 	=> 'Units',									
+					'enableAutoStep' 	=> FALSE,
+					'creditsEnabled'	=> FALSE						
+>>>>>>> bc2143dcd5cfbe7912d9b5887a5b21e7bd946aa4
 				) 
 			);
 		
@@ -100,12 +106,17 @@ class MinimalistDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'piewrapper',  // div to display chart inside
-					'chartWidth'				=> 800,
-					'chartHeight'				=> 600,					
-					'title'						=> 'Browser Usage Statistics',
+					'renderTo'			=> 'piewrapper',  // div to display chart inside
+					'chartWidth'			=> 800,
+					'chartHeight'			=> 600,					
+					'title'				=> 'Browser Usage Statistics',
 					'plotOptionsShowInLegend'	=> TRUE,					
+<<<<<<< HEAD
                     'creditsEnabled' 			=> FALSE							
+=======
+                    			'creditsEnabled' 		=> FALSE
+							
+>>>>>>> bc2143dcd5cfbe7912d9b5887a5b21e7bd946aa4
 				) 
 			);
 		

@@ -58,7 +58,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'areawrapper',  // div to display chart inside
+					'renderTo'				=> 'areawrapper',  // div to display chart inside
 					'chartWidth'				=> 800,
 					'chartHeight'				=> 600,
 					'chartMarginTop' 			=> 60,
@@ -66,41 +66,41 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'chartMarginRight'			=> 30,
 					'chartMarginBottom'			=> 110,
 					'chartSpacingRight'			=> 10,
-					'chartSpacingBottom'		=> 15,
+					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
 					'chartAlignTicks'			=> FALSE,					
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 					
-					'title'						=> 'Monthly Sales Summary',
+					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'					=> 20,
-					'titleY'					=> 20,
+					'titleX'				=> 20,
+					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
-					'legendVerticalAlign '		=> 'bottom',
+					'legendVerticalAlign '			=> 'bottom',
 					'legendItemStyle'			=> array('color' => '#222'),
-					'legendBackgroundColorLinearGradient' => array(0,0,0,25),
+					'legendBackgroundColorLinearGradient' 	=> array(0,0,0,25),
 					'legendBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
-                    'tooltipEnabled' 			=> FALSE,
+                    			'tooltipEnabled' 			=> FALSE,
                    			// 'tooltipBackgroundColorLinearGradient' => array(0,0,0,50),   // triggers js error
                    			// 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
                     
 					//'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
 					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 					'plotOptionsFillColor' =>  array(
-													'linearGradient' => array(0, 0, 0, 300),
-													'stops' => array (
-																		array(0, 'rgba(112, 138, 255, 1.0)'),  // Highcharts.getOptions().colors[0]
-																		array(1, 'rgba(2,0,0,0)')
-																	  )
-												   ),			
+										'linearGradient' => array(0, 0, 0, 300),
+										'stops' => array (
+													array(0, 'rgba(112, 138, 255, 1.0)'),  // Highcharts.getOptions().colors[0]
+													array(1, 'rgba(2,0,0,0)')
+												  )
+									),			
 					
 					//'xAxisType' 				=> 'datetime',
 					//'xAxisTickInterval' 			=> 10,
@@ -109,13 +109,13 @@ class SingleSeriesDemoController extends HighChartsAppController
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
 					
-					'xAxisLabelsEnabled' 		=> TRUE,
+					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
-					'xAxisLabelsRotation' 		=> -35,
+					'xAxisLabelsRotation' 			=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
-					'xAxisCategories'           => array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
+					'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
 					
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
@@ -144,7 +144,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				) 
 			);
 		
-        $series = $this->HighCharts->addChartSeries();	
+        	$series = $this->HighCharts->addChartSeries();	
 						
 		$series->addName('Tokyo')->addData($chartData);
 						
@@ -177,7 +177,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'areasplinewrapper',  // div to display chart inside
+					'renderTo'				=> 'areasplinewrapper',  // div to display chart inside
 					'chartWidth'				=> 800,
 					'chartHeight'				=> 600,
 					'chartMarginTop' 			=> 60,
@@ -185,29 +185,29 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'chartMarginRight'			=> 30,
 					'chartMarginBottom'			=> 110,
 					'chartSpacingRight'			=> 10,
-					'chartSpacingBottom'		=> 15,
+					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
 					'chartAlignTicks'			=> FALSE,					
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 					
-					'title'						=> 'Monthly Sales Summary',
+					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'					=> 20,
-					'titleY'					=> 20,
+					'titleX'				=> 20,
+					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
-					'legendVerticalAlign '		=> 'bottom',
+					'legendVerticalAlign '			=> 'bottom',
 					'legendItemStyle'			=> array('color' => '#222'),
 					'legendBackgroundColorLinearGradient' 	=> array(0,0,0,25),
 					'legendBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
-                    'tooltipEnabled' 			=> FALSE,
+                    			'tooltipEnabled' 			=> FALSE,
 		                     // 'tooltipBackgroundColorLinearGradient' => array(0,0,0,50),   // triggers js error
 		                     // 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
                     
@@ -221,13 +221,13 @@ class SingleSeriesDemoController extends HighChartsAppController
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
 					
-					'xAxisLabelsEnabled' 		=> TRUE,
+					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
-					'xAxisLabelsRotation' 		=> -35,
+					'xAxisLabelsRotation' 			=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
-					'xAxisCategories'           => array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
+					'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
 					
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
@@ -286,7 +286,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'barwrapper',  // div to display chart inside
+					'renderTo'				=> 'barwrapper',  // div to display chart inside
 					'chartWidth'				=> 800,
 					'chartHeight'				=> 600,
 					'chartMarginTop' 			=> 60,
@@ -294,19 +294,19 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'chartMarginRight'			=> 30,
 					'chartMarginBottom'			=> 110,
 					'chartSpacingRight'			=> 10,
-					'chartSpacingBottom'		=> 15,
+					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
 					'chartAlignTicks'			=> FALSE,					
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 					
-					'title'						=> 'Monthly Sales Summary',
+					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'					=> 20,
-					'titleY'					=> 20,
+					'titleX'				=> 20,
+					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
@@ -330,13 +330,13 @@ class SingleSeriesDemoController extends HighChartsAppController
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
 					
-					'xAxisLabelsEnabled' 		=> TRUE,
+					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
-					'xAxisLabelsRotation' 		=> -35,
+					'xAxisLabelsRotation' 			=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
-					'xAxisCategories'           => array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
+					'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
 					
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
@@ -394,7 +394,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'columnwrapper',  // div to display chart inside
+					'renderTo'				=> 'columnwrapper',  // div to display chart inside
 					'chartWidth'				=> 800,
 					'chartHeight'				=> 600,
 					'chartMarginTop' 			=> 60,
@@ -402,19 +402,19 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'chartMarginRight'			=> 30,
 					'chartMarginBottom'			=> 110,
 					'chartSpacingRight'			=> 10,
-					'chartSpacingBottom'		=> 15,
+					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
 					'chartAlignTicks'			=> FALSE,					
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 					
-					'title'						=> 'Monthly Sales Summary',
+					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'					=> 20,
-					'titleY'					=> 20,
+					'titleX'				=> 20,
+					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
@@ -438,13 +438,13 @@ class SingleSeriesDemoController extends HighChartsAppController
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
 						
-					'xAxisLabelsEnabled' 		=> TRUE,
+					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
-					'xAxisLabelsRotation' 		=> -35,
+					'xAxisLabelsRotation' 			=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,					
-					'xAxisCategories'           => array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),	
+					'xAxisCategories'          		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),	
 					
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
@@ -502,7 +502,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'linewrapper',  // div to display chart inside
+					'renderTo'				=> 'linewrapper',  // div to display chart inside
 					'chartWidth'				=> 800,
 					'chartHeight'				=> 600,
 					'chartMarginTop' 			=> 60,
@@ -510,29 +510,29 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'chartMarginRight'			=> 30,
 					'chartMarginBottom'			=> 110,
 					'chartSpacingRight'			=> 10,
-					'chartSpacingBottom'		=> 15,
+					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
 					'chartAlignTicks'			=> FALSE,					
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 					
-					'title'						=> 'Monthly Sales Summary',
+					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'					=> 20,
-					'titleY'					=> 20,
+					'titleX'				=> 20,
+					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
-					'legendVerticalAlign '		=> 'bottom',
+					'legendVerticalAlign '			=> 'bottom',
 					'legendItemStyle'			=> array('color' => '#222'),
 					'legendBackgroundColorLinearGradient' 	=> array(0,0,0,25),
 					'legendBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
-                    'tooltipEnabled' 			=> FALSE,
+                    			'tooltipEnabled' 			=> FALSE,
                    		     // 'tooltipBackgroundColorLinearGradient' => array(0,0,0,50),   // triggers js error
                                      // 'tooltipBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
                     
@@ -546,13 +546,13 @@ class SingleSeriesDemoController extends HighChartsAppController
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
 					
-					'xAxisLabelsEnabled' 		=> TRUE,
+					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
-					'xAxisLabelsRotation' 		=> -35,
+					'xAxisLabelsRotation' 			=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
-					'xAxisCategories'           => array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),							
+					'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),							
 					
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
@@ -619,7 +619,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'piewrapper',  // div to display chart inside
+					'renderTo'				=> 'piewrapper',  // div to display chart inside
 					'chartWidth'				=> 800,
 					'chartHeight'				=> 600,
 					'chartMarginTop' 			=> 60,
@@ -627,19 +627,19 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'chartMarginRight'			=> 30,
 					'chartMarginBottom'			=> 110,
 					'chartSpacingRight'			=> 10,
-					'chartSpacingBottom'		=> 15,
+					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
 					'chartAlignTicks'			=> FALSE,					
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 					
-					'title'						=> 'Browser Usage Statistics',
+					'title'					=> 'Browser Usage Statistics',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'					=> 20,
-					'titleY'					=> 20,
+					'titleX'				=> 20,
+					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
@@ -649,7 +649,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'legendBackgroundColorLinearGradient' 	=> array(0,0,0,25),
 					'legendBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
-                    'tooltipEnabled' 			=> FALSE,
+                    			'tooltipEnabled' 			=> FALSE,
                    			// 'tooltipBackgroundColorLinearGradient' => array(0,0,0,50),   // triggers js error
                    			// 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
                     
@@ -663,10 +663,10 @@ class SingleSeriesDemoController extends HighChartsAppController
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
 					
-					'xAxisLabelsEnabled' 		=> TRUE,
+					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
-					'xAxisLabelsRotation' 		=> -35,
+					'xAxisLabelsRotation' 			=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,					
 					
@@ -725,7 +725,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'scatterwrapper',  // div to display chart inside
+					'renderTo'				=> 'scatterwrapper',  // div to display chart inside
 					'chartWidth'				=> 800,
 					'chartHeight'				=> 600,
 					'chartMarginTop' 			=> 60,
@@ -733,19 +733,19 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'chartMarginRight'			=> 30,
 					'chartMarginBottom'			=> 110,
 					'chartSpacingRight'			=> 10,
-					'chartSpacingBottom'		=> 15,
+					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
 					'chartAlignTicks'			=> FALSE,					
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 					
-					'title'						=> 'Monthly Sales Summary',
+					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'					=> 20,
-					'titleY'					=> 20,
+					'titleX'				=> 20,
+					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
@@ -769,13 +769,13 @@ class SingleSeriesDemoController extends HighChartsAppController
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
 					
-					'xAxisLabelsEnabled' 		=> TRUE,
+					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
-					'xAxisLabelsRotation' 		=> -35,
+					'xAxisLabelsRotation' 			=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
-					'xAxisCategories'           => array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),							
+					'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),							
 					
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
@@ -800,7 +800,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				) 
 			);
 		
-        $series1 = $this->HighCharts->addChartSeries();
+        	$series1 = $this->HighCharts->addChartSeries();
 		
 		$series1->addName('Tokyo')->addData($chartData1);
 						
@@ -833,7 +833,7 @@ class SingleSeriesDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'					=> 'splinewrapper',  // div to display chart inside
+					'renderTo'				=> 'splinewrapper',  // div to display chart inside
 					'chartWidth'				=> 800,
 					'chartHeight'				=> 600,
 					'chartMarginTop' 			=> 60,
@@ -841,29 +841,29 @@ class SingleSeriesDemoController extends HighChartsAppController
 					'chartMarginRight'			=> 30,
 					'chartMarginBottom'			=> 110,
 					'chartSpacingRight'			=> 10,
-					'chartSpacingBottom'		=> 15,
+					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
 					'chartAlignTicks'			=> FALSE,					
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 					
-					'title'						=> 'Monthly Sales Summary',
+					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
 					'titleStyleFont'			=> '18px Metrophobic, Arial, sans-serif',
 					'titleStyleColor'			=> '#0099ff',
-					'titleX'					=> 20,
-					'titleY'					=> 20,
+					'titleX'				=> 20,
+					'titleY'				=> 20,
 					
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
-					'legendVerticalAlign '		=> 'bottom',
+					'legendVerticalAlign '			=> 'bottom',
 					'legendItemStyle'			=> array('color' => '#222'),
 					'legendBackgroundColorLinearGradient' 	=> array(0,0,0,25),
 					'legendBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
-                    'tooltipEnabled' 			=> FALSE,
+                    			'tooltipEnabled' 			=> FALSE,
                    			// 'tooltipBackgroundColorLinearGradient' => array(0,0,0,50),   // triggers js error
                    			// 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
                     
@@ -877,13 +877,13 @@ class SingleSeriesDemoController extends HighChartsAppController
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
 					
-					'xAxisLabelsEnabled' 		=> TRUE,
+					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
-					'xAxisLabelsRotation' 		=> -35,
+					'xAxisLabelsRotation' 			=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
-					'xAxisCategories'           => array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
+					'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
 					
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
