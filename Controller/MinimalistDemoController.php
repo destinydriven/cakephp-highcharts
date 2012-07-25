@@ -9,6 +9,7 @@
  * 		MPL <http://www.mozilla.org/MPL/MPL-1.1.html>
  * 		LGPL <http://www.gnu.org/licenses/lgpl.html>
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
+ * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
 class MinimalistDemoController extends HighChartsAppController
 {
@@ -52,7 +53,8 @@ class MinimalistDemoController extends HighChartsAppController
 					'xAxisCategories'       => array( 'Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug',	'Sep','Oct','Nov','Dec'),				
 					'yAxisTitleText' 		=> 'Units',									
 					'enableAutoStep' 		=> FALSE,
-					'creditsEnabled'		=> FALSE						
+					'creditsEnabled'		=> FALSE,
+					'exportingEnabled'		=> TRUE							
 				) 
 			);
 		
@@ -103,8 +105,7 @@ class MinimalistDemoController extends HighChartsAppController
 					'chartHeight'				=> 600,					
 					'title'						=> 'Browser Usage Statistics',
 					'plotOptionsShowInLegend'	=> TRUE,					
-                    'creditsEnabled' 			=> FALSE
-							
+                    'creditsEnabled' 			=> FALSE							
 				) 
 			);
 		
@@ -114,6 +115,4 @@ class MinimalistDemoController extends HighChartsAppController
 						
 		$pieChart->addSeries($series);
 	}
-
-	
 }

@@ -9,6 +9,7 @@
  * 		MPL <http://www.mozilla.org/MPL/MPL-1.1.html>
  * 		LGPL <http://www.gnu.org/licenses/lgpl.html>
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
+ * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
 class StackedDemoController extends HighChartsAppController
 {
@@ -111,7 +112,7 @@ class StackedDemoController extends HighChartsAppController
 				'yAxisTitleText' 		=> 'Total Fruit Consumption',									
 				'enableAutoStep' 		=> FALSE,
 				'creditsEnabled'		=> FALSE,
-				'plotOptionsSeriesStacking' => 'percent'						
+				'plotOptionsSeriesStacking' => 'normal'						
 			) 
 		);
 		
@@ -119,6 +120,56 @@ class StackedDemoController extends HighChartsAppController
 		$janeSeries = $this->HighCharts->addChartSeries();
 		$joeSeries  = $this->HighCharts->addChartSeries();
 		
+		$johnSeries->addName('John')->addData($johnData);
+		$janeSeries->addName('Jane')->addData($janeData);
+		$joeSeries->addName('Joe')->addData($joeData);
+
+		$mychart->addSeries($johnSeries);
+		$mychart->addSeries($janeSeries);
+		$mychart->addSeries($joeSeries);
+	}
+
+	public function percent_column()
+	{
+		$johnData = array( 5,3,4,7,2 );
+		$janeData =	array( 2,2,3,2,1 );
+		$joeData  = array( 3,4,4,2,5 );				
+
+		$chartName = 'Stacked Percentage Column Chart';		
+
+		$mychart = $this->HighCharts->create
+						 (
+							$chartName,
+							array
+							(
+								'type' => 'column',
+								'exporting' => TRUE
+							)
+						 );	
+
+        $this->HighCharts->setChartParams
+		(
+			$chartName,
+			array
+			(
+				'renderTo'				=> 'columnwrapper',  // div to display chart inside
+				'chartWidth'			=> 800,
+				'chartHeight'			=> 600,
+				'title'					=> 'Stacked Percentage Column Chart',
+				'subtitle'				=> 'Source: World Bank',
+				'xAxisLabelsEnabled' 	=> TRUE,
+				'xAxisCategories'       => array( 'Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas' ),
+				'yAxisTitleText' 		=> 'Total Fruit Consumption',
+				'enableAutoStep' 		=> FALSE,
+				'creditsEnabled'		=> FALSE,
+				'plotOptionsSeriesStacking' => 'percent'
+			)
+		);
+
+        $johnSeries = $this->HighCharts->addChartSeries();
+		$janeSeries = $this->HighCharts->addChartSeries();
+		$joeSeries  = $this->HighCharts->addChartSeries();		
+
 		$johnSeries->addName('John')->addData($johnData);
 		$janeSeries->addName('Jane')->addData($janeData);
 		$joeSeries->addName('Joe')->addData($joeData);

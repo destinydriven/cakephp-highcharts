@@ -13,11 +13,11 @@
  */
 ?>
 <div class="chart">
-	<p>Bar Chart</p>
+	<h3>Stacked Percentage Column Chart</h3>
 	
-    <div id="barwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
+	<div id="columnwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
     <div class="clear"></div>	
 	
-	<?php echo $this->HighCharts->render('Bar Chart'); ?>
+	<?php echo $this->HighCharts->render('Stacked Percentage Column Chart'); ?>
 
 </div>

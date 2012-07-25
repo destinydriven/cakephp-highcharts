@@ -8,11 +8,16 @@ More features will be added and the existing ones will be improved as you discov
 
 Please send your comments and suggestions to d3stinydriv3n[at]gmail.com
 
+For those of you who simply want take a quick look at this plugin's features,  demos should be available at:
+
+<http://destinydrivenlive.com/highcharts/high_charts/high_charts_demo>
+
 ## Usage ##
 
 Deploy the plugin in your `app/Plugin/HighCharts` directory. If you're using
 Git, run this while in your app folder:
 
+	git init
 	git submodule add git://github.com/destinydriven/cakephp-high-charts-plugin.git Plugin/HighCharts
 	git submodule init
 	git submodule update
@@ -65,7 +70,7 @@ Jigzstar <https://github.com/jigzstar> for introducing me to HighCharts.
 
 ## Additional Resources ##
 It might be instructive to take a look at the HighRoller README file (Plugin Vendor's Folder) to get a better idea of how it all works
-Additionally, if you're looking to extend this plugin, a good place to start would be the HighCharts API Reference
+Additionally, if you are looking to extend this plugin, a good place to start would be the HighCharts API Reference
 <http://www.highcharts.com/ref/>
 
 ## Licence ##

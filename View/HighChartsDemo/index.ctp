@@ -9,6 +9,7 @@
  * 		MPL <http://www.mozilla.org/MPL/MPL-1.1.html>
  * 		LGPL <http://www.gnu.org/licenses/lgpl.html>
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
+ * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
 ?>
 <table>
@@ -50,7 +51,7 @@
 		<tr>
 			<td><?php echo $this->Html->link('Column', array('plugin' => 'high_charts', 'controller' => 'single_series_demo', 'action' => 'column')); ?></td>
 			<td><?php echo $this->Html->link('Column', array('plugin' => 'high_charts', 'controller' => 'multi_series_demo', 'action' => 'column')); ?></td>
-			<td><?php //echo $this->Html->link('Area', array('plugin' => 'high_charts', 'controller' => 'stacked_demo', 'action' => 'area')); ?></td>
+			<td><?php echo $this->Html->link('Percentage Column', array('plugin' => 'high_charts', 'controller' => 'stacked_demo', 'action' => 'percent_column')); ?></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -69,6 +70,7 @@
 			<td></td>
 			<td></td>
 			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td><?php echo $this->Html->link('Scatter', array('plugin' => 'high_charts', 'controller' => 'single_series_demo', 'action' => 'scatter')); ?></td>
@@ -76,10 +78,12 @@
 			<td></td>
 			<td></td>
 			<td></td>
+			<td></td>
 		</tr>
 		<tr>
 			<td><?php echo $this->Html->link('Spline', array('plugin' => 'high_charts', 'controller' => 'single_series_demo', 'action' => 'spline')); ?></td>
 			<td><?php echo $this->Html->link('Spline', array('plugin' => 'high_charts', 'controller' => 'multi_series_demo', 'action' => 'spline')); ?></td>
+			<td></td>
 			<td></td>
 			<td></td>
 			<td></td>
