@@ -112,11 +112,8 @@ class StackedDemoController extends HighChartsAppController
 				'yAxisTitleText' 		=> 'Total Fruit Consumption',									
 				'enableAutoStep' 		=> FALSE,
 				'creditsEnabled'		=> FALSE,
-<<<<<<< HEAD
 				'plotOptionsSeriesStacking' => 'normal'						
-=======
 				'plotOptionsSeriesStacking' 	=> 'normal' // other options is 'percent'						
->>>>>>> bc2143dcd5cfbe7912d9b5887a5b21e7bd946aa4
 			) 
 		);
 		
@@ -170,7 +167,7 @@ class StackedDemoController extends HighChartsAppController
 			)
 		);
 
-        $johnSeries = $this->HighCharts->addChartSeries();
+        	$johnSeries = $this->HighCharts->addChartSeries();
 		$janeSeries = $this->HighCharts->addChartSeries();
 		$joeSeries  = $this->HighCharts->addChartSeries();		
 
