@@ -111,7 +111,7 @@ class StackedDemoController extends HighChartsAppController
 				'yAxisTitleText' 		=> 'Total Fruit Consumption',									
 				'enableAutoStep' 		=> FALSE,
 				'creditsEnabled'		=> FALSE,
-				'plotOptionsSeriesStacking' 	=> 'percent'						
+				'plotOptionsSeriesStacking' 	=> 'normal' // other options is 'percent'						
 			) 
 		);
 		
