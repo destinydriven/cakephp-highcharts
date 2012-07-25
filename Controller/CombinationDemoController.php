@@ -54,18 +54,18 @@ class CombinationDemoController extends HighChartsAppController
 				$chartName,
 				array
 				(
-					'renderTo'				=> 'combowrapper',  // div to display chart inside				
-					'title'					=> 'Combination Chart',
-					'subtitle'				=> 'Source: World Bank',
-					'xAxisLabelsEnabled' 	=> TRUE,				
-					'xAxisCategories'       => array( 'Apples','Oranges','Pears','Bananas','Plums'),				
+					'renderTo'			=> 'combowrapper',  // div to display chart inside				
+					'title'				=> 'Combination Chart',
+					'subtitle'			=> 'Source: World Bank',
+					'xAxisLabelsEnabled' 		=> TRUE,				
+					'xAxisCategories'       	=> array( 'Apples','Oranges','Pears','Bananas','Plums'),				
 					'yAxisTitleText' 		=> 'Units',									
 					'enableAutoStep' 		=> FALSE,
 					'creditsEnabled'		=> FALSE						
 				) 
 			);
 		
-        $janeSeries = $this->HighCharts->addChartSeries();
+        	$janeSeries = $this->HighCharts->addChartSeries();
 		$janeSeries->type = 'column';
 		$janeSeries->addName('Jane')->addData($janeData);
 		
