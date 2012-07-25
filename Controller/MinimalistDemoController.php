@@ -51,16 +51,13 @@ class MinimalistDemoController extends HighChartsAppController
 					'subtitle'		=> 'Source: World Bank',
 					'xAxisLabelsEnabled' 	=> TRUE,				
 					'xAxisCategories'       => array( 'Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug',	'Sep','Oct','Nov','Dec'),				
-<<<<<<< HEAD
 					'yAxisTitleText' 		=> 'Units',									
 					'enableAutoStep' 		=> FALSE,
 					'creditsEnabled'		=> FALSE,
-					'exportingEnabled'		=> TRUE							
-=======
+					'exportingEnabled'		=> TRUE,							
 					'yAxisTitleText' 	=> 'Units',									
 					'enableAutoStep' 	=> FALSE,
 					'creditsEnabled'	=> FALSE						
->>>>>>> bc2143dcd5cfbe7912d9b5887a5b21e7bd946aa4
 				) 
 			);
 		
@@ -110,17 +107,12 @@ class MinimalistDemoController extends HighChartsAppController
 					'chartWidth'			=> 800,
 					'chartHeight'			=> 600,					
 					'title'				=> 'Browser Usage Statistics',
-					'plotOptionsShowInLegend'	=> TRUE,					
-<<<<<<< HEAD
-                    'creditsEnabled' 			=> FALSE							
-=======
+					'plotOptionsShowInLegend'	=> TRUE,												
                     			'creditsEnabled' 		=> FALSE
-							
->>>>>>> bc2143dcd5cfbe7912d9b5887a5b21e7bd946aa4
 				) 
 			);
 		
-        $series = $this->HighCharts->addChartSeries();
+        	$series = $this->HighCharts->addChartSeries();
 		
 		$series->addName('Browser Share')->addData($chartData);
 						
