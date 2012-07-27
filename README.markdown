@@ -36,6 +36,11 @@ individual chart types. Open the demos in your browser:
 	
 Be sure to first check out the Minimalist Demo for tips on how to quickly set up HighCharts Plugin in your own projects.
 The other examples provide tons of customization options which you may not want to bother with initially.
+
+This would simply include adding the HighCharts component and helper to your controller. (See examples for more details)
+
+	public $components = array('HighCharts.HighCharts');
+	public $helpers = array('HighCharts.HighCharts');
 	
 ## Special Note ##
 
@@ -65,8 +70,12 @@ This plugin also utilizes HighRoller (an object-oriented PHP wrapper for HighCha
 HighRoller is also available on Github and is licenced under  the Apache 2.0 license.
 <https://github.com/jmaclabs/HighRoller>  
 
-Thanks to Lecterror (<https://github.com/lecteror>) for providing the inspiration to create this plugin and to 
-Jigzstar <https://github.com/jigzstar> for introducing me to HighCharts.
+# Special Thanks To: #
+
+* Lecterror (<https://github.com/lecteror>) for providing the inspiration to create this plugin
+* Jigzstar <https://github.com/jigzstar> for introducing me to HighCharts.
+* Tigrang <https://github.com/tigrang> for assistance in improving HighCharts helper
+
 
 ## Additional Resources ##
 It might be instructive to take a look at the HighRoller README file (Plugin Vendor's Folder) to get a better idea of how it all works

@@ -55,13 +55,6 @@ class HighChartsComponent extends Component {
 		$this->highroller = New HighRoller();
 		
 	    $this->title = new HighRollerTitle();
-	 /*
-		$this->legend = new HighRollerLegend();
-		$this->tooltip = new HighRollerToolTip();
-		$this->plotOptions = new HighRollerPlotOptions($this->chart->type);
-	   	$this->series1 = new HighRollerSeriesData();
-		$this->series2 = new HighRollerSeriesData();
-	 */	
 		
 	}
 
@@ -195,7 +188,11 @@ class HighChartsComponent extends Component {
 		if (isset($params['chartHeight']))
 		{
 			$this->charts[$name]->chart->height = $params['chartHeight'];
-		}
+		}		
+		if (isset($params['chartMargin']) && is_array($params['chartMargin']))
+		{
+			$this->charts[$name]->chart->margin = $params['chartMargin'];
+		}		
 		if (isset($params['chartMarginTop']))
 		{
 			$this->charts[$name]->chart->marginTop = $params['chartMarginTop'];
@@ -235,7 +232,12 @@ class HighChartsComponent extends Component {
 		if (isset($params['chartBackgroundColorStops']))
 		{
 			$this->charts[$name]->chart->backgroundColor->stops = $params['chartBackgroundColorStops'];
-		}			
+		}		
+		if (isset($params['chartEventsLoad']))
+		{
+			$this->charts[$name]->chart->events->load = $params['chartEventsLoad'];
+		}	
+					
 		
 		// title options		
 		if (isset($params['title']))
@@ -272,7 +274,7 @@ class HighChartsComponent extends Component {
 		}
 
         	// legend options
-        	if (isset($params['legendEnabled']))
+        if (isset($params['legendEnabled']))
 		{
 			$this->charts[$name]->legend->enabled = $params['legendEnabled'];
 		}
@@ -304,9 +306,6 @@ class HighChartsComponent extends Component {
 		// tooltip options
 		if (isset($params['tooltipEnabled']) &&  $params['tooltipEnabled'] === TRUE)
 		{
-			App::import('Vendor', 'HighCharts.HighRollerFormatter', TRUE, array(), 'lib/HighRollerFormatter.php');	
-			$this->charts[$name]->tooltip->formatter = new HighRollerFormatter(); // TOOLTIP FORMATTER
-			
 			if (isset($params['tooltipBackgroundColorLinearGradient']))
 			{
 				$this->charts[$name]->tooltip->backgroundColor->linearGradient = $params['tooltipBackgroundColorLinearGradient'];
@@ -314,6 +313,21 @@ class HighChartsComponent extends Component {
 			if (isset($params['tooltipBackgroundColorStops']))
 			{
 				$this->charts[$name]->tooltip->backgroundColor->stops = $params['tooltipBackgroundColorStops'];
+			}
+			if (isset($params['tooltipFormatter']))
+			{
+				App::import('Vendor', 'HighCharts.HighRollerFormatter', TRUE, array(), 'lib/HighRollerFormatter.php');	
+				$this->charts[$name]->tooltip->formatter = new HighRollerFormatter(); // TOOLTIP FORMATTER
+				$this->charts[$name]->tooltip->formatter = $params['tooltipFormatter'];				
+				
+			}
+			if (isset($params['tooltipCrosshairs'])) 
+			{
+				$this->charts[$name]->tooltip->crosshairs = $params['tooltipCrosshairs'];
+			}
+			if (isset($params['tooltipShared']))
+			{
+				$this->charts[$name]->tooltip->shared = $params['tooltipShared'];
 			}
 		}		
 		
@@ -338,6 +352,14 @@ class HighChartsComponent extends Component {
 		{
 			$this->charts[$name]->plotOptions->area->fillColor = $params['plotOptionsFillColor'];
 		}
+		if (isset($params['plotOptionsLineDataLabelsEnabled']))
+		{
+			$this->charts[$name]->plotOptions->line->dataLabels->enabled = $params['plotOptionsLineDataLabelsEnabled'];
+		}
+		if (isset($params['plotOptionsLineEnableMouseTracking']))
+		{
+			$this->charts[$name]->plotOptions->line->enableMouseTracking = $params['plotOptionsLineEnableMouseTracking'];
+		}
 
 		
 		// X axis options
@@ -352,7 +374,11 @@ class HighChartsComponent extends Component {
 		if (isset($params['xAxisTickInterval']))
 		{
 			$this->charts[$name]->xAxis->tickInterval = $params['xAxisTickInterval'];
-		}
+		}		
+		if (isset($params['xAxisTickPixelInterval']))
+		{
+			$this->charts[$name]->xAxis->tickPixelInterval = $params['xAxisTickPixelInterval'];
+		}		
 		if (isset($params['xAxisStartOnTick']))
 		{
 			$this->charts[$name]->xAxis->startOnTick = $params['xAxisStartOnTick'];
@@ -369,7 +395,7 @@ class HighChartsComponent extends Component {
 		{
 			$this->charts[$name]->xAxis->minorTickLength = $params['xAxisMinorTickLength'];
 		}		
-		if (isset($params['labelsEnabled']) &&  $params['labelsEnabled'] === TRUE)
+		if (isset($params['xAxisLabelsEnabled']) &&  $params['xAxisLabelsEnabled'] === TRUE)
 		{
 			App::import('Vendor', 'HighCharts.HighRollerFormatter', true, array(), 'lib/HighRollerFormatter.php');	
 			$this->charts[$name]->labels->formatter = new HighRollerFormatter(); // LABELS FORMATTER
@@ -474,7 +500,6 @@ class HighChartsComponent extends Component {
 		}
 		else
 		{
-			//$this->charts[$name]->credits = TRUE;
 			if(isset($params['creditsText']))
 			{
 				$this->charts[$name]->credits->text = $params['creditsText'];				
@@ -484,11 +509,12 @@ class HighChartsComponent extends Component {
 				$this->charts[$name]->credits->href = $params['creditsURL'];				
 			}
 			
-		}		
+		}
+		
 		// exporting options
-		if (isset($params['exportingEnabled']) && $params['exportingEnabled'] === FALSE )
+		if(isset($params['exportingEnabled']) && $params['exportingEnabled'] === FALSE)
 		{
-			$this->charts[$name]->exporting->enabled = FALSE; 
+			$this->charts[$name]->exporting->enabled = FALSE;
 		}
 		
 	}
@@ -505,8 +531,7 @@ class HighChartsComponent extends Component {
 		if (isset($data))
 		{
 			$this->highroller->addData($data);
-		}
-		
+		}		
 	}
 	
 	

@@ -38,7 +38,6 @@ class CombinationDemoController extends HighChartsAppController
 			);
 				
 		$chartName = 'Combination Chart';
-		
 		$mychart = $this->HighCharts->create
 						 (
 							$chartName,
@@ -48,53 +47,13 @@ class CombinationDemoController extends HighChartsAppController
 								'exporting' => TRUE
 							)
 						 );
-
 	
-	        $this->HighCharts->setChartParams
-			(
-				$chartName,
-				array
-				(
-					'renderTo'			=> 'combowrapper',  // div to display chart inside				
-					'title'				=> 'Combination Chart',
-					'subtitle'			=> 'Source: World Bank',
-					'xAxisLabelsEnabled' 		=> TRUE,				
-					'xAxisCategories'       	=> array( 'Apples','Oranges','Pears','Bananas','Plums'),				
-					'yAxisTitleText' 		=> 'Units',									
-					'enableAutoStep' 		=> FALSE,
-					'creditsEnabled'		=> FALSE						
-				) 
-			);
-		
-        	$janeSeries = $this->HighCharts->addChartSeries();
-		$janeSeries->type = 'column';
-		$janeSeries->addName('Jane')->addData($janeData);
-		
-		$johnSeries = $this->HighCharts->addChartSeries();
-		$johnSeries->type = 'column';
-		$johnSeries->addName('John')->addData($johnData);		
-		
-		$joeSeries  = $this->HighCharts->addChartSeries();
-		$joeSeries->type = 'column';
-		$joeSeries->addName('Joe')->addData($joeData);		
-		
-		$avgSeries  = $this->HighCharts->addChartSeries();
-		$avgSeries->type = 'spline';
-		$avgSeries->addName('Average')->addData($avgData);
-		
-		$pieSeries  = $this->HighCharts->addChartSeries();
-		$pieSeries->type = 'pie';
-		$pieSeries->center = array(200,50);
-		$pieSeries->size = 150;
-		$pieSeries->showInLegend = FALSE;
-		$pieSeries->addName('Total consumption')->addData($pieData);	
-
-		$mychart->addSeries($janeSeries);
-		$mychart->addSeries($johnSeries);
-		$mychart->addSeries($joeSeries);
-		$mychart->addSeries($avgSeries);
-		$mychart->addSeries($pieSeries);	
-		
-	}
-	
-}
+		$this->HighCharts->setChartParams			(				$chartName,				array				(					'renderTo'				=> 'combowrapper',  // div to display chart inside					'chartWidth'			=> 1000,					'chartHeight'			=> 750,					'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),					'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),									'title'					=> 'Combination Chart',					'subtitle'				=> 'Source: World Bank',					'xAxisLabelsEnabled' 	=> TRUE,									'xAxisCategories'       => array( 'Apples','Oranges','Pears','Bananas','Plums'),									'yAxisTitleText' 		=> 'Units',														'enableAutoStep' 		=> FALSE,					'creditsEnabled'		=> FALSE										) 			);	        $janeSeries = $this->HighCharts->addChartSeries();		$janeSeries->type = 'column';		$janeSeries->addName('Jane')->addData($janeData);
+		$johnSeries = $this->HighCharts->addChartSeries();		$johnSeries->type = 'column';		$johnSeries->addName('John')->addData($johnData);		
+		$joeSeries  = $this->HighCharts->addChartSeries();		$joeSeries->type = 'column';		$joeSeries->addName('Joe')->addData($joeData);						$avgSeries  = $this->HighCharts->addChartSeries();		$avgSeries->type = 'spline';		$avgSeries->addName('Average')->addData($avgData);
+		$pieSeries  = $this->HighCharts->addChartSeries();		$pieSeries->type = 'pie';		$pieSeries->center = array(200,150);
+		$pieSeries->size = 250;		$pieSeries->showInLegend = FALSE;		$pieSeries->addName('Total consumption')->addData($pieData);	
+		$mychart->addSeries($janeSeries);		$mychart->addSeries($johnSeries);		$mychart->addSeries($joeSeries);
+		$mychart->addSeries($avgSeries);		$mychart->addSeries($pieSeries);	
+	}	
+}
