@@ -137,7 +137,7 @@ EOF;
 			) 
 		);
 
-        $series = $this->HighCharts->addChartSeries();
+        	$series = $this->HighCharts->addChartSeries();
 
 		$series->addName('Population')->addData($chartData);
 		
