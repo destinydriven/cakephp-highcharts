@@ -32,7 +32,7 @@ class HighChartsHelper extends AppHelper
 	{
 		$this->Html->css('high_charts/css/highroller');	
 		
-		$this->Html->script(array( '/high_charts/js/jquery.min', '/high_charts/js/highcharts', '/high_charts/js/modules/exporting' ), FALSE);  
+		$this->Html->script(array( '/high_charts/js/highcharts', '/high_charts/js/modules/exporting' ), FALSE);  
 		
 		return true;
 	}
@@ -74,23 +74,33 @@ class HighChartsHelper extends AppHelper
 		$jsonOptions = preg_replace('/"(\(?function.+?}(\)\(\))?)"/', '$1', $jsonOptions);
 		
 		// this section from HighRoller::renderChart()		
-		$options = new HighRollerOptions();		
+		$options = new HighRollerOptions();	
 		
-		$chartJS = '$(document).ready(function() {';
+		// prepare PHP vars for chartJS script
+		$json_options = json_encode($options);
+        $chart_title = $charts[$name]->title->text;
+		$chart_type = $charts[$name]->chart->type;
+		$renderTo = $charts[$name]->chart->renderTo;
+ 
+		$chartJS = <<<EOF
+$(document).ready(function() {
 
-	    	$chartJS .= "\n\n    // HIGHROLLER - HIGHCHARTS UTC OPTIONS ";
-	    	$chartJS .= "\n    Highcharts.setOptions(\n";
-	    	$chartJS .= "       " . json_encode($options) . "\n";
-	    	$chartJS .= "    );\n";
-	    	$chartJS .= "\n\n    // HIGHROLLER - HIGHCHARTS '" . $charts[$name]->title->text . "' " . $charts[$name]->chart->type . " chart";
-	    	$chartJS .= "\n    var " . $charts[$name]->chart->renderTo . " = new Highcharts.Chart(\n";
-	    	$chartJS .= "       " . $jsonOptions. "\n";
-	    	$chartJS .= "    );\n";
-	    	$chartJS .= "\n  });\n";
+    // HIGHROLLER - HIGHCHARTS UTC OPTIONS 
+    Highcharts.setOptions(
+       {$json_options}
+    );
+
+    // HIGHROLLER - HIGHCHARTS '{$chart_title}' {$chart_type} chart
+    
+    var {$renderTo} = new Highcharts.Chart(
+       {$jsonOptions}
+     );
+
+  });
+  
+EOF;
 		
 		$out = trim($chartJS);
-		
-		// end section
 		
 		return $this->Html->scriptBlock($this->output($out), array('defer' => FALSE));	
 	}
