@@ -1,0 +1,78 @@
+/*
+ * High Roller Style
+ * @author John McLaughlin
+ *
+ * Licensed to Gravity.com under one or more contributor license agreements.
+ * See the NOTICE file distributed with this work for additional information
+ * regarding copyright ownership.  Gravity.com licenses this file to you use
+ * under the Apache License, Version 2.0 (the License); you may not this
+ * file except in compliance with the License.  You may obtain a copy of the
+ * License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an AS IS BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&v1);
+
+@charset "UTF-8";
+@font-face {
+	font-family: "Open Sans", Helvetica;
+	font-weight: normal;
+	font-style: normal;
+}
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+   /* CSS overrides for mobile here */
+  body { background-color: #EEEDEC; width: 960px; }
+
+}
+
+*,
+html { margin: 0px; padding: 0px; border: 0px;  }
+html { height: 100%; }
+
+html,
+body { background-color: #EEEDEC; width: 940px; }
+
+.main {
+	position: relative;
+	top: 0px;
+	width: auto;
+	margin: 0px auto;
+	padding: 0px 20px 20px 20px;
+	border-right: 0px dashed #555;
+	border-left: 0px dashed #555;
+	border-bottom: 0px dashed #555;
+}
+
+div.clear { clear: both; font-size: 0; height: 0; width: 0; margin: 0px;}
+div.section { margin: 30px auto 30px auto; }
+div.subsection {margin: 20px auto 20px auto; display: block; width: auto;}
+div.center { margin-left: auto; margin-right: auto; width: 45%; }
+div.page { margin: 25px auto 25px auto; }
+div.footer { margin: 45px auto 25px auto; font-size: 10px; width: 100%;}
+
+body,p { cursor:default; color: #222; font-size: 13px; font-family: "Open Sans", serif; }
+.page p { cursor:default; color: #222; font-size: 13px; font-family: "Open Sans", serif; margin: 8px auto 8px auto ; }
+
+h1, h2, h3, h4, h5 { cursor:default; color: #222; font-size: 19px; font-family: "Open Sans", serif; text-transform: uppercase; line-height:50px; letter-spacing:.15em; }
+/*h1 { background: url('../_assets/red_dice.png') 10% 10% no-repeat; }*/
+h3 { font-size: 15px; line-height:35px; }
+h4 { font-size: 13px; line-height:20px; }
+h5 { font-size: 11px; line-height:15px; }
+
+.logo { height: 100px; }
+a { cursor: pointer; }
+
+pre { cursor:default; color: #222; font-size: 13px; font-family: "Open Sans", serif; margin: 3px; padding: 3px; }
+
+ul { margin-left: 40px; list-style-type: square; }
+
+
