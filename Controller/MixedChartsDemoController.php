@@ -33,11 +33,11 @@ class MixedChartsDemoController  extends HighChartsAppController {
 
 		$chartData3 = array( 
 					array(
-							'name' => 'Chrome',
-							'y' => 45.0, 
-							'sliced' => true, 
-							'selected' => true
-						), 
+						'name' => 'Chrome',
+						'y' => 45.0, 
+						'sliced' => true, 
+						'selected' => true
+					     ), 
 					array('IE', 26.8), 
 					array('Firefox', 12.8), 
 					array('Safari', 8.5), 
@@ -50,26 +50,29 @@ class MixedChartsDemoController  extends HighChartsAppController {
 
 		$mychartOne = $this->HighCharts->create(
 								$chartNameOne, 
-								array(
-										'type' => 'line',
-										'exporting' => TRUE
-									 )
+								array
+								(
+									'type' => 'line',
+									'exporting' => TRUE
+								 )
 							);
 
 		$mychartTwo = $this->HighCharts->create(
 								$chartNameTwo, 
-								array(
-										'type' => 'column', 
-										'exporting' => TRUE
-									 )
+								array
+								(
+									'type' => 'column', 
+									'exporting' => TRUE
+								)
 							);
 
 		$mychartThree = $this->HighCharts->create(
 								$chartNameThree, 
-								array(
-										'type' => 'pie', 
-										'exporting' => TRUE
-									 )
+								array
+								(
+									'type' => 'pie', 
+									'exporting' => TRUE
+								)
 							);
 
 		$this->HighCharts->setChartParams(
@@ -168,7 +171,7 @@ EOF;
 					'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 				
-					'title'						=> 'Live Random Data',
+					'title'					=> 'Live Random Data',
 				
 					'legendEnabled' 			=> FALSE,
 					'exportingEnabled' 			=> FALSE,
