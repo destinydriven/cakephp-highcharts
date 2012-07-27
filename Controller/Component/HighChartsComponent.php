@@ -28,7 +28,7 @@
 
 class HighChartsComponent extends Component {	
 	
-    public $components = array('Session');
+    	public $components = array('Session');
    
 	public $controller;
 	public $defaultSettings = array('title' => 'HighCharts Sample Title');
