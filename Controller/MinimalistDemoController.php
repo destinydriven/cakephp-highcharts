@@ -58,7 +58,7 @@ class MinimalistDemoController extends HighChartsAppController
 				) 
 			);
 	
-        $series = $this->HighCharts->addChartSeries();
+        	$series = $this->HighCharts->addChartSeries();
 
 		$series->addName('Example Online Store')->addData($chartData);
 
@@ -90,7 +90,7 @@ EOF;
 						 );
 
 
-        $this->HighCharts->setChartParams
+        	$this->HighCharts->setChartParams
 		(
 			$chartName,
 			array
