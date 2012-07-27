@@ -125,7 +125,7 @@ class HighChartsComponent extends Component {
 				break;
 			case 'column':
 					App::import('Vendor', 'HighCharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
-                    $this->$name = new HighRollerColumnChart();
+                    			$this->$name = new HighRollerColumnChart();
 					$this->charts[$name] =& $this->$name;				
 					return $this->$name;
 				break;
