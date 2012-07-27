@@ -54,7 +54,7 @@ class HighChartsComponent extends Component {
 		
 		$this->highroller = New HighRoller();
 		
-	    $this->title = new HighRollerTitle();
+	    	$this->title = new HighRollerTitle();
 		
 	}
 
@@ -274,7 +274,7 @@ class HighChartsComponent extends Component {
 		}
 
         	// legend options
-        if (isset($params['legendEnabled']))
+        	if (isset($params['legendEnabled']))
 		{
 			$this->charts[$name]->legend->enabled = $params['legendEnabled'];
 		}
@@ -348,7 +348,7 @@ class HighChartsComponent extends Component {
 		{
 			$this->charts[$name]->plotOptions->series->showInLegend = $params['plotOptionsShowInLegend'];
 		}
-        if (isset($params['plotOptionsFillColor']))
+        	if (isset($params['plotOptionsFillColor']))
 		{
 			$this->charts[$name]->plotOptions->area->fillColor = $params['plotOptionsFillColor'];
 		}
