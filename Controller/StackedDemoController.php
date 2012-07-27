@@ -46,7 +46,7 @@ class StackedDemoController extends HighChartsAppController
 						 );
 
 	
-        $this->HighCharts->setChartParams
+        	$this->HighCharts->setChartParams
 		(
 			$chartName,
 			array
