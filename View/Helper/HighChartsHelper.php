@@ -78,7 +78,7 @@ class HighChartsHelper extends AppHelper
 		
 		// prepare PHP vars for chartJS script
 		$json_options = json_encode($options);
-        $chart_title = $charts[$name]->title->text;
+        	$chart_title = $charts[$name]->title->text;
 		$chart_type = $charts[$name]->chart->type;
 		$renderTo = $charts[$name]->chart->renderTo;
  
