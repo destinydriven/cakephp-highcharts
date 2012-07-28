@@ -42,11 +42,34 @@ This would simply include adding the HighCharts component and helper to your con
 	public $components = array('HighCharts.HighCharts');
 	public $helpers = array('HighCharts.HighCharts');
 	
-## Special Note ##
+## Special Dependency Note ##
 
-The plugin depends on and loads jQuery natively (so you could quickly test it out without difficulty). If you are already loading jQuery e.g. in your
-layout, then you will need to edit the HighChartsHelper::beforeRender() function to avoid duplicity.
+This plugin depends on jQuery (<http://jquery.com>) so you would need to ensure that it is loaded in your layout or the
+view in which you want to display your charts. An example of how to load jQuery in your layout is available in:
+	
+	HighCharts/View/Layouts/chart.demo.ctp
 
+	<?php
+		...
+		
+		echo $this->Html->script(array('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'));
+
+		...
+
+		echo $this->fetch('script');
+	?>
+
+Of course, you may also use a copy of the jQuery library from your app/webroot/js folder like this:
+
+	<?php
+		...
+		
+		echo $this->Html->script(array('jquery.min'));
+
+		...
+
+		echo $this->fetch('script');
+	?>
 
 **Important**
 
@@ -68,7 +91,7 @@ Obviously, this plugin is using HighCharts Free, freely available for non-commer
 This plugin also utilizes HighRoller (an object-oriented PHP wrapper for HighCharts)
 <http://www.highcharts.com/>
 HighRoller is also available on Github and is licenced under  the Apache 2.0 license.
-<https://github.com/jmaclabs/HighRoller>  
+<https://github.com/jmaclabs/HighRoller>
 
 # Special Thanks To: #
 
