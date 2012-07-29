@@ -89,7 +89,7 @@ Obviously, this plugin is using HighCharts Free, freely available for non-commer
 <http://www.highcharts.com/>
  
 This plugin also utilizes HighRoller (an object-oriented PHP wrapper for HighCharts)
-<http://www.highcharts.com/>
+<http://www.highroller.io/>
 HighRoller is also available on Github and is licenced under  the Apache 2.0 license.
 <https://github.com/jmaclabs/HighRoller>
 
