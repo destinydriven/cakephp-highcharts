@@ -78,21 +78,19 @@ class HighChartsComponent extends Component {
 	}
 	
 	/**
-	 * Creates a graph and associates it with a key "$name".
+	 * Creates a chart and associates it with a key "$name".
 	 *
 	 * Required options for $options param are:
 	 *
 	 * * type - A type of chart to be displayed.
-	 * * width - Chart width.
-	 * * height - Chart height.
 	 *
 	 * Optional params are:
 	 *
-	 * * id - An id.
+	 * * exporting - boolean. Whether or not to include HighCharts exporting.js lib (not implemented)
 	 *
 	 * @param string $name
 	 * @param array $options An array of options.
-	 * @return bool True on success, false on failure.
+	 * @return object HighRoller chart object of specified type .
 	 */
 	public function create($name, $options)
 	{
