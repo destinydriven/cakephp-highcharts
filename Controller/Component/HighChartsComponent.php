@@ -521,8 +521,7 @@ class HighChartsComponent extends Component {
 	/**
 	 * Add chart data.
 	 * Wrapper for HighRoller addData()
-	 * @param string $name Chart name.
-	 * @param array $data An array of values, and optionally params.
+	 * @param array $data An array of values.
 	 */
 	public function addChartData($data)
 	{	
