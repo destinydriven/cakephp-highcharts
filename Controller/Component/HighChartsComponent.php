@@ -524,7 +524,7 @@ class HighChartsComponent extends Component {
 	 * @param string $name Chart name.
 	 * @param array $data An array of values, and optionally params.
 	 */
-	public function addChartData($highroller, $data)
+	public function addChartData($data)
 	{	
 		if (isset($data))
 		{
