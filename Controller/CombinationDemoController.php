@@ -60,19 +60,23 @@ class CombinationDemoController extends HighChartsAppController {
 	
         $janeSeries = $this->HighCharts->addChartSeries();
         $janeSeries->type = 'column';
-        $janeSeries->addName('Jane')->addData($janeData);
+        $janeSeries->addName('Jane')
+            ->addData($janeData);
 
         $johnSeries = $this->HighCharts->addChartSeries();
         $johnSeries->type = 'column';
-        $johnSeries->addName('John')->addData($johnData);		
+        $johnSeries->addName('John')
+            ->addData($johnData);		
 
         $joeSeries  = $this->HighCharts->addChartSeries();
         $joeSeries->type = 'column';
-        $joeSeries->addName('Joe')->addData($joeData);		
+        $joeSeries->addName('Joe')
+            ->addData($joeData);		
 
         $avgSeries  = $this->HighCharts->addChartSeries();
         $avgSeries->type = 'spline';
-        $avgSeries->addName('Average')->addData($avgData);
+        $avgSeries->addName('Average')
+            ->addData($avgData);
 
         $pieSeries  = $this->HighCharts->addChartSeries();
         $pieSeries->type = 'pie';
