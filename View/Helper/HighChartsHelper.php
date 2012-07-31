@@ -68,10 +68,10 @@ class HighChartsHelper extends AppHelper
 			return;
 		}				
 		
-		$jsonOptions = $charts[$name]->getChartOptionsObject();
+		$_jsonOptions = $charts[$name]->getChartOptionsObject();
 			
 		// fix issue with quotes ("") wrapping js functions in json
-		$jsonOptions = preg_replace('/"(\(?function.+?}(\)\(\))?)"/', '$1', $jsonOptions);
+		$jsonOptions = preg_replace('/"(\(?function.+?}(\)\(\))?)"/', '$1', $_jsonOptions);
 		
 		// this section from HighRoller::renderChart()		
 		$options = new HighRollerOptions();	
