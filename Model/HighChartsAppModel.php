@@ -11,6 +11,5 @@
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
  * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
-class HighChartsAppModel extends AppModel
-{
+class HighChartsAppModel extends AppModel {
 }

@@ -15,15 +15,13 @@
 /**
  * @property HighChartsController $HighCharts
  */
-class HighChartsDemoController extends HighChartsAppController
-{
-	public $name = 'HighChartsDemo';
-	public $components = array('HighCharts.HighCharts');
-	public $helpers = array('HighCharts.HighCharts');
-	public $uses = array();
-	public $layout = 'chart.demo';
+class HighChartsDemoController extends HighChartsAppController {
+    public $name = 'HighChartsDemo';
+    public $components = array('HighCharts.HighCharts');
+    public $helpers = array('HighCharts.HighCharts');
+    public $uses = array();
+    public $layout = 'chart.demo';
 
-	function index()
-	{
-	}
+    function index() {
+    }
 }

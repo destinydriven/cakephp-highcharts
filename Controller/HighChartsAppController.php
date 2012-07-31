@@ -11,11 +11,9 @@
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
  * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
-class HighChartsAppController extends AppController
-{
-  public function beforeFilter()
-  {
-  	parent::beforeFilter();	  	
-  	$this->layout = 'HighCharts.chart.demo';
-  }
+class HighChartsAppController extends AppController {
+    public function beforeFilter() {
+        parent::beforeFilter();	  	
+        $this->layout = 'HighCharts.chart.demo';
+    }
 }
