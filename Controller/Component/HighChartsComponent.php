@@ -532,7 +532,8 @@ class HighChartsComponent extends Component {
 	}
 	
 	
-	/** create a series for your chart
+         /** 
+          * Create a series for your chart
 	  * 
 	  * @return HighRollerSeriesData object
 	  */
