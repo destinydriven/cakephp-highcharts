@@ -68,15 +68,7 @@ class HighChartsComponent extends Component {
     /**
      * Creates a chart and associates it with a key "$name".
      *
-     * Required options for $options param are:
-     *
-     * * type - A type of chart to be displayed.
-     *
-     * Optional params are:
-     *
-     * * exporting - boolean. Whether or not to include HighCharts exporting.js lib (not implemented)
-     *
-     * @param string $name
+     * @param string $name Name to identify your chart
      * @param string $type Type of chart (options are 'area','areaspline','bar', 'column', 'line', 'pie', 'scatter' or 'spline').
      * @return object HighRoller chart object of specified type .
      */
