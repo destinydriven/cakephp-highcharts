@@ -150,6 +150,9 @@ class HighChartsComponent extends Component {
         if (isset($params['renderTo'])) {
             $this->charts[$name]->chart->renderTo = $params['renderTo'];
         }
+        if (isset($params['chartColors'])) {
+            $this->charts[$name]->chart->colors = $params['chartColors'];
+        }
         if (isset($params['chartWidth'])) {
             $this->charts[$name]->chart->width = $params['chartWidth'];
         }
@@ -183,6 +186,12 @@ class HighChartsComponent extends Component {
         if (isset($params['chartAlignTicks'])) {
             $this->charts[$name]->chart->alignTicks = $params['chartAlignTicks'];
         }
+        if (isset($params['chartBorderColor'])) {
+            $this->charts[$name]->chart->borderColor = $params['chartBorderColor'];
+        }
+        if (isset($params['chartBorderWidth'])) {
+            $this->charts[$name]->chart->borderWidth = $params['chartBorderWidth'];
+        }
         if (isset($params['chartBackgroundColorLinearGradient'])) {
             $this->charts[$name]->chart->backgroundColor->linearGradient = $params['chartBackgroundColorLinearGradient'];
         }
@@ -191,6 +200,30 @@ class HighChartsComponent extends Component {
         }		
         if (isset($params['chartEventsLoad'])) {
             $this->charts[$name]->chart->events->load = $params['chartEventsLoad'];
+        }
+        if (isset($params['chartBackgroundColor'])) {
+            $this->charts[$name]->chart->backgroundColor = $params['chartBackgroundColor'];
+            if (isset($params['chartShadow'])) {
+                $this->charts[$name]->chart->shadow = $params['chartShadow'];
+            }
+        }
+        if (isset($params['chartPlotBackgroundColor'])) {
+            $this->charts[$name]->chart->plotBackgroundColor = $params['chartPlotBackgroundColor'];
+            if (isset($params['chartPlotShadow'])) {
+                $this->charts[$name]->chart->plotShadow = $params['chartPlotShadow'];
+            }
+        }
+        if (isset($params['chartPlotBackgroundImage'])) {
+            $this->charts[$name]->chart->plotBackgroundImage = $params['chartPlotBackgroundImage'];
+        }
+        if (isset($params['chartPlotBorderColor'])) {
+            $this->charts[$name]->chart->plotBorderColor = $params['chartPlotBorderColor'];
+        }
+        if (isset($params['chartPlotBorderWidth'])) {
+            $this->charts[$name]->chart->plotBorderWidth = $params['chartPlotBorderWidth'];
+        }
+        if (isset($params['chartTheme'])) {
+            $this->charts[$name]->chart->className = $params['chartTheme'];
         }
 
         // title options		
