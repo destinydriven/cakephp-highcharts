@@ -115,6 +115,17 @@ $(document).ready(function() {
     var {$renderTo} = new Highcharts.Chart(
         {$jsonOptions}
     );
+ //for column drilldown   
+function setChart(name, categories, data, color) {
+        //console.log(column_drilldown.xAxis);
+        {$renderTo}.xAxis[0].setCategories(categories);
+        {$renderTo}.series[0].remove();
+        {$renderTo}.addSeries({
+            name: name,
+            data: data,
+            color: color || 'white'
+        });
+    }   
 });
 EOF;
 
