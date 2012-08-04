@@ -102,7 +102,7 @@ HighRoller is also available on Github and is licenced under  the Apache 2.0 lic
 
 # Special Thanks To: #
 
-* Lecterror (<https://github.com/lecteror>) for providing the inspiration to create this plugin
+* Lecterror (<https://github.com/lecterror>) for providing the inspiration to create this plugin
 * Jigzstar <https://github.com/jigzstar> for introducing me to HighCharts.
 * Tigrang <https://github.com/tigrang> for assistance in improving HighCharts helper
 
