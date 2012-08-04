@@ -32,17 +32,18 @@ class MinimalistDemoController extends HighChartsAppController {
                         array
                         (
                             'renderTo'                                  => 'columnwrapper',  // div to display chart inside
-                            'chartWidth'				=> 800,
-                            'chartHeight'				=> 600,
-                            'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
-                            'chartBackgroundColorStops'                 => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),				
+                            'chartWidth'				=> 1000,
+                            'chartHeight'				=> 750,
+                            //'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
+                            //'chartBackgroundColorStops'                 => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),				
                             'title'					=> 'Monthly Sales Summary',
                             'subtitle'                                  => 'Source: World Bank',
                             'xAxisLabelsEnabled' 			=> TRUE,				
                             'xAxisCategories'       	=> array( 'Jan','Feb','Mar','Apr','May','Jun', 'Jul','Aug',	'Sep','Oct','Nov','Dec'),				
                             'yAxisTitleText' 		=> 'Units',									
                             'enableAutoStep' 		=> FALSE,
-                            'creditsEnabled'		=> FALSE						
+                            'creditsEnabled'		=> FALSE,
+                            'chartTheme'                => 'skies'
                         ) 
                 );
 
@@ -73,11 +74,11 @@ EOF;
         $chartName,
         array(
             'renderTo'                                  => 'columnwrapper',  // div to display chart inside
-            'chartWidth'				=> 1024,
-            'chartHeight'				=> 768,	
-            'chartMargin'				=> array( 50, 50, 100, 80),	
-            'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
-            'chartBackgroundColorStops'                 => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),			
+            'chartWidth'				=> 1000,
+            'chartHeight'				=> 750,	
+            'chartMargin'				=> array( 50, 50, 100, 80),
+            'chartTheme'                                => 'grid',
+			
             'title'					=> 'World\'s Largest Cities per 2008',
             'subtitle'                                  => 'Source: World Bank',
             'xAxisLabelsEnabled'    => TRUE,				
@@ -110,7 +111,7 @@ EOF;
             'enableAutoStep' 		=> FALSE,
             'creditsEnabled'		=> FALSE,
             'tooltipEnabled'		=> TRUE,
-            'tooltipFormatter'		=> $tooltipFormatFunction	
+            'tooltipFormatter'		=> $tooltipFormatFunction            
             ) 
     );
 
@@ -147,13 +148,12 @@ EOF;
                                             array
                                             (
                                                 'renderTo'				=> 'piewrapper',  // div to display chart inside
-                                                'chartWidth'				=> 800,
-                                                'chartHeight'				=> 600,
-                                                'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
-                                                'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),						
+                                                'chartWidth'				=> 1000,
+                                                'chartHeight'				=> 750,
+                                                'chartTheme'                            => 'gray',					
                                                 'title'					=> 'Browser Usage Statistics',
                                                 'plotOptionsShowInLegend'		=> TRUE,					
-                                                'creditsEnabled' 			=> FALSE
+                                                'creditsEnabled' 			=> FALSE                                                
                                             ) 
         );
 
@@ -192,8 +192,7 @@ EOF;
                                                 'chartSpacingBottom'			=> 15,
                                                 'chartSpacingLeft'			=> 0,
                                                 'chartAlignTicks'			=> FALSE,					
-                                                'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
-                                                'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
+                                                'chartTheme'                            => 'dark-blue',
 
                                                 'title'					=> 'Monthly Average Temperature',
                                                 'subtitle'				=> 'Source: WorldClimate.com',
@@ -236,8 +235,7 @@ EOF;
                                                                                                 'Oct', 
                                                                                                 'Nov', 
                                                                                                 'Dec'													
-                                                                                            ),						
-
+                                                                                            ),
                                                 'yAxisTitleText' 			=> 'Temperature',
 
                                                 /* autostep options */
@@ -288,9 +286,8 @@ EOF;
                                 'chartSpacingRight'			=> 10,
                                 'chartSpacingBottom'			=> 15,
                                 'chartSpacingLeft'			=> 0,
-                                'chartAlignTicks'			=> FALSE,					
-                                'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
-                                'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
+                                'chartAlignTicks'			=> FALSE,
+                                'chartTheme'                            => 'dark-green',
 
                                 'title'					=> 'Monthly Average Temperature',
                                 'subtitle'				=> 'Source: WorldClimate.com',
