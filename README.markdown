@@ -27,7 +27,7 @@ and download the plugin manually to your `app/Plugin/HighCharts/` folder.
 
 Since CakePHP 2.0 it is necessary to activate the plugin in your application. To do so,
 edit `app/Config/bootstrap.php` and add the line `CakePlugin::load('HighCharts');` at the 
-bottom.
+bottom. If you already have `CakePlugin::loadAll();` then you may skip this step.
 
 You're done. Check the demo charts included in the plugin to see how to generate
 individual chart types. Open the demos in your browser:
@@ -35,9 +35,14 @@ individual chart types. Open the demos in your browser:
 	[your app root]/high_charts/high_charts_demo
 	
 Be sure to first check out the Minimalist Demo for tips on how to quickly set up HighCharts Plugin in your own projects.
+The Minimalist Demos also demonstrate theme usage where you can add predefined customizations to your charts by simply
+specifying the key:
+        'chartTheme' => 'dark-blue'  // other options are 'skies', 'grid', 'gray', 'dark-green'
+in your $params array on your setChartParams() call.
+
 The other examples provide tons of customization options which you may not want to bother with initially.
 
-This would simply include adding the HighCharts component and helper to your controller. (See examples for more details)
+Implementing HighCharts to your app would simply include adding the HighCharts component and helper to your controller. (See examples for more details)
 
 	public $components = array('HighCharts.HighCharts');
 	public $helpers = array('HighCharts.HighCharts');
