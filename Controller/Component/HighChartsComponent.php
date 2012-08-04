@@ -303,6 +303,24 @@ class HighChartsComponent extends Component {
         if (isset($params['plotOptionsLinePointInterval'])) {
             $this->charts[$name]->plotOptions->line->pointInterval = $params['plotOptionsLinePointInterval'];
         }
+        if (isset($params['plotOptionsColumnCursor'])) {
+            $this->charts[$name]->plotOptions->column->cursor = $params['plotOptionsColumnCursor'];
+        }
+        if (isset($params['plotOptionsColumnPointEventsClick'])) {
+            $this->charts[$name]->plotOptions->column->point->events->click = $params['plotOptionsColumnPointEventsClick'];
+        }
+        if (isset($params['plotOptionsColumnDataLabelsEnabled'])) {
+            $this->charts[$name]->plotOptions->column->dataLabels->enabled = $params['plotOptionsColumnDataLabelsEnabled'];
+        }
+        if (isset($params['plotOptionsColumnDataLabelsColor'])) {
+            $this->charts[$name]->plotOptions->column->dataLabels->color = $params['plotOptionsColumnDataLabelsColor'];
+        }
+        if (isset($params['plotOptionsColumnDataLabelsFormatter'])) {
+            $this->charts[$name]->plotOptions->column->dataLabels->formatter = $params['plotOptionsColumnDataLabelsFormatter'];
+        }
+        if (isset($params['plotOptionsColumnDataLabelsStyle'])) {
+            $this->charts[$name]->plotOptions->column->dataLabels->style = $params['plotOptionsColumnDataLabelsStyle'];
+        }
         if (isset($params['plotOptionsSeriesStacking'])) {
             $this->charts[$name]->plotOptions->series->stacking = $params['plotOptionsSeriesStacking'];
         }
