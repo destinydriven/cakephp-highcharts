@@ -37,7 +37,9 @@ individual chart types. Open the demos in your browser:
 Be sure to first check out the Minimalist Demo for tips on how to quickly set up HighCharts Plugin in your own projects.
 The Minimalist Demos also demonstrate theme usage where you can add predefined customizations to your charts by simply
 specifying the key:
+
         'chartTheme' => 'dark-blue'  // other options are 'skies', 'grid', 'gray', 'dark-green'
+
 in your $params array on your setChartParams() call.
 
 The other examples provide tons of customization options which you may not want to bother with initially.
