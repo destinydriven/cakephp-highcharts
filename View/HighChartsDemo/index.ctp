@@ -45,7 +45,7 @@
 			<td><?php echo $this->Html->link('Bar', array('plugin' => 'high_charts', 'controller' => 'multi_series_demo', 'action' => 'bar')); ?></td>
 			<td><?php echo $this->Html->link('Bar', array('plugin' => 'high_charts', 'controller' => 'stacked_demo', 'action' => 'bar')); ?></td>
 			<td><?php echo $this->Html->link('Column with Rotated Label (Grid)', array('plugin' => 'high_charts', 'controller' => 'minimalist_demo', 'action' => 'column_rotated')); ?></td>
-			<td></td>
+			<td><?php echo $this->Html->link('Column with Drolldown', array('plugin' => 'high_charts', 'controller' => 'mixed_charts_demo', 'action' => 'column_drilldown')); ?></td>
 			<td></td>
 		</tr>
 		<tr>
@@ -90,3 +90,8 @@
 		</tr>
 	</tbody>
 </table>
+
+<p>
+    Get the code on Github now <?php echo $this->Html->link('CakePHP HighCharts Plugin', 'https://github.com/destinydriven/cakephp-high-charts-plugin'); ?>
+          
+</p>
