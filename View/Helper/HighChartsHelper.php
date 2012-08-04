@@ -13,7 +13,8 @@
  */
 class HighChartsHelper extends AppHelper {
     public $helpers = array('Html', 'Session');
-    public $charts = array();
+    public $charts = null;
+    public $chart_name = '';
 
 
     /**
@@ -23,39 +24,73 @@ class HighChartsHelper extends AppHelper {
      * @param $options array
      */
     public function __construct(View $View, $options = array()) {
-        parent::__construct($View, $options);	  
+        parent::__construct($View, $options);
+        $this->charts = $this->_getCharts();
     }	
 
     public function beforeRender($viewFile) {
-        $this->Html->css('high_charts/css/highroller');
-        $this->Html->script(array( '/high_charts/js/highcharts', '/high_charts/js/modules/exporting' ), FALSE);
+        //$this->Html->css('high_charts/css/highroller');
+       // $this->Html->script(array( '/high_charts/js/highcharts', '/high_charts/js/modules/exporting' ), FALSE);
         return true;
     }
 
     public function afterRender($viewFile) {
         CakeSession::delete('HighChartsPlugin.Charts');
     }
-
-    public function _getCharts() {
-        static $read = false;
-
-        if ($read === true) {
-            return $this->charts;
+    
+    public function beforeLayout($viewFile) {       
+        parent::beforeLayout($viewFile);
+        
+        $js = array('/high_charts/js/highcharts', '/high_charts/js/modules/exporting');        
+        $theme = $this->_getTheme($this->chart_name);
+        
+        switch ($theme){
+            case 'gray':               
+            case 'grid':                 
+            case 'dark-blue':                      
+            case 'dark-green':                
+            case 'skies':
+                $js[] = '/high_charts/js/themes/'.$theme;
+                break;
+            default:
+               // $js[] = '/high_charts/js/themes/highroller';
+                break;
         }
-        $this->charts = CakeSession::read('HighChartsPlugin.Charts');
-        $read = true;
-        return $this->charts;
+        
+        $this->Html->css('high_charts/css/highroller');
+        $this->Html->script( $js, FALSE);
+        return true;
     }
 
-    public function render($name) {	
-        $charts = $this->_getCharts();
+    private function _getCharts() {
+        static $read = false;
+        if ($read === true) {
+            return $this->charts;
+        } else{
+            $this->charts = CakeSession::read('HighChartsPlugin.Charts');
+            $read = true;
+            return $this->charts;
+        }
+    }
+    
+    private function _getTheme($name) {
+        if(isset($name) && (!empty($this->charts[$name]->chart->className))){
+           return $this->charts[$name]->chart->className;
+        } else {
+            return null;
+        }
+    }
 
-        if (!isset($charts[$name])) {
+    public function render($name) {
+        
+        $this->chart_name = $name;
+
+        if (!isset($this->charts[$name])) {
             trigger_error(sprintf(__('Chart: "%s" could not be found', true), $name), E_USER_ERROR);
             return;
-        }				
+        }
 
-        $_jsonOptions = $charts[$name]->getChartOptionsObject();
+        $_jsonOptions = $this->charts[$name]->getChartOptionsObject();
 
         // fix issue with quotes ("") wrapping js functions in json
         $jsonOptions = preg_replace('/"(\(?function.+?}(\)\(\))?)"/', '$1', $_jsonOptions);
@@ -65,9 +100,9 @@ class HighChartsHelper extends AppHelper {
 
         // prepare PHP vars for chartJS script
         $json_options = json_encode($options);
-        $chart_title = $charts[$name]->title->text;
-        $chart_type = $charts[$name]->chart->type;
-        $renderTo = $charts[$name]->chart->renderTo;
+        $chart_title = $this->charts[$name]->title->text;
+        $chart_type = $this->charts[$name]->chart->type;
+        $renderTo = $this->charts[$name]->chart->renderTo;
 
         $chartJS = <<<EOF
 $(document).ready(function() {
