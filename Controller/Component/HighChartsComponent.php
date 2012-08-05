@@ -201,6 +201,9 @@ class HighChartsComponent extends Component {
         if (isset($params['chartEventsLoad'])) {
             $this->charts[$name]->chart->events->load = $params['chartEventsLoad'];
         }
+        if (isset($params['chartEventsClick'])) {
+            $this->charts[$name]->chart->events->click = $params['chartEventsClick'];
+        }
         if (isset($params['chartBackgroundColor'])) {
             $this->charts[$name]->chart->backgroundColor = $params['chartBackgroundColor'];
             if (isset($params['chartShadow'])) {

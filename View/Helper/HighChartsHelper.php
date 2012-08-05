@@ -16,7 +16,6 @@ class HighChartsHelper extends AppHelper {
     public $charts = null;
     public $chart_name = '';
 
-
     /**
      * Constructor.
      * 
@@ -29,8 +28,6 @@ class HighChartsHelper extends AppHelper {
     }	
 
     public function beforeRender($viewFile) {
-        //$this->Html->css('high_charts/css/highroller');
-       // $this->Html->script(array( '/high_charts/js/highcharts', '/high_charts/js/modules/exporting' ), FALSE);
         return true;
     }
 
@@ -115,9 +112,9 @@ $(document).ready(function() {
     var {$renderTo} = new Highcharts.Chart(
         {$jsonOptions}
     );
- //for column drilldown   
-function setChart(name, categories, data, color) {
-        //console.log(column_drilldown.xAxis);
+    
+    //for column drilldown
+    function setChart(name, categories, data, color) {
         {$renderTo}.xAxis[0].setCategories(categories);
         {$renderTo}.series[0].remove();
         {$renderTo}.addSeries({

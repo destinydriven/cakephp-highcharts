@@ -178,6 +178,9 @@ EOF;
         
         $colors = array( '#4572A7', '#AA4643', '#89A54E', '#80699B', '#3D96AE' );  // custom list of colours
         
+        // notice that we set 'renderTo' variable in this case because we want to do some dynamic stuff with it in drilldown JS function
+        $renderTo = 'column_drilldown';
+        
         $chartData = array(
 		array(
                     'y' => 55.11,
@@ -204,8 +207,7 @@ EOF;
                     'color'  => $colors[2],
                     'drilldown'  => array(
                         'name'  => 'Chrome Versions',
-                        'categories'  => array('Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', 'Chrome 8.0', 'Chrome 9.0',
-                            'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'),
+                        'categories'  => array('Chrome 5.0', 'Chrome 6.0', 'Chrome 7.0', 'Chrome 8.0', 'Chrome 9.0', 'Chrome 10.0', 'Chrome 11.0', 'Chrome 12.0'),
                         'data'  => array( 0.12, 0.19, 0.12, 0.36, 0.32, 9.91, 0.50, 0.22),
                         'color'  => $colors[2]
                     )
@@ -215,8 +217,7 @@ EOF;
                     'color'  => $colors[3],
                     'drilldown'  => array(
                         'name'  => 'Safari Versions',
-                        'categories'  => array('Safari 5.0', 'Safari 4.0', 'Safari Win 5.0', 'Safari 4.1', 'Safari/Maxthon',
-                            'Safari 3.1', 'Safari 4.1'),
+                        'categories'  => array('Safari 5.0', 'Safari 4.0', 'Safari Win 5.0', 'Safari 4.1', 'Safari-Maxthon', 'Safari 3.1', 'Safari 4.1'),
                         'data'  => array(4.55, 1.42, 0.23, 0.21, 0.20, 0.19, 0.14),
                         'color'  => $colors[3]
                     )
@@ -242,7 +243,7 @@ EOF;
 function(){var point = this.point,s = this.x +':<b>'+ this.y +'% market share</b><br/>';if (point.drilldown) {s += 'Click to view '+ point.category +' versions';} else{s += 'Click to return to browser brands';}return s;}
 EOF;
 	$pointEventsClick = <<<EOF
-function(){var drilldown = this.drilldown;if (drilldown) {setChart(drilldown.name, drilldown.categories, drilldown.data, drilldown.color);} else {setChart(name, categories, data);}}
+function(){var drilldown = this.drilldown; if(drilldown){setChart(drilldown.name, drilldown.categories, drilldown.data, drilldown.color);} else { setChart( {$renderTo}.options.series[0].name, {$renderTo}.xAxis[0].options.categories, {$renderTo}.options.series[0].data);}}
 EOF;
         $dataLabelsFormatter = <<<EOF
 function(){return this.y +'%'; }
@@ -253,7 +254,7 @@ EOF;
         $this->HighCharts->setChartParams(
 				$chartName,
 				array(
-					'renderTo'				=> 'column_drilldown',  // div to display chart inside
+					'renderTo'				=> $renderTo,  // div to display chart inside
 					'chartWidth'				=> 1000,
 					'chartHeight'				=> 750,					
 					'chartMarginRight'			=> 10,					
