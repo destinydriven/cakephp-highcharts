@@ -150,6 +150,9 @@ class HighChartsComponent extends Component {
         if (isset($params['renderTo'])) {
             $this->charts[$name]->chart->renderTo = $params['renderTo'];
         }
+         if (isset($params['reflow'])) {
+            $this->charts[$name]->chart->reflow = $params['reflow'];
+        }
         if (isset($params['chartColors'])) {
             $this->charts[$name]->chart->colors = $params['chartColors'];
         }
