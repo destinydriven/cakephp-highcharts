@@ -83,7 +83,7 @@ class HighChartsHelper extends AppHelper {
         $this->chart_name = $name;
 
         if (!isset($this->charts[$name])) {
-            trigger_error(sprintf(__('Chart: "%s" could not be found', true), $name), E_USER_ERROR);
+            trigger_error(sprintf(__('Chart: "%s" could not be found. Ensure that Chart Name is the same string that is passed to $this->HighCharts->render() in your view.', true), $name), E_USER_ERROR);
             return;
         }
 
