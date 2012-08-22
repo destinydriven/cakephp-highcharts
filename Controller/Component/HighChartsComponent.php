@@ -51,7 +51,7 @@ class HighChartsComponent extends Component {
 	$this->title = new HighRollerTitle();		
     }
 
-    public function initialize($controller) {
+    public function initialize(Controller $controller) {
 	$_settings = $this->defaultSettings;
         
 	if (is_array($this->settings)) {
@@ -61,7 +61,7 @@ class HighChartsComponent extends Component {
     }
 	
 
-    public function beforeRender($controller) {
+    public function beforeRender(Controller $controller) {
         CakeSession::write('HighChartsPlugin.Charts', $this->charts);
     }
 	
