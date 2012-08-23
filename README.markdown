@@ -44,7 +44,7 @@ in your $params array on your setChartParams() call.
 
 The other examples provide tons of customization options which you may not want to bother with initially.
 
-Implementing HighCharts to your app would simply include adding the HighCharts component and to your controller. (See examples for more details)
+Implementing HighCharts to your app would simply include adding the HighCharts component to your controller. (See examples for more details)
 
 	public $components = array('HighCharts.HighCharts');
 
