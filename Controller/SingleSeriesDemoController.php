@@ -1,10 +1,10 @@
 <?php
 /**
  *  CakePHP HighCharts Plugin
- * 
+ *
  * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
- *	<https://github.com/destinydriven> 
- * 
+ *	<https://github.com/destinydriven>
+ *
  * 	Multi-licensed under:
  * 		MPL <http://www.mozilla.org/MPL/MPL-1.1.html>
  * 		LGPL <http://www.gnu.org/licenses/lgpl.html>
@@ -14,21 +14,21 @@
 class SingleSeriesDemoController extends HighChartsAppController {
     public $name = 'SingleSeriesDemo';
     public $components = array('HighCharts.HighCharts');
-    public $helpers = array('HighCharts.HighCharts', 'Html');
+    public $helpers = array('Html');
     public $uses = array();
     public $layout = 'HightCharts.chart.demo';
-    
+
     public $chartData = array( 7.0,6.9,9.5,14.5,18.2,21.5,25.2,26.5,23.3,18.3,13.9,9.6);
 
     public $HighCharts = null;
 
     public function area() {
-				
+
         $chartName = 'Area Chart';
 
         $mychart = $this->HighCharts->create( $chartName, 'area' );
 
-	
+
         $this->HighCharts->setChartParams(
 				$chartName,
 				array(
@@ -42,10 +42,10 @@ class SingleSeriesDemoController extends HighChartsAppController {
 					'chartSpacingRight'			=> 10,
 					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
-					'chartAlignTicks'			=> FALSE,					
+					'chartAlignTicks'			=> FALSE,
 					'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					'chartBackgroundColorStops'             => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-					
+
 					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
@@ -53,7 +53,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
 					'titleStyleColor'			=> '#0099ff',
 					'titleX'				=> 20,
 					'titleY'				=> 20,
-					
+
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
@@ -65,7 +65,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                     			'tooltipEnabled' 			=> FALSE,
            				// 'tooltipBackgroundColorLinearGradient' => array(0,0,0,50),   // triggers js error
            				// 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-                    
+
 					//'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
 					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 					'plotOptionsFillColor' =>  array(
@@ -74,23 +74,23 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                                                                 array(0, 'rgba(112, 138, 255, 1.0)'),  // Highcharts.getOptions().colors[0]
                                                                                 array(1, 'rgba(2,0,0,0)')
                                                                                 )
-									),			
-				
+									),
+
 					//'xAxisType' 				=> 'datetime',
 					//'xAxisTickInterval' 			=> 10,
 					//'xAxisStartOnTick' 			=> TRUE,
 					//'xAxisTickmarkPlacement' 		=> 'on',
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
-					
+
 					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 2,
 					//'xAxisLabelsRotation' 		=> -35,
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
-					'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
-					
+					'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),
+
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
 					//'yAxisEndOnTick'			=> FALSE,
@@ -98,8 +98,8 @@ class SingleSeriesDemoController extends HighChartsAppController {
 					//'yAxisMinorTickInterval' 		=> 'auto',
 					//'yAxisMinorTickLength' 		=> 1,
 					//'yAxisTickLength'			=> 2,
-					//'yAxisMinorTickWidth'			=> 1,					
-					
+					//'yAxisMinorTickWidth'			=> 1,
+
 					'yAxisTitleText' 			=> 'Units Sold',
 					//'yAxisTitleAlign' 			=> 'high',
 					//'yAxisTitleStyleFont' 		=> '14px Metrophobic, Arial, sans-serif',
@@ -107,32 +107,32 @@ class SingleSeriesDemoController extends HighChartsAppController {
 					//'yAxisTitleX' 			=> 0,
 					//'yAxisTitleY' 			=> -10,
 					//'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
-					
+
 					// autostep options
 					'enableAutoStep' 			=> FALSE,
-					
+
 					// credits setting  [HighCharts.com  displayed on chart]
 					'creditsEnabled' 			=> FALSE,
 					'creditsText'  	 			=> 'Example.com',
-					'creditsURL'	 			=> 'http://example.com'								
-				) 
+					'creditsURL'	 			=> 'http://example.com'
+				)
 			);
-		
-        $series = $this->HighCharts->addChartSeries();	
+
+        $series = $this->HighCharts->addChartSeries();
 
         $series->addName('Tokyo')
             ->addData($this->chartData);
 
         $mychart->addSeries($series);
-		
+
     }
 
     public function areaspline() {
-				
+
         $chartName = 'AreaSpline Chart';
 
         $mychart = $this->HighCharts->create( $chartName, 'areaspline' );
-	
+
         $this->HighCharts->setChartParams(
                         $chartName,
                         array(
@@ -146,7 +146,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 'chartSpacingRight'			=> 10,
                                 'chartSpacingBottom'			=> 15,
                                 'chartSpacingLeft'			=> 0,
-                                'chartAlignTicks'			=> FALSE,					
+                                'chartAlignTicks'			=> FALSE,
                                 'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                                 'chartBackgroundColorStops'             => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -171,7 +171,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 // 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
                                 //'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-                                //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
+                                //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 
                                 //'xAxisType' 				=> 'datetime',
                                 //'xAxisTickInterval' 			=> 10,
@@ -186,7 +186,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 //'xAxisLabelsRotation' 		=> -35,
                                 'xAxislabelsX' 				=> 5,
                                 'xAxisLabelsY' 				=> 20,
-                                'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
+                                'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),
 
                                 //'yAxisMin' 				=> 0,
                                 //'yAxisMaxPadding'			=> 0.2,
@@ -207,10 +207,10 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 //'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
 
                                 // autostep options
-                                'enableAutoStep' 			=> FALSE							
+                                'enableAutoStep' 			=> FALSE
                     )
             );
-			
+
         $series = $this->HighCharts->addChartSeries();
 
         $series->addName('Tokyo')
@@ -221,11 +221,11 @@ class SingleSeriesDemoController extends HighChartsAppController {
     }
 
     public function bar() {
-				
+
         $chartName = 'Bar Chart';
 
         $mychart = $this->HighCharts->create( $chartName, 'bar' );
-	
+
         $this->HighCharts->setChartParams(
                         $chartName,
                         array(
@@ -239,7 +239,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 'chartSpacingRight'			=> 10,
                                 'chartSpacingBottom'			=> 15,
                                 'chartSpacingLeft'			=> 0,
-                                'chartAlignTicks'			=> FALSE,					
+                                'chartAlignTicks'			=> FALSE,
                                 'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                                 'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -264,7 +264,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 // 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
                                 //'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-                                //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
+                                //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 
                                 //'xAxisType' 				=> 'datetime',
                                 //'xAxisTickInterval' 			=> 10,
@@ -279,7 +279,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 //'xAxisLabelsRotation' 		=> -35,
                                 'xAxislabelsX' 				=> -10,
                                 'xAxisLabelsY' 				=> 20,
-                                'xAxisCategories'           	=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
+                                'xAxisCategories'           	=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),
 
                                 //'yAxisMin' 				=> 0,
                                 //'yAxisMaxPadding'			=> 0.2,
@@ -300,10 +300,10 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 //'yAxisPlotLines' 		=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
 
                                 // autostep options
-                                'enableAutoStep' 		=> FALSE							
-                        ) 
+                                'enableAutoStep' 		=> FALSE
+                        )
                 );
-		
+
         $series = $this->HighCharts->addChartSeries();
 
         $series->addName('Tokyo')
@@ -314,11 +314,11 @@ class SingleSeriesDemoController extends HighChartsAppController {
     }
 
     public function column() {
-				
+
         $chartName = 'Column Chart';
 
         $mychart = $this->HighCharts->create( $chartName, 'column' );
-	
+
         $this->HighCharts->setChartParams(
                         $chartName,
                         array(
@@ -332,7 +332,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 'chartSpacingRight'			=> 10,
                                 'chartSpacingBottom'			=> 15,
                                 'chartSpacingLeft'			=> 0,
-                                'chartAlignTicks'			=> FALSE,					
+                                'chartAlignTicks'			=> FALSE,
                                 'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                                 'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -357,7 +357,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 // 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
                                 //'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-                                //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
+                                //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 
                                 //'xAxisType' 				=> 'datetime',
                                 //'xAxisTickInterval' 			=> 10,
@@ -371,8 +371,8 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 'xAxisLabelsStep' 			=> 1,
                                 //'xAxisLabelsRotation' 		=> -35,
                                 'xAxislabelsX' 				=> 5,
-                                'xAxisLabelsY' 				=> 20,					
-                                'xAxisCategories'          		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),	
+                                'xAxisLabelsY' 				=> 20,
+                                'xAxisCategories'          		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),
 
                                 //'yAxisMin' 				=> 0,
                                 //'yAxisMaxPadding'			=> 0.2,
@@ -392,10 +392,10 @@ class SingleSeriesDemoController extends HighChartsAppController {
                                 //'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
 
                                 // autostep options
-                                'enableAutoStep' 			=> FALSE							
-                        ) 
+                                'enableAutoStep' 			=> FALSE
+                        )
                 );
-		
+
         $series = $this->HighCharts->addChartSeries();
 
         $series->addName('Tokyo')
@@ -405,11 +405,11 @@ class SingleSeriesDemoController extends HighChartsAppController {
 
     }
 
-    public function line() {				
+    public function line() {
         $chartName = 'Line Chart';
 
         $mychart = $this->HighCharts->create( $chartName, 'line' );
-	
+
         $this->HighCharts->setChartParams(
                     $chartName,
                     array(
@@ -423,7 +423,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             'chartSpacingRight'			=> 10,
                             'chartSpacingBottom'		=> 15,
                             'chartSpacingLeft'			=> 0,
-                            'chartAlignTicks'			=> FALSE,					
+                            'chartAlignTicks'			=> FALSE,
                             'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                             'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -448,7 +448,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             // 'tooltipBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
                             //'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-                            //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
+                            //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 
                             //'xAxisType' 				=> 'datetime',
                             //'xAxisTickInterval' 			=> 10,
@@ -463,7 +463,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             //'xAxisLabelsRotation' 		=> -35,
                             'xAxislabelsX' 			=> 5,
                             'xAxisLabelsY' 			=> 20,
-                            'xAxisCategories'           	=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),							
+                            'xAxisCategories'           	=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),
 
                             //'yAxisMin' 			=> 0,
                             //'yAxisMaxPadding'			=> 0.2,
@@ -484,10 +484,10 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             //'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
 
                             // autostep options
-                            'enableAutoStep' 			=> FALSE							
-                    ) 
+                            'enableAutoStep' 			=> FALSE
+                    )
             );
-		
+
         $series = $this->HighCharts->addChartSeries();
 
         $series->addName('Tokyo')
@@ -516,7 +516,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
 
         $pieChart = $this->HighCharts->create( $chartName, 'pie' );
 
-	
+
         $this->HighCharts->setChartParams(
                     $chartName,
                     array(
@@ -530,7 +530,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             'chartSpacingRight'			=> 10,
                             'chartSpacingBottom'		=> 15,
                             'chartSpacingLeft'			=> 0,
-                            'chartAlignTicks'			=> FALSE,					
+                            'chartAlignTicks'			=> FALSE,
                             'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                             'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -554,9 +554,9 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             'tooltipBackgroundColorLinearGradient' => array(0,0,0,50),   // triggers js error
                             'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
-                    ) 
+                    )
             );
-		
+
         $series = $this->HighCharts->addChartSeries();
 
         $series->addName('Browser Share')
@@ -565,10 +565,10 @@ class SingleSeriesDemoController extends HighChartsAppController {
         $pieChart->addSeries($series);
     }
 
-    public function scatter() {		
+    public function scatter() {
         $chartName = 'Scatter Chart';
         $mychart = $this->HighCharts->create( $chartName, 'scatter' );
-	
+
         $this->HighCharts->setChartParams(
                     $chartName,
                     array(
@@ -582,7 +582,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             'chartSpacingRight'			=> 10,
                             'chartSpacingBottom'		=> 15,
                             'chartSpacingLeft'			=> 0,
-                            'chartAlignTicks'			=> FALSE,					
+                            'chartAlignTicks'			=> FALSE,
                             //'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                             //'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -607,7 +607,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             // 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
                             //'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-                            //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
+                            //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 
                             //'xAxisType' 				=> 'datetime',
                             //'xAxisTickInterval' 			=> 10,
@@ -622,7 +622,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                            // 'xAxisLabelsRotation' 			=> -35,
                             'xAxislabelsX' 				=> 5,
                             'xAxisLabelsY' 				=> 20,
-                            'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),							
+                            'xAxisCategories'           		=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),
 
                             //'yAxisMin' 				=> 0,
                             //'yAxisMaxPadding'			=> 0.2,
@@ -643,10 +643,10 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             //'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
 
                             // autostep options
-                            'enableAutoStep' 			=> FALSE							
-                    ) 
+                            'enableAutoStep' 			=> FALSE
+                    )
             );
-		
+
         $series1 = $this->HighCharts->addChartSeries();
 
         $series1->addName('Tokyo')
@@ -657,12 +657,12 @@ class SingleSeriesDemoController extends HighChartsAppController {
     }
 
     public function spline() {
-	
+
     $chartName = 'Spline Chart';
 
     $mychart = $this->HighCharts->create( $chartName, 'spline' );
 
-	
+
     $this->HighCharts->setChartParams(
                     $chartName,
                     array(
@@ -676,7 +676,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             'chartSpacingRight'			=> 10,
                             'chartSpacingBottom'		=> 15,
                             'chartSpacingLeft'			=> 0,
-                            'chartAlignTicks'			=> FALSE,					
+                            'chartAlignTicks'			=> FALSE,
                             'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                             'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -701,7 +701,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             // 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
                             //'plotOptionsLinePointStart' 	=> strtotime('-30 day') * 1000,
-                            //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
+                            //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 
                             //'xAxisType' 			=> 'datetime',
                             //'xAxisTickInterval' 		=> 10,
@@ -716,7 +716,7 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             //'xAxisLabelsRotation' 		=> -35,
                             'xAxislabelsX' 			=> 5,
                             'xAxisLabelsY' 			=> 20,
-                            'xAxisCategories'           	=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),						
+                            'xAxisCategories'           	=> array('Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'),
 
                             //'yAxisMin' 			=> 0,
                             //'yAxisMaxPadding'			=> 0.2,
@@ -737,10 +737,10 @@ class SingleSeriesDemoController extends HighChartsAppController {
                             //'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
 
                             // autostep options
-                            'enableAutoStep' 			=> FALSE							
-                    ) 
+                            'enableAutoStep' 			=> FALSE
+                    )
             );
-		
+
         $series = $this->HighCharts->addChartSeries();
 
         $series->addName('Tokyo')

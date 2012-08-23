@@ -1,10 +1,10 @@
 <?php
 /**
  *  CakePHP HighCharts Plugin
- * 
+ *
  * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
- *	<https://github.com/destinydriven> 
- * 
+ *	<https://github.com/destinydriven>
+ *
  * 	Multi-licensed under:
  * 		MPL <http://www.mozilla.org/MPL/MPL-1.1.html>
  * 		LGPL <http://www.gnu.org/licenses/lgpl.html>
@@ -14,22 +14,22 @@
 class MultiSeriesDemoController extends HighChartsAppController {
     public $name = 'MultiSeriesDemo';
     public $components = array('HighCharts.HighCharts');
-    public $helpers = array('HighCharts.HighCharts', 'Html');
+    public $helpers = array('Html');
     public $uses = array();
     public $layout = 'HightCharts.chart.demo';
 
     public $HighCharts = null;
-    
+
     public $chartData1 = array( 7.0,6.9,9.5,14.5,18.2, 21.5,25.2,26.5,23.3,18.3,13.9,9.6 );
-    public $chartData2 = array( 0.2,0.9,5.5,11.5,17.2,22.5,24.2,21.5,23.3,14.3,18.9,2.6 );	
+    public $chartData2 = array( 0.2,0.9,5.5,11.5,17.2,22.5,24.2,21.5,23.3,14.3,18.9,2.6 );
     public $chartData3 = array( 0.9,0.6,3.5,8.5,13.2,17.5,18.2,17.5, 14.3,12.3,8.9,5.6);
 
     public function area() {
         $chartName = 'Area Chart';
-		
+
         $mychart = $this->HighCharts->create( $chartName, 'area' );
 
-	
+
         $this->HighCharts->setChartParams(
                         $chartName,
                         array(
@@ -43,7 +43,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
                                 'chartSpacingRight'			=> 10,
                                 'chartSpacingBottom'			=> 15,
                                 'chartSpacingLeft'			=> 0,
-                                'chartAlignTicks'			=> FALSE,					
+                                'chartAlignTicks'			=> FALSE,
                                 'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                                 'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -68,7 +68,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
                                 // 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
                                 //'plotOptionsLinePointStart' 	=> strtotime('-30 day') * 1000,
-                                //'plotOptionsLinePointInterval'=> 24 * 3600 * 1000,					
+                                //'plotOptionsLinePointInterval'=> 24 * 3600 * 1000,
 
                                 //'xAxisType' 			=> 'datetime',
                                 //'xAxisTickInterval' 		=> 10,
@@ -84,19 +84,19 @@ class MultiSeriesDemoController extends HighChartsAppController {
                                 'xAxislabelsX' 			=> 5,
                                 'xAxisLabelsY' 			=> 20,
                                 'xAxisCategories'           	=> array(
-                                                                        'Jan', 
-                                                                        'Feb', 
-                                                                        'Mar', 
-                                                                        'Apr', 
-                                                                        'May', 
+                                                                        'Jan',
+                                                                        'Feb',
+                                                                        'Mar',
+                                                                        'Apr',
+                                                                        'May',
                                                                         'Jun',
-                                                                        'Jul', 
-                                                                        'Aug', 
-                                                                        'Sep', 
-                                                                        'Oct', 
-                                                                        'Nov', 
-                                                                        'Dec'													
-                                                                   ),					
+                                                                        'Jul',
+                                                                        'Aug',
+                                                                        'Sep',
+                                                                        'Oct',
+                                                                        'Nov',
+                                                                        'Dec'
+                                                                   ),
 
                                 //'yAxisMin' 			=> 0,
                                 //'yAxisMaxPadding'		=> 0.2,
@@ -122,10 +122,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
                                 // credits setting  [HighCharts.com  displayed on chart]
                                 'creditsEnabled' => FALSE,
                                 'creditsText'  	 => 'Example.com',
-                                'creditsURL'	 => 'http://example.com'								
-                        ) 
+                                'creditsURL'	 => 'http://example.com'
+                        )
                 );
-		
+
             $series1 = $this->HighCharts->addChartSeries();
             $series2 = $this->HighCharts->addChartSeries();
             $series3 = $this->HighCharts->addChartSeries();
@@ -143,9 +143,9 @@ class MultiSeriesDemoController extends HighChartsAppController {
 
     }
 
-    public function areaspline(){				
+    public function areaspline(){
         $chartName = 'AreaSpline Chart';
-		
+
         $mychart = $this->HighCharts->create( $chartName, 'areaspline' );
         $this->HighCharts->setChartParams(
 				$chartName,
@@ -161,10 +161,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'chartSpacingRight'			=> 10,
 					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
-					'chartAlignTicks'			=> FALSE,					
+					'chartAlignTicks'			=> FALSE,
 					'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-					
+
 					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
@@ -172,7 +172,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'titleStyleColor'			=> '#0099ff',
 					'titleX'				=> 20,
 					'titleY'				=> 20,
-					
+
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
@@ -184,17 +184,17 @@ class MultiSeriesDemoController extends HighChartsAppController {
         				'tooltipEnabled' 			=> FALSE,
        		      			//'tooltipBackgroundColorLinearGradient' 	=> array(0,0,0,50),   // triggers js error
        		      			//'tooltipBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-                    
+
 					//'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
-					
+					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
+
 					//'xAxisType' 				=> 'datetime',
 					//'xAxisTickInterval' 			=> 10,
 					//'xAxisStartOnTick' 			=> TRUE,
 					//'xAxisTickmarkPlacement' 		=> 'on',
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
-					
+
 					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 1,
@@ -202,20 +202,20 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
 					'xAxisCategories'           		=> array(
-											'Jan', 
-											'Feb', 
-											'Mar', 
-											'Apr', 
-											'May', 
+											'Jan',
+											'Feb',
+											'Mar',
+											'Apr',
+											'May',
 											'Jun',
-											'Jul', 
-											'Aug', 
-											'Sep', 
-											'Oct', 
-											'Nov', 
-											'Dec'													
-									              ),					
-					
+											'Jul',
+											'Aug',
+											'Sep',
+											'Oct',
+											'Nov',
+											'Dec'
+									              ),
+
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
 					//'yAxisEndOnTick'			=> FALSE,
@@ -224,8 +224,8 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisMinorTickLength' 		=> 1,
 					//'yAxisTickLength'			=> 2,
 					//'yAxisMinorTickWidth'			=> 1,
-					
-					
+
+
 					'yAxisTitleText' 			=> 'Units Sold',
 					//'yAxisTitleAlign' 			=> 'high',
 					//'yAxisTitleStyleFont' 		=> '14px Metrophobic, Arial, sans-serif',
@@ -233,12 +233,12 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisTitleX' 			=> 0,
 					//'yAxisTitleY' 			=> -10,
 					//'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
-					
+
 					/* autostep options */
-					'enableAutoStep' => FALSE							
+					'enableAutoStep' => FALSE
 				)
 			);
-			
+
             $series1 = $this->HighCharts->addChartSeries();
             $series2 = $this->HighCharts->addChartSeries();
             $series3 = $this->HighCharts->addChartSeries();
@@ -256,7 +256,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
     }
 
     public function bar() {
-				
+
         $chartName = 'Bar Chart';
         $mychart = $this->HighCharts->create( $chartName, 'bar' );
         $this->HighCharts->setChartParams(
@@ -272,7 +272,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
                                 'chartSpacingRight'			=> 10,
                                 'chartSpacingBottom'			=> 15,
                                 'chartSpacingLeft'			=> 0,
-                                'chartAlignTicks'			=> FALSE,					
+                                'chartAlignTicks'			=> FALSE,
                                 'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                                 'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
@@ -297,7 +297,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
                              // 'tooltipBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
 
                                 //'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-                                //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
+                                //'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
 
                                 //'xAxisType' 				=> 'datetime',
                                 //'xAxisTickInterval' 			=> 10,
@@ -313,19 +313,19 @@ class MultiSeriesDemoController extends HighChartsAppController {
                                 'xAxislabelsX' 				=> 5,
                                 'xAxisLabelsY' 				=> 20,
                                 'xAxisCategories'           		=> array(
-                                                                                'Jan', 
-                                                                                'Feb', 
-                                                                                'Mar', 
-                                                                                'Apr', 
-                                                                                'May', 
+                                                                                'Jan',
+                                                                                'Feb',
+                                                                                'Mar',
+                                                                                'Apr',
+                                                                                'May',
                                                                                 'Jun',
-                                                                                'Jul', 
-                                                                                'Aug', 
-                                                                                'Sep', 
-                                                                                'Oct', 
-                                                                                'Nov', 
-                                                                                'Dec'													
-                                                                                ),				
+                                                                                'Jul',
+                                                                                'Aug',
+                                                                                'Sep',
+                                                                                'Oct',
+                                                                                'Nov',
+                                                                                'Dec'
+                                                                                ),
 
                                 //'yAxisMin' 				=> 0,
                                 //'yAxisMaxPadding'			=> 0.2,
@@ -346,10 +346,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
                                 //'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
 
                                 /* autostep options */
-                                'enableAutoStep' 			=> FALSE							
-                        ) 
+                                'enableAutoStep' 			=> FALSE
+                        )
                 );
-		
+
             $series1 = $this->HighCharts->addChartSeries();
             $series2 = $this->HighCharts->addChartSeries();
             $series3 = $this->HighCharts->addChartSeries();
@@ -366,7 +366,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
             $mychart->addSeries($series3);
     }
 
-    public function column() {				
+    public function column() {
         $chartName = 'Column Chart';
         $mychart = $this->HighCharts->create( $chartName, 'column' );
         $this->HighCharts->setChartParams(
@@ -382,10 +382,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'chartSpacingRight'			=> 10,
 					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
-					'chartAlignTicks'			=> FALSE,					
+					'chartAlignTicks'			=> FALSE,
 					'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-					
+
 					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
@@ -393,8 +393,8 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'titleStyleColor'			=> '#0099ff',
 					'titleX'				=> 20,
 					'titleY'				=> 20,
-					
-					'legendEnabled'				=> TRUE, 
+
+					'legendEnabled'				=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
 					'legendVerticalAlign '			=> 'bottom',
@@ -405,17 +405,17 @@ class MultiSeriesDemoController extends HighChartsAppController {
         				'tooltipEnabled' 			=> FALSE,
        		      			//'tooltipBackgroundColorLinearGradient'=> array(0,0,0,50),   // triggers js error
        		     			//'tooltipBackgroundColorStops' 	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-    
+
 					//'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
-					
+					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
+
 					//'xAxisType' 				=> 'datetime',
 					//'xAxisTickInterval' 			=> 10,
 					//'xAxisStartOnTick' 			=> TRUE,
 					//'xAxisTickmarkPlacement' 		=> 'on',
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
-					
+
 					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 1,
@@ -423,20 +423,20 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
 					'xAxisCategories'           		=> array(
-											'Jan', 
-											'Feb', 
-											'Mar', 
-											'Apr', 
-											'May', 
+											'Jan',
+											'Feb',
+											'Mar',
+											'Apr',
+											'May',
 											'Jun',
-											'Jul', 
-											'Aug', 
-											'Sep', 
-											'Oct', 
-											'Nov', 
-											'Dec'													
-									              ),					
-					
+											'Jul',
+											'Aug',
+											'Sep',
+											'Oct',
+											'Nov',
+											'Dec'
+									              ),
+
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
 					//'yAxisEndOnTick'			=> FALSE,
@@ -445,8 +445,8 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisMinorTickLength' 		=> 1,
 					//'yAxisTickLength'			=> 2,
 					//'yAxisMinorTickWidth'			=> 1,
-					
-					
+
+
 					'yAxisTitleText' 			=> 'Units Sold',
 					//'yAxisTitleAlign' 			=> 'high',
 					//'yAxisTitleStyleFont' 		=> '14px Metrophobic, Arial, sans-serif',
@@ -454,12 +454,12 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisTitleX' 			=> 0,
 					//'yAxisTitleY' 			=> -10,
 					//'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
-					
+
 					/* autostep options */
- 					'enableAutoStep' 			=> FALSE							
-				) 
+ 					'enableAutoStep' 			=> FALSE
+				)
 			);
-		
+
         $series1 = $this->HighCharts->addChartSeries();
         $series2 = $this->HighCharts->addChartSeries();
         $series3 = $this->HighCharts->addChartSeries();
@@ -473,8 +473,8 @@ class MultiSeriesDemoController extends HighChartsAppController {
         $mychart->addSeries($series3);
     }
 
-    public function line() {				
-        $chartName = 'Line Chart';		
+    public function line() {
+        $chartName = 'Line Chart';
         $mychart = $this->HighCharts->create( $chartName, 'line' );
         $this->HighCharts->setChartParams(
 				$chartName,
@@ -489,10 +489,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'chartSpacingRight'			=> 10,
 					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
-					'chartAlignTicks'			=> FALSE,					
+					'chartAlignTicks'			=> FALSE,
 					'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-					
+
 					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
@@ -500,7 +500,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'titleStyleColor'			=> '#0099ff',
 					'titleX'				=> 20,
 					'titleY'				=> 20,
-					
+
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
@@ -512,17 +512,17 @@ class MultiSeriesDemoController extends HighChartsAppController {
         				'tooltipEnabled' 			=> FALSE,
        		      			//'tooltipBackgroundColorLinearGradient' 	=> array(0,0,0,50),   // triggers js error
          		    		//'tooltipBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-                    
+
 					//'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
-					
+					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
+
 					//'xAxisType' 				=> 'datetime',
 					//'xAxisTickInterval' 			=> 10,
 					//'xAxisStartOnTick' 			=> TRUE,
 					//'xAxisTickmarkPlacement' 		=> 'on',
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
-					
+
 					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 1,
@@ -530,20 +530,20 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
 					'xAxisCategories'           		=> array(
-											'Jan', 
-											'Feb', 
-											'Mar', 
-											'Apr', 
-											'May', 
+											'Jan',
+											'Feb',
+											'Mar',
+											'Apr',
+											'May',
 											'Jun',
-											'Jul', 
-											'Aug', 
-											'Sep', 
-											'Oct', 
-											'Nov', 
-											'Dec'													
-								       			),					
-					
+											'Jul',
+											'Aug',
+											'Sep',
+											'Oct',
+											'Nov',
+											'Dec'
+								       			),
+
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
 					//'yAxisEndOnTick'			=> FALSE,
@@ -552,7 +552,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisMinorTickLength' 		=> 1,
 					//'yAxisTickLength'			=> 2,
 					//'yAxisMinorTickWidth'			=> 1,
-					
+
 					'yAxisTitleText' 			=> 'Units Sold',
 					//'yAxisTitleAlign' 			=> 'high',
 					//'yAxisTitleStyleFont' 		=> '14px Metrophobic, Arial, sans-serif',
@@ -560,12 +560,12 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisTitleX' 			=> 0,
 					//'yAxisTitleY' 			=> -10,
 					//'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
-					
+
 					/* autostep options */
-					'enableAutoStep' 			=> FALSE							
-				) 
+					'enableAutoStep' 			=> FALSE
+				)
 			);
-		
+
         $series1 = $this->HighCharts->addChartSeries();
         $series2 = $this->HighCharts->addChartSeries();
         $series3 = $this->HighCharts->addChartSeries();
@@ -596,11 +596,11 @@ class MultiSeriesDemoController extends HighChartsAppController {
                         array('Opera', 6.2),
                         array('Others', 0.7)
                     );
-				
+
         $chartName = 'Pie Chart';
-		
+
         $pieChart = $this->HighCharts->create( $chartName, 'pie' );
-	
+
         $this->HighCharts->setChartParams(
 				$chartName,
 				array(
@@ -614,10 +614,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'chartSpacingRight'			=> 10,
 					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
-					'chartAlignTicks'			=> FALSE,					
+					'chartAlignTicks'			=> FALSE,
 					//'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					//'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-					
+
 					'title'					=> 'Browser Usage Statistics',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
@@ -625,7 +625,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'titleStyleColor'			=> '#0099ff',
 					'titleX'				=> 20,
 					'titleY'				=> 20,
-					
+
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
@@ -637,10 +637,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
                 			'tooltipEnabled' 			=> FALSE,
                   			//'tooltipBackgroundColorLinearGradient' 	=> array(0,0,0,50),   // triggers js error
                   			//'tooltipBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
- 							
-                    ) 
+
+                    )
             );
-		
+
         $series = $this->HighCharts->addChartSeries();
         $series->addName('Browser Share')
             ->addData($chartData);
@@ -664,10 +664,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'chartSpacingRight'			=> 10,
 					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
-					'chartAlignTicks'			=> FALSE,					
+					'chartAlignTicks'			=> FALSE,
 					'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-					
+
 					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
@@ -675,7 +675,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'titleStyleColor'			=> '#0099ff',
 					'titleX'				=> 20,
 					'titleY'				=> 20,
-					
+
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
@@ -686,17 +686,17 @@ class MultiSeriesDemoController extends HighChartsAppController {
         				'tooltipEnabled' 			=> FALSE,
         				//'tooltipBackgroundColorLinearGradient' 	=> array(0,0,0,50),   // triggers js error
        		        		//'tooltipBackgroundColorStops'   		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-        
+
 					//'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
-					
+					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
+
 					//'xAxisType' 				=> 'datetime',
 					//'xAxisTickInterval' 			=> 10,
 					//'xAxisStartOnTick' 			=> TRUE,
 					//'xAxisTickmarkPlacement' 		=> 'on',
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
-					
+
 					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 1,
@@ -704,20 +704,20 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
 					'xAxisCategories'           		=> array(
-											'Jan', 
-											'Feb', 
-											'Mar', 
-											'Apr', 
-											'May', 
+											'Jan',
+											'Feb',
+											'Mar',
+											'Apr',
+											'May',
 											'Jun',
-											'Jul', 
-											'Aug', 
-											'Sep', 
-											'Oct', 
-											'Nov', 
-											'Dec'													
-									              ),					
-					
+											'Jul',
+											'Aug',
+											'Sep',
+											'Oct',
+											'Nov',
+											'Dec'
+									              ),
+
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
 					//'yAxisEndOnTick'			=> FALSE,
@@ -726,8 +726,8 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisMinorTickLength' 		=> 1,
 					//'yAxisTickLength'			=> 2,
 					//'yAxisMinorTickWidth'			=> 1,
-					
-					
+
+
 					'yAxisTitleText' 			=> 'Units Sold',
 					//'yAxisTitleAlign' 			=> 'high',
 					//'yAxisTitleStyleFont' 		=> '14px Metrophobic, Arial, sans-serif',
@@ -735,12 +735,12 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisTitleX' 			=> 0,
 					//'yAxisTitleY' 			=> -10,
 					//'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
-					
+
 					/* autostep options */
-					'enableAutoStep' 			=> FALSE							
-                    ) 
+					'enableAutoStep' 			=> FALSE
+                    )
             );
-		
+
         $series1 = $this->HighCharts->addChartSeries();
         $series2 = $this->HighCharts->addChartSeries();
         $series3 = $this->HighCharts->addChartSeries();
@@ -757,7 +757,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
         $mychart->addSeries($series3);
     }
 
-    public function spline() {        
+    public function spline() {
         $chartName = 'Spline Chart';
         $mychart = $this->HighCharts->create( $chartName, 'spline' );
         $this->HighCharts->setChartParams(
@@ -773,10 +773,10 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'chartSpacingRight'			=> 10,
 					'chartSpacingBottom'			=> 15,
 					'chartSpacingLeft'			=> 0,
-					'chartAlignTicks'			=> FALSE,					
+					'chartAlignTicks'			=> FALSE,
 					'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
 					'chartBackgroundColorStops'	=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-					
+
 					'title'					=> 'Monthly Sales Summary',
 					'titleAlign'				=> 'left',
 					'titleFloating'				=> TRUE,
@@ -784,7 +784,7 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'titleStyleColor'			=> '#0099ff',
 					'titleX'				=> 20,
 					'titleY'				=> 20,
-					
+
 					'legendEnabled' 			=> TRUE,
 					'legendLayout'				=> 'horizontal',
 					'legendAlign'				=> 'center',
@@ -796,17 +796,17 @@ class MultiSeriesDemoController extends HighChartsAppController {
 		             		'tooltipEnabled' 			=> FALSE,
                      			// 'tooltipBackgroundColorLinearGradient' 	=> array(0,0,0,50),   // triggers js error
                      			// 'tooltipBackgroundColorStops' 		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-                    
+
 					//'plotOptionsLinePointStart' 		=> strtotime('-30 day') * 1000,
-					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,					
-					
+					//'plotOptionsLinePointInterval' 	=> 24 * 3600 * 1000,
+
 					//'xAxisType' 				=> 'datetime',
 					//'xAxisTickInterval' 			=> 10,
 					//'xAxisStartOnTick' 			=> TRUE,
 					//'xAxisTickmarkPlacement' 		=> 'on',
 					//'xAxisTickLength' 			=> 10,
 					//'xAxisMinorTickLength' 		=> 5,
-					
+
 					'xAxisLabelsEnabled' 			=> TRUE,
 					'xAxisLabelsAlign' 			=> 'right',
 					'xAxisLabelsStep' 			=> 1,
@@ -814,20 +814,20 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					'xAxislabelsX' 				=> 5,
 					'xAxisLabelsY' 				=> 20,
 					'xAxisCategories'           		=> array(
-											'Jan', 
-											'Feb', 
-											'Mar', 
-											'Apr', 
-											'May', 
+											'Jan',
+											'Feb',
+											'Mar',
+											'Apr',
+											'May',
 											'Jun',
-											'Jul', 
-											'Aug', 
-											'Sep', 
-											'Oct', 
-											'Nov', 
-											'Dec'													
-											),						
-					
+											'Jul',
+											'Aug',
+											'Sep',
+											'Oct',
+											'Nov',
+											'Dec'
+											),
+
 					//'yAxisMin' 				=> 0,
 					//'yAxisMaxPadding'			=> 0.2,
 					//'yAxisEndOnTick'			=> FALSE,
@@ -836,8 +836,8 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisMinorTickLength' 		=> 1,
 					//'yAxisTickLength'			=> 2,
 					//'yAxisMinorTickWidth'			=> 1,
-					
-					
+
+
 					'yAxisTitleText' 			=> 'Units Sold',
 					//'yAxisTitleAlign' 			=> 'high',
 					//'yAxisTitleStyleFont' 		=> '14px Metrophobic, Arial, sans-serif',
@@ -845,12 +845,12 @@ class MultiSeriesDemoController extends HighChartsAppController {
 					//'yAxisTitleX' 			=> 0,
 					//'yAxisTitleY' 			=> -10,
 					//'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
-					
+
 					/* autostep options */
-					'enableAutoStep' 			=> FALSE							
-                ) 
+					'enableAutoStep' 			=> FALSE
+                )
         );
-		
+
         $series1 = $this->HighCharts->addChartSeries();
         $series2 = $this->HighCharts->addChartSeries();
         $series3 = $this->HighCharts->addChartSeries();

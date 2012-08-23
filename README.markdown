@@ -26,14 +26,14 @@ Or visit <http://github.com/destinydriven/cakephp-high-charts-plugin>
 and download the plugin manually to your `app/Plugin/HighCharts/` folder.
 
 Since CakePHP 2.0 it is necessary to activate the plugin in your application. To do so,
-edit `app/Config/bootstrap.php` and add the line `CakePlugin::load('HighCharts');` at the 
+edit `app/Config/bootstrap.php` and add the line `CakePlugin::load('HighCharts');` at the
 bottom. If you already have `CakePlugin::loadAll();` then you may skip this step.
 
 You're done. Check the demo charts included in the plugin to see how to generate
 individual chart types. Open the demos in your browser:
 
 	[your app root]/high_charts/high_charts_demo
-	
+
 Be sure to first check out the Minimalist Demo for tips on how to quickly set up HighCharts Plugin in your own projects.
 The Minimalist Demos also demonstrate theme usage where you can add predefined customizations to your charts by simply
 specifying the key:
@@ -44,21 +44,22 @@ in your $params array on your setChartParams() call.
 
 The other examples provide tons of customization options which you may not want to bother with initially.
 
-Implementing HighCharts to your app would simply include adding the HighCharts component and helper to your controller. (See examples for more details)
+Implementing HighCharts to your app would simply include adding the HighCharts component and to your controller. (See examples for more details)
 
 	public $components = array('HighCharts.HighCharts');
-	public $helpers = array('HighCharts.HighCharts');
-	
+
+Through the inclusion of the component, the HighCharts helper is automatically made available to your views.
+
 ## Special Dependency Note ##
 
 This plugin depends on jQuery (<http://jquery.com>) so you would need to ensure that it is loaded in your layout or the
 view in which you want to display your charts. An example of how to load jQuery in your layout is available in:
-	
+
 	HighCharts/View/Layouts/chart.demo.ctp
 
 	<?php
 		...
-		
+
 		echo $this->Html->script(array('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'));
 
 		...
@@ -70,7 +71,7 @@ Of course, you may also use a copy of the jQuery library from your app/webroot/j
 
 	<?php
 		...
-		
+
 		echo $this->Html->script(array('jquery.min'));
 
 		...
@@ -80,7 +81,7 @@ Of course, you may also use a copy of the jQuery library from your app/webroot/j
 
 **Important**
 
-This plugin is not compatible with CakePHP 1.3.* versions. 
+This plugin is not compatible with CakePHP 1.3.* versions.
 
 This plugin has been tested with CakePHP 2.2.1 and so far works without issue.
 
@@ -94,7 +95,7 @@ If you are unable to fix the issue, create a ticket and we'll see what happens f
 
 Obviously, this plugin is using HighCharts Free, freely available for non-commercial use from
 <http://www.highcharts.com/>
- 
+
 This plugin also utilizes HighRoller (an object-oriented PHP wrapper for HighCharts)
 <http://www.highroller.io/>
 HighRoller is also available on Github and is licenced under  the Apache 2.0 license.
