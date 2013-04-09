@@ -4,11 +4,11 @@ Thank you for trying out HighCharts plugin for CakePHP 2.*!
 
 Please note that this plugin is still a work-in-progress, with only the basic
 functionality to reproduce the charts available through the HighCharts library.
-More features will be added and the existing ones will be improved as you discover better ways of doing things and send pull requests.
+More features will be added and the existing ones will be improved as you discover better ways of doing things and send me pull requests.
 
 Please send your comments and suggestions to d3stinydriv3n[at]gmail.com
 
-For those of you who simply want take a quick look at this plugin's features,  demos should be available at:
+For those of you who simply want take a quick look at this plugin's features,  demos are available at:
 
 <http://destinydrivenlive.com/highcharts/high_charts/high_charts_demo>
 
@@ -60,7 +60,7 @@ view in which you want to display your charts. An example of how to load jQuery 
 	<?php
 		...
 
-		echo $this->Html->script(array('https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'));
+		echo $this->Html->script(array('https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'));
 
 		...
 
@@ -81,9 +81,9 @@ Of course, you may also use a copy of the jQuery library from your app/webroot/j
 
 **Important**
 
-This plugin is not compatible with CakePHP 1.3.* versions.
+This plugin is NOT compatible with CakePHP 1.3.* versions.
 
-This plugin has been tested with CakePHP 2.2.1 and so far works without issue.
+This plugin has been tested with CakePHP 2.3.2 and so far works without issue.
 
 
 ## Contributing ##
@@ -111,7 +111,7 @@ HighRoller is also available on Github and is licenced under  the Apache 2.0 lic
 ## Additional Resources ##
 It might be instructive to take a look at the HighRoller README file (Plugin Vendor's Folder) to get a better idea of how it all works
 Additionally, if you are looking to extend this plugin, a good place to start would be the HighCharts API Reference
-<http://www.highcharts.com/ref/>
+<http://www.api.highcharts.com/highcharts/>
 
 ## Licence ##
 
