@@ -1,9 +1,9 @@
-# HighCharts Plugin for CakePHP 2.* #
+# Highcharts Plugin for CakePHP 2.* #
 
-Thank you for trying out HighCharts plugin for CakePHP 2.*!
+Thank you for trying out Highcharts plugin for CakePHP 2.*!
 
 Please note that this plugin is still a work-in-progress, with only the basic
-functionality to reproduce the charts available through the HighCharts library.
+functionality to reproduce the charts available through the Highcharts library.
 More features will be added and the existing ones will be improved as you discover better ways of doing things and send me pull requests.
 
 Please send your comments and suggestions to d3stinydriv3n[at]gmail.com
@@ -34,7 +34,7 @@ individual chart types. Open the demos in your browser:
 
 	[your app root]/high_charts/high_charts_demo
 
-Be sure to first check out the Minimalist Demo for tips on how to quickly set up HighCharts Plugin in your own projects.
+Be sure to first check out the Minimalist Demo for tips on how to quickly set up Highcharts Plugin in your own projects.
 The Minimalist Demos also demonstrate theme usage where you can add predefined customizations to your charts by simply
 specifying the key:
 
@@ -44,7 +44,7 @@ in your $params array on your setChartParams() call.
 
 The other examples provide tons of customization options which you may not want to bother with initially.
 
-Implementing HighCharts to your app would simply include adding the HighCharts component to your controller. (See examples for more details)
+Implementing Highcharts to your app would simply include adding the Highcharts component to your controller. (See examples for more details)
 
 	public $components = array('HighCharts.HighCharts');
 
@@ -93,10 +93,10 @@ If you are unable to fix the issue, create a ticket and we'll see what happens f
 
 ## Credits ##
 
-Obviously, this plugin is using HighCharts Free, freely available for non-commercial use from
+Obviously, this plugin is using Highcharts Free, freely available for non-commercial use from
 <http://www.highcharts.com/>
 
-This plugin also utilizes HighRoller (an object-oriented PHP wrapper for HighCharts)
+This plugin also utilizes HighRoller (an object-oriented PHP wrapper for Highcharts)
 <http://www.highroller.io/>
 HighRoller is also available on Github and is licenced under  the Apache 2.0 license.
 <https://github.com/jmaclabs/HighRoller>
@@ -104,13 +104,13 @@ HighRoller is also available on Github and is licenced under  the Apache 2.0 lic
 # Special Thanks To: #
 
 * Lecterror (<https://github.com/lecterror>) for providing the inspiration to create this plugin
-* Jigzstar <https://github.com/jigzstar> for introducing me to HighCharts.
-* Tigrang <https://github.com/tigrang> for assistance in improving HighCharts helper
+* Jigzstar <https://github.com/jigzstar> for introducing me to Highcharts.
+* Tigrang <https://github.com/tigrang> for assistance in improving Highcharts helper
 
 
 ## Additional Resources ##
 It might be instructive to take a look at the HighRoller README file (Plugin Vendor's Folder) to get a better idea of how it all works
-Additionally, if you are looking to extend this plugin, a good place to start would be the HighCharts API Reference
+Additionally, if you are looking to extend this plugin, a good place to start would be the Highcharts API Reference
 <http://www.api.highcharts.com/highcharts/>
 
 ## Licence ##
