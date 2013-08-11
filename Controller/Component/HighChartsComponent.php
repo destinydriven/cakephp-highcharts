@@ -37,8 +37,6 @@ App::import('Vendor', 'HighCharts.HighRollerDataLabels', TRUE, array(), 'lib/Hig
 
 App::import('Vendor', 'HighCharts.HighRollerSeriesOptions', TRUE, array(), 'lib/HighRollerSeriesOptions.php');
 
-App::import('Vendor', 'HighCharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php'); 
-
 App::import('Vendor', 'HighCharts.HighRollerToolTip', TRUE, array(), 'lib/HighRollerToolTip.php');
 
 class HighChartsComponent extends Component {
