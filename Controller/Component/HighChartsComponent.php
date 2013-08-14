@@ -37,6 +37,8 @@ App::import('Vendor', 'HighCharts.HighRollerDataLabels', TRUE, array(), 'lib/Hig
 
 App::import('Vendor', 'HighCharts.HighRollerSeriesOptions', TRUE, array(), 'lib/HighRollerSeriesOptions.php');
 
+App::import('Vendor', 'HighCharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php'); 
+
 App::import('Vendor', 'HighCharts.HighRollerToolTip', TRUE, array(), 'lib/HighRollerToolTip.php');
 
 class HighChartsComponent extends Component {
@@ -345,7 +347,6 @@ class HighChartsComponent extends Component {
                 $this->charts[$name]->tooltip->backgroundColor->stops = $params['tooltipBackgroundColorStops'];
             }
             if (isset($params['tooltipFormatter'])) {
-                $this->charts[$name]->tooltip = new HighRollerToolTip();
                 $this->charts[$name]->tooltip->formatter = $params['tooltipFormatter'];
             }
             if (isset($params['tooltipCrosshairs'])) {
@@ -417,6 +418,16 @@ class HighChartsComponent extends Component {
         }        
         if (isset($params['plotOptionsLineEnableMouseTracking'])) {
             $this->charts[$name]->plotOptions->line->enableMouseTracking = $params['plotOptionsLineEnableMouseTracking'];
+        }
+		if (isset($params['plotOptionsPieDataLabelsEnabled'])) {
+            $this->charts[$name]->plotOptions = new stdClass();
+            $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
+            $this->charts[$name]->plotOptions->pie->dataLabels->enabled = $params['plotOptionsPieDataLabelsEnabled'];
+        }
+		if (isset($params['plotOptionsPieShowInLegend'])) {           
+            $this->charts[$name]->plotOptions = new stdClass(); 
+            $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);  
+            $this->charts[$name]->plotOptions->pie->showInLegend = $params['plotOptionsPieShowInLegend'];
         }
 
         // X axis options
