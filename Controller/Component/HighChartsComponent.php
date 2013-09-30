@@ -518,7 +518,9 @@ class HighChartsComponent extends Component {
         if (isset($params['yAxisTitleText'])) {
             App::import('Vendor', 'HighCharts.HighRollerStyle', TRUE, array(), 'lib/HighRollerStyle.php');
             App::import('Vendor', 'HighCharts.HighRollerAxisTitle', TRUE, array(), 'lib/HighRollerAxisTitle.php');
-            $this->charts[$name]->yAxis = new HighRollerAxisTitle(); 
+            if(!isset($this->charts[$name]->yAxis)) {
+		$this->charts[$name]->yAxis = new HighRollerAxisTitle();
+  	    }
             $this->charts[$name]->yAxis->title = new stdClass();
             $this->charts[$name]->yAxis->title->text = $params['yAxisTitleText'];
         }
