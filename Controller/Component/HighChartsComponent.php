@@ -166,6 +166,11 @@ class HighChartsComponent extends Component {
             return;
         }
         
+            	// credits options
+    	if (isset($params['credits'])) {
+    		$this->charts[$name]->credits = $params['credits'];
+    	}
+        
         //lang options 
         if(isset($params['langOptionsEnabled']) && $params['langOptionsEnabled'] == true) {  
             
