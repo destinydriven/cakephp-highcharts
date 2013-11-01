@@ -38,8 +38,13 @@ class HighChartsHelper extends AppHelper {
     public function beforeLayout($viewFile) {       
         parent::beforeLayout($viewFile);
         
-        $js = array('/high_charts/js/highcharts', '/high_charts/js/modules/exporting');        
-        $theme = $this->_getTheme($this->chart_name);
+        $js = array('/high_charts/js/highcharts');        
+        $theme = $this->_getTheme($this->chart_name);        
+        $exportingEnabled = $this->_checkExporting($this->chart_name);
+        
+        if($exportingEnabled){
+                $js[] = '/high_charts/js/modules/exporting';
+        }
         
         switch ($theme){
             case 'gray':               
@@ -59,7 +64,7 @@ class HighChartsHelper extends AppHelper {
         return true;
     }
 
-    private function _getCharts() {
+    protected function _getCharts() {
         static $read = false;
         if ($read === true) {
             return $this->charts;
@@ -70,11 +75,19 @@ class HighChartsHelper extends AppHelper {
         }
     }
     
-    private function _getTheme($name) {
+    protected function _getTheme($name) {
         if(isset($name) && (!empty($this->charts[$name]->chart->className))){
            return $this->charts[$name]->chart->className;
         } else {
             return null;
+        }
+    }
+    
+     protected function _checkExporting($name) {
+        if(isset($this->charts[$name]->exporting->enabled) && ($this->charts[$name]->exporting->enabled  == TRUE)){
+           return $this->charts[$name]->exporting->enabled;
+        } else {
+            return FALSE;
         }
     }
 
