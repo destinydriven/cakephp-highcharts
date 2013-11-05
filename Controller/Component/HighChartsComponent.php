@@ -340,6 +340,30 @@ class HighChartsComponent extends Component {
         if (isset($params['legendBackgroundColorStops'])) {
             $this->charts[$name]->legend->backgroundColor->stops = $params['legendBackgroundColorStops'];
         }
+        if (isset($params['legendBackgroundColor'])) {
+            $this->charts[$name]->legend->backgroundColor = $params['legendBackgroundColor'];
+        }
+        if (isset($params['legendMargin'])) {
+            $this->charts[$name]->legend->margin = $params['legendMargin'];
+        }
+        if (isset($params['legendItemMarginTop'])) {
+            $this->charts[$name]->legend->itemMarginTop = $params['legendItemMarginTop'];
+        }
+        if (isset($params['legendItemMarginBottom'])) {
+            $this->charts[$name]->legend->itemMarginBottom = $params['legendItemMarginBottom'];
+        }
+        if (isset($params['legendWidth'])) {
+            $this->charts[$name]->legend->width = $params['legendWidth'];
+        }
+        if (isset($params['legendItemWidth'])) {
+            $this->charts[$name]->legend->item->width = $params['legendItemWidth'];
+        }
+        if (isset($params['legendItemWidth'])) {
+            $this->charts[$name]->legend->itemWidth = $params['legendItemWidth'];
+        }
+        if (isset($params['legendItemStyleWidth'])) {
+            $this->charts[$name]->legend->itemStyle->width = $params['legendItemStyleWidth'];
+        }
 
         // tooltip options
         if (isset($params['tooltipEnabled']) &&  $params['tooltipEnabled'] === TRUE) {
