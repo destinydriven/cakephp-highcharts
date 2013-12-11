@@ -526,6 +526,12 @@ class HighChartsComponent extends Component {
         if (isset($params['yAxisMinorGridLineWidth'])) {
             $this->charts[$name]->yAxis->minorGridLineWidth  = $params['yAxisMinorGridLineWidth'];
         }
+        if (isset($params['yAxisTickInterval'])) {
+            $this->charts[$name]->yAxis->tickInterval = $params['yAxisTickInterval'];
+        }
+        if (isset($params['yAxisMinTickInterval'])) {
+            $this->charts[$name]->yAxis->minTickInterval = $params['yAxisMinTickInterval'];
+        }    
         if (isset($params['yAxisMinorTickInterval'])) {
             $this->charts[$name]->yAxis->minorTickInterval  = $params['yAxisMinorTickInterval'];
         }
