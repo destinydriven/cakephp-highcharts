@@ -408,8 +408,6 @@ class HighChartsComponent extends Component {
             $this->charts[$name]->plotOptions->column->point->events->click = $params['plotOptionsColumnPointEventsClick'];
         }
         if (isset($params['plotOptionsColumnDataLabelsEnabled'])) {
-            $this->charts[$name]->plotOptions = new stdClass();
-            $this->charts[$name]->plotOptions->column = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
             $this->charts[$name]->plotOptions->column->dataLabels->enabled = $params['plotOptionsColumnDataLabelsEnabled'];
         }
         if (isset($params['plotOptionsColumnDataLabelsColor'])) {
