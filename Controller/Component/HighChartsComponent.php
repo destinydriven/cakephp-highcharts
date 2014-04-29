@@ -376,6 +376,8 @@ class HighChartsComponent extends Component {
                 $this->charts[$name]->tooltip->backgroundColor->stops = $params['tooltipBackgroundColorStops'];
             }
             if (isset($params['tooltipFormatter'])) {
+            	$this->charts[$name]->tooltip = new stdClass();
+          	$this->charts[$name]->tooltip->formatter = new stdClass();
                 $this->charts[$name]->tooltip->formatter = $params['tooltipFormatter'];
             }
             if (isset($params['tooltipCrosshairs'])) {
