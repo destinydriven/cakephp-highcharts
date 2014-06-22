@@ -61,10 +61,10 @@ class HighChartsComponent extends Component {
      */
     public function __construct(ComponentCollection $collection, $settings = array()) {
         parent::__construct($collection, $settings);
-    $this->controller = $collection->getController();
-    $this->settings = $settings;
-    $this->highroller = New HighRoller();
-    $this->title = new HighRollerTitle();
+    	$this->controller = $collection->getController();
+    	$this->settings = $settings;
+    	$this->highroller = New HighRoller();
+    	$this->title = new HighRollerTitle();
     }
 
     public function initialize(Controller $controller) {
@@ -81,7 +81,7 @@ class HighChartsComponent extends Component {
 
 
     public function beforeRender(Controller $controller) {
-        CakeSession::write('HighChartsPlugin.Charts', $this->charts);
+        $this->Session->write('HighChartsPlugin.Charts', $this->charts);
     }
 
     /**
