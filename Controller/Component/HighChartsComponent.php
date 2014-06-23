@@ -514,6 +514,7 @@ class HighChartsComponent extends Component {
         }
 
         // Y axis options
+        $this->charts[$name]->yAxis = new stdClass();
         if (isset($params['yAxisMin'])) {
             $this->charts[$name]->yAxis->min = $params['yAxisMin'];
         }
