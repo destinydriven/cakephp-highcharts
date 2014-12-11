@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,31 +22,43 @@
  * limitations under the License.
  *
  */
- 
-class HighRollerSeriesData {
+class HighRollerSeriesData
+{
 
-  public $name;
-  public $data = array();
-  
-  public function addName($name){
-    $this->name = $name;
-    return $this;
-  }
+    public $name;
+    public $id;
+    public $data = array();
 
-  public function addType($type){
-    $this->type = $type;
-    return $this;
-  }
+    public function addName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
 
-  public function addData($data){
-    $this->data = $data;
-    return $this;
-  }
+    public function addType($type)
+    {
+        $this->type = $type;
+        return $this;
+    }
 
-  public function addColor($color){
-    $this->color = $color;
-    return $this;
-  }
+    public function addData($data)
+    {
+        $this->data = $data;
+        return $this;
+    }
+
+    public function addColor($color)
+    {
+        $this->color = $color;
+        return $this;
+    }
+
+
+    public function addId($id) {
+        $this->id = $id;
+        return $this;
+    }
 
 }
+
 ?>

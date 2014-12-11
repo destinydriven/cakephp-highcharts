@@ -93,7 +93,7 @@ class HighChartsComponent extends Component
      *
      * @param string $name Name to identify your chart
      * @param string $type Type of chart (options are 'area','areaspline','bar', 'column', 'line', 'pie', 'scatter' or 'spline').
-     * @return object HighRoller chart object of specified type .
+     * @return HighRoller HighRoller chart object of specified type .
      */
     public function create($name, $type)
     {
@@ -203,6 +203,9 @@ class HighChartsComponent extends Component
             }
             if (isset($params['langPrintButtonTitle'])) {
                 $this->charts[$name]->lang->printButtonTitle = $params['langPrintButtonTitle'];
+            }
+            if (isset($params['langDrillUpText'])) {
+                $this->charts[$name]->lang->drillUpText = $params['langDrillUpText'];
             }
         }
 
