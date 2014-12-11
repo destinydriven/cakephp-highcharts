@@ -204,6 +204,9 @@ class HighChartsComponent extends Component
             if (isset($params['langPrintButtonTitle'])) {
                 $this->charts[$name]->lang->printButtonTitle = $params['langPrintButtonTitle'];
             }
+            if (isset($params['langDrillUpText'])) {
+                $this->charts[$name]->lang->drillUpText = $params['langDrillUpText'];
+            }
         }
 
         // chart options
