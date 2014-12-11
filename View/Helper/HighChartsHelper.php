@@ -41,9 +41,14 @@ class HighChartsHelper extends AppHelper {
         $js = array('/high_charts/js/highcharts');        
         $theme = $this->_getTheme($this->chart_name);        
         $exportingEnabled = $this->_checkExporting($this->chart_name);
+        $drillDownEnabled = $this->_checkDrillDown($this->chart_name);
         
         if($exportingEnabled){
                 $js[] = '/high_charts/js/modules/exporting';
+        }
+
+        if($drillDownEnabled) {
+            array_push($js, '/high_charts/js/modules/drilldown');
         }
         
         switch ($theme){
@@ -143,5 +148,14 @@ EOF;
 
         return $this->Html->scriptBlock($this->output($out), array('defer' => FALSE));	
     }
-	
+
+    private function _checkDrillDown($chart_name)
+    {
+        if(isset($this->charts[$chart_name]->drilldown->series) && count($this->charts[$chart_name]->drilldown->series) > 0){
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
 }
