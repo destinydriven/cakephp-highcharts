@@ -37,11 +37,12 @@ App::import('Vendor', 'HighCharts.HighRollerDataLabels', TRUE, array(), 'lib/Hig
 
 App::import('Vendor', 'HighCharts.HighRollerSeriesOptions', TRUE, array(), 'lib/HighRollerSeriesOptions.php');
 
-App::import('Vendor', 'HighCharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php'); 
+App::import('Vendor', 'HighCharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php');
 
 App::import('Vendor', 'HighCharts.HighRollerToolTip', TRUE, array(), 'lib/HighRollerToolTip.php');
 
-class HighChartsComponent extends Component {
+class HighChartsComponent extends Component
+{
 
     public $components = array('Session');
 
@@ -59,28 +60,31 @@ class HighChartsComponent extends Component {
      * @param ComponentCollection $collection A ComponentCollection this component can use to lazy load its components
      * @param array $settings Array of configuration settings
      */
-    public function __construct(ComponentCollection $collection, $settings = array()) {
+    public function __construct(ComponentCollection $collection, $settings = array())
+    {
         parent::__construct($collection, $settings);
-    	$this->controller = $collection->getController();
-    	$this->settings = $settings;
-    	$this->highroller = New HighRoller();
-    	$this->title = new HighRollerTitle();
+        $this->controller = $collection->getController();
+        $this->settings = $settings;
+        $this->highroller = New HighRoller();
+        $this->title = new HighRollerTitle();
     }
 
-    public function initialize(Controller $controller) {
+    public function initialize(Controller $controller)
+    {
         if (!isset($this->controller->helpers['HighCharts.HighCharts'])) {
             $this->controller->helpers[] = 'HighCharts.HighCharts';
         }
-    $_settings = $this->defaultSettings;
+        $_settings = $this->defaultSettings;
 
-    if (is_array($this->settings)) {
+        if (is_array($this->settings)) {
             $_settings = array_merge($_settings, $this->settings);
-    }
-    $this->settings = $_settings;
+        }
+        $this->settings = $_settings;
     }
 
 
-    public function beforeRender(Controller $controller) {
+    public function beforeRender(Controller $controller)
+    {
         $this->Session->write('HighChartsPlugin.Charts', $this->charts);
     }
 
@@ -91,65 +95,66 @@ class HighChartsComponent extends Component {
      * @param string $type Type of chart (options are 'area','areaspline','bar', 'column', 'line', 'pie', 'scatter' or 'spline').
      * @return object HighRoller chart object of specified type .
      */
-    public function create($name, $type) {
+    public function create($name, $type)
+    {
         if (!isset($type)) {
             $this->log(sprintf(__('Please provide a type for chart %s!', true), $name));
             return false;
         }
         switch ($type) {
             case 'area':
-                    App::import('Vendor', 'HighCharts.HighRollerAreaChart', true, array(), 'HighRollerAreaChart.php');
-                    $this->$name = new HighRollerAreaChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerAreaChart', true, array(), 'HighRollerAreaChart.php');
+                $this->$name = new HighRollerAreaChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
             case 'areaspline':
-                    App::import('Vendor', 'HighCharts.HighRollerAreasplineChart', true, array(), 'HighRollerAreaSplineChart.php');
-                    $this->$name = new HighRollerAreaSplineChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerAreasplineChart', true, array(), 'HighRollerAreaSplineChart.php');
+                $this->$name = new HighRollerAreaSplineChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
             case 'bar':
-                    App::import('Vendor', 'HighCharts.HighRollerBarChart', true, array(), 'HighRollerBarChart.php');
-                    $this->$name = new HighRollerBarChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerBarChart', true, array(), 'HighRollerBarChart.php');
+                $this->$name = new HighRollerBarChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
             case 'column':
-                    App::import('Vendor', 'HighCharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
-                    $this->$name = new HighRollerColumnChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
+                $this->$name = new HighRollerColumnChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
             case 'line':
-                    App::import('Vendor', 'HighCharts.HighRollerLineChart', true, array(), 'HighRollerLineChart.php');
-                    $this->$name = new HighRollerLineChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerLineChart', true, array(), 'HighRollerLineChart.php');
+                $this->$name = new HighRollerLineChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
             case 'pie':
-                    App::import('Vendor', 'HighCharts.HighRollerPieChart', true, array(), 'HighRollerPieChart.php');
-                    $this->$name = new HighRollerPieChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerPieChart', true, array(), 'HighRollerPieChart.php');
+                $this->$name = new HighRollerPieChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
             case 'scatter':
-                    App::import('Vendor', 'HighCharts.HighRollerScatterChart', true, array(), 'HighRollerScatterChart.php');
-                    $this->$name = new HighRollerScatterChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerScatterChart', true, array(), 'HighRollerScatterChart.php');
+                $this->$name = new HighRollerScatterChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
             case 'spline':
-                    App::import('Vendor', 'HighCharts.HighRollerSplineChart', true, array(), 'HighRollerSplineChart.php');
-                    $this->$name = new HighRollerSplineChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerSplineChart', true, array(), 'HighRollerSplineChart.php');
+                $this->$name = new HighRollerSplineChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
             default:
-                    App::import('Vendor', 'HighCharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
-                    $this->$name = new HighRollerColumnChart();
-                    $this->charts[$name] =& $this->$name;
-                    return $this->$name;
+                App::import('Vendor', 'HighCharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
+                $this->$name = new HighRollerColumnChart();
+                $this->charts[$name] =& $this->$name;
+                return $this->$name;
                 break;
         }
     }
@@ -160,22 +165,23 @@ class HighChartsComponent extends Component {
      * @param string $name Chart name.
      * @param array $params A [large] array of chart options.
      */
-    public function setChartParams($name, $params = array()) {
-        
+    public function setChartParams($name, $params = array())
+    {
+
         if (empty($params)) {
             return;
         }
-        
-            	// credits options
-    	if (isset($params['credits'])) {
-    		$this->charts[$name]->credits = $params['credits'];
-    	}
-        
+
+        // credits options
+        if (isset($params['credits'])) {
+            $this->charts[$name]->credits = $params['credits'];
+        }
+
         //lang options 
-        if(isset($params['langOptionsEnabled']) && $params['langOptionsEnabled'] == true) {  
-            
+        if (isset($params['langOptionsEnabled']) && $params['langOptionsEnabled'] == true) {
+
             $this->charts[$name]->lang = new HighRollerOptionsGlobal();
-            
+
             if (isset($params['langThousandsSep'])) {
                 // this appears to have no effect here 
                 $this->charts[$name]->lang->thousandsSep = $params['langThousandsSep'];
@@ -199,7 +205,7 @@ class HighChartsComponent extends Component {
                 $this->charts[$name]->lang->printButtonTitle = $params['langPrintButtonTitle'];
             }
         }
-        
+
         // chart options
         if (isset($params['renderTo'])) {
             $this->charts[$name]->chart->renderTo = $params['renderTo'];
@@ -223,7 +229,7 @@ class HighChartsComponent extends Component {
             $this->charts[$name]->chart->marginTop = $params['chartMarginTop'];
         }
         if (isset($params['chartMarginLeft'])) {
-            $this->charts[$name]->chart->marginLeft= $params['chartMarginLeft'];
+            $this->charts[$name]->chart->marginLeft = $params['chartMarginLeft'];
         }
         if (isset($params['chartMarginRight'])) {
             $this->charts[$name]->chart->marginRight = $params['chartMarginRight'];
@@ -249,7 +255,7 @@ class HighChartsComponent extends Component {
         if (isset($params['chartBorderWidth'])) {
             $this->charts[$name]->chart->borderWidth = $params['chartBorderWidth'];
         }
-        if (isset($params['chartBackgroundColorLinearGradient'])) {            
+        if (isset($params['chartBackgroundColorLinearGradient'])) {
             $this->charts[$name]->chart->backgroundColor = new stdClass();
             $this->charts[$name]->chart->backgroundColor->linearGradient = $params['chartBackgroundColorLinearGradient'];
         }
@@ -366,7 +372,7 @@ class HighChartsComponent extends Component {
         }
 
         // tooltip options
-        if (isset($params['tooltipEnabled']) &&  $params['tooltipEnabled'] === TRUE) {
+        if (isset($params['tooltipEnabled']) && $params['tooltipEnabled'] === TRUE) {
             if (isset($params['tooltipBackgroundColorLinearGradient'])) {
                 $this->charts[$name]->tooltip = new HighRollerToolTip(); // TOOLTIP FORMATTER
                 $this->charts[$name]->tooltip->backgroundColor = new stdClass();
@@ -376,8 +382,8 @@ class HighChartsComponent extends Component {
                 $this->charts[$name]->tooltip->backgroundColor->stops = $params['tooltipBackgroundColorStops'];
             }
             if (isset($params['tooltipFormatter'])) {
-            	$this->charts[$name]->tooltip = new stdClass();
-          	$this->charts[$name]->tooltip->formatter = new stdClass();
+                $this->charts[$name]->tooltip = new stdClass();
+                $this->charts[$name]->tooltip->formatter = new stdClass();
                 $this->charts[$name]->tooltip->formatter = $params['tooltipFormatter'];
             }
             if (isset($params['tooltipCrosshairs'])) {
@@ -385,6 +391,9 @@ class HighChartsComponent extends Component {
             }
             if (isset($params['tooltipShared'])) {
                 $this->charts[$name]->tooltip->shared = $params['tooltipShared'];
+            }
+            if (isset($params['tooltipValueSuffix'])) {
+                $this->charts[$name]->tooltip->valueSuffix = $params['tooltipValueSuffix'];
             }
         }
 
@@ -396,13 +405,13 @@ class HighChartsComponent extends Component {
             $this->charts[$name]->plotOptions->line->pointInterval = $params['plotOptionsLinePointInterval'];
         }
         if (isset($params['plotOptionsColumnCursor'])) {
-            $this->charts[$name]->plotOptions = new HighRollerPlotOptions($this->charts[$name]->chart->type); 
-            $this->charts[$name]->plotOptions->column = new stdClass(); 
+            $this->charts[$name]->plotOptions = new HighRollerPlotOptions($this->charts[$name]->chart->type);
+            $this->charts[$name]->plotOptions->column = new stdClass();
             $this->charts[$name]->plotOptions->column->cursor = $params['plotOptionsColumnCursor'];
         }
         if (isset($params['plotOptionsColumnPointEventsClick'])) {
             $this->charts[$name]->plotOptions = new HighRollerPlotOptions($this->charts[$name]->chart->type);
-            $this->charts[$name]->plotOptions->column = new stdClass(); 
+            $this->charts[$name]->plotOptions->column = new stdClass();
             $this->charts[$name]->plotOptions->column->point = new stdClass();
             $this->charts[$name]->chart->events = new stdClass();
             $this->charts[$name]->plotOptions->column->point->events = $this->charts[$name]->chart->events;
@@ -422,49 +431,54 @@ class HighChartsComponent extends Component {
             $this->charts[$name]->plotOptions->column->dataLabels->style = $params['plotOptionsColumnDataLabelsStyle'];
         }
         if (isset($params['plotOptionsSeriesStacking'])) {
-            $this->charts[$name]->plotOptions = new stdClass(); 
-            $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);                        
+            $this->charts[$name]->plotOptions = new stdClass();
+            $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
             $this->charts[$name]->plotOptions->series->stacking = $params['plotOptionsSeriesStacking'];
         }
-        if (isset($params['plotOptionsShowInLegend'])) {           
-            $this->charts[$name]->plotOptions = new stdClass(); 
-            $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);  
+        if (isset($params['plotOptionsShowInLegend'])) {
+            $this->charts[$name]->plotOptions = new stdClass();
+            $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
             $this->charts[$name]->plotOptions->series->showInLegend = $params['plotOptionsShowInLegend'];
         }
-        if (isset($params['plotOptionsFillColor'])) {            
-            $this->charts[$name]->plotOptions = new HighRollerPlotOptions($this->charts[$name]->chart->type);             
+        if (isset($params['plotOptionsFillColor'])) {
+            $this->charts[$name]->plotOptions = new HighRollerPlotOptions($this->charts[$name]->chart->type);
             $this->charts[$name]->plotOptions->area = new stdClass();
             $this->charts[$name]->plotOptions->area->fillColor = $params['plotOptionsFillColor'];
         }
         if (isset($params['plotOptionsLineDataLabelsEnabled'])) {
-            $this->charts[$name]->plotOptions = new HighRollerPlotOptions($this->charts[$name]->chart->type); 
-            $this->charts[$name]->plotOptions->line = new HighRollerPlotOptions($this->charts[$name]->chart->type); 
+            $this->charts[$name]->plotOptions = new HighRollerPlotOptions($this->charts[$name]->chart->type);
+            $this->charts[$name]->plotOptions->line = new HighRollerPlotOptions($this->charts[$name]->chart->type);
             $this->charts[$name]->plotOptions->line->dataLabels = new HighRollerDataLabels();
             $this->charts[$name]->plotOptions->line->dataLabels->enabled = $params['plotOptionsLineDataLabelsEnabled'];
         }
         if (isset($params['plotOptionsLineDataLabelsFormatter'])) {
             $this->charts[$name]->plotOptions->line->dataLabels->formatter = $params['plotOptionsColumnDataLabelsFormatter'];
-        }        
+        }
         if (isset($params['plotOptionsLineEnableMouseTracking'])) {
             $this->charts[$name]->plotOptions->line->enableMouseTracking = $params['plotOptionsLineEnableMouseTracking'];
         }
-		if (isset($params['plotOptionsPieDataLabelsEnabled'])) {
+        if (isset($params['plotOptionsPieDataLabelsEnabled'])) {
             $this->charts[$name]->plotOptions = new stdClass();
             $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
             $this->charts[$name]->plotOptions->pie->dataLabels->enabled = $params['plotOptionsPieDataLabelsEnabled'];
         }
-		if (isset($params['plotOptionsPieShowInLegend'])) {           
-            $this->charts[$name]->plotOptions = new stdClass(); 
-            $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);  
+        if (isset($params['plotOptionsPieShowInLegend'])) {
+            $this->charts[$name]->plotOptions = new stdClass();
+            $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
             $this->charts[$name]->plotOptions->pie->showInLegend = $params['plotOptionsPieShowInLegend'];
+        }
+        if (isset($params['plotOptionsPieAllowPointSelect'])) {
+            $this->charts[$name]->plotOptions = new stdClass();
+            $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
+            $this->charts[$name]->plotOptions->pie->allowPointSelect = $params['plotOptionsPieAllowPointSelect'];
         }
 
         // X axis options
         $this->charts[$name]->xAxis = new stdClass();
-        if (isset($params['xAxisDateTimeLabelFormats'])) {           
+        if (isset($params['xAxisDateTimeLabelFormats'])) {
             $this->charts[$name]->xAxis->dateTimeLabelFormats = $params['xAxisDateTimeLabelFormats'];
         }
-        
+
         if (isset($params['xAxisCategories'])) {
             $this->charts[$name]->xAxis->categories = $params['xAxisCategories'];
         }
@@ -489,27 +503,33 @@ class HighChartsComponent extends Component {
         if (isset($params['xAxisMinorTickLength'])) {
             $this->charts[$name]->xAxis->minorTickLength = $params['xAxisMinorTickLength'];
         }
-        if (isset($params['xAxisLabelsEnabled']) &&  $params['xAxisLabelsEnabled'] === TRUE) {
+
+        if (isset($params['xAxisLabelsEnabled'])) {
             $this->charts[$name]->labels = new stdClass();
             $this->charts[$name]->dataLabels = new stdClass();
             $this->charts[$name]->labels->formatter = new HighRollerFormatter(); // LABELS FORMATTER
             $this->charts[$name]->dataLabels->formatter = new HighRollerFormatter(); // LABELS FORMATTER
 
-            if (isset($params['xAxisLabelsAlign'])) {
-                $this->charts[$name]->xAxis->labels = new stdClass();
-                $this->charts[$name]->xAxis->labels->align = $params['xAxisLabelsAlign'];
-            }
-            if (isset($params['xAxisLabelsStep'])) {
-                $this->charts[$name]->xAxis->labels->step = $params['xAxisLabelsStep'];
-            }
-            if (isset($params['xAxisLabelsRotation'])) {
-                $this->charts[$name]->xAxis->labels->rotation = $params['xAxisLabelsRotation'];
-            }
-            if (isset($params['xAxislabelsX'])) {
-                $this->charts[$name]->xAxis->labels->x = $params['xAxislabelsX'];
-            }
-            if (isset($params['xAxisLabelsY'])) {
-                $this->charts[$name]->xAxis->labels->y = $params['xAxisLabelsY'];
+            if ($params['xAxisLabelsEnabled'] === FALSE) {
+                $this->charts[$name]->xAxis->labels->enabled = new stdClass();
+                $this->charts[$name]->xAxis->labels->enabled = $params['xAxisLabelsEnabled'];
+            } else {
+                if (isset($params['xAxisLabelsAlign'])) {
+                    $this->charts[$name]->xAxis->labels = new stdClass();
+                    $this->charts[$name]->xAxis->labels->align = $params['xAxisLabelsAlign'];
+                }
+                if (isset($params['xAxisLabelsStep'])) {
+                    $this->charts[$name]->xAxis->labels->step = $params['xAxisLabelsStep'];
+                }
+                if (isset($params['xAxisLabelsRotation'])) {
+                    $this->charts[$name]->xAxis->labels->rotation = $params['xAxisLabelsRotation'];
+                }
+                if (isset($params['xAxislabelsX'])) {
+                    $this->charts[$name]->xAxis->labels->x = $params['xAxislabelsX'];
+                }
+                if (isset($params['xAxisLabelsY'])) {
+                    $this->charts[$name]->xAxis->labels->y = $params['xAxisLabelsY'];
+                }
             }
         }
 
@@ -519,87 +539,86 @@ class HighChartsComponent extends Component {
             $this->charts[$name]->yAxis->min = $params['yAxisMin'];
         }
         if (isset($params['yAxisMaxPadding'])) {
-            $this->charts[$name]->yAxis->maxPadding  = $params['yAxisMaxPadding'];
+            $this->charts[$name]->yAxis->maxPadding = $params['yAxisMaxPadding'];
         }
         if (isset($params['yAxisEndOnTick'])) {
             $this->charts[$name]->yAxis->endOnTick = $params['yAxisEndOnTick'];
         }
         if (isset($params['yAxisMinorGridLineWidth'])) {
-            $this->charts[$name]->yAxis->minorGridLineWidth  = $params['yAxisMinorGridLineWidth'];
+            $this->charts[$name]->yAxis->minorGridLineWidth = $params['yAxisMinorGridLineWidth'];
         }
         if (isset($params['yAxisTickInterval'])) {
             $this->charts[$name]->yAxis->tickInterval = $params['yAxisTickInterval'];
         }
         if (isset($params['yAxisMinTickInterval'])) {
             $this->charts[$name]->yAxis->minTickInterval = $params['yAxisMinTickInterval'];
-        }    
+        }
         if (isset($params['yAxisMinorTickInterval'])) {
-            $this->charts[$name]->yAxis->minorTickInterval  = $params['yAxisMinorTickInterval'];
+            $this->charts[$name]->yAxis->minorTickInterval = $params['yAxisMinorTickInterval'];
         }
         if (isset($params['yAxisMinorTickLength'])) {
-            $this->charts[$name]->yAxis->minorTickLength  = $params['yAxisMinorTickLength'];
+            $this->charts[$name]->yAxis->minorTickLength = $params['yAxisMinorTickLength'];
         }
         if (isset($params['yAxisTickLength'])) {
-            $this->charts[$name]->yAxis->tickLength  = $params['yAxisTickLength'];
+            $this->charts[$name]->yAxis->tickLength = $params['yAxisTickLength'];
         }
         if (isset($params['yAxisMinorTickWidth'])) {
-            $this->charts[$name]->yAxis->minorTickWidth  = $params['yAxisMinorTickWidth'];
+            $this->charts[$name]->yAxis->minorTickWidth = $params['yAxisMinorTickWidth'];
         }
         if (isset($params['yAxisPlotLines'])) {
             $this->charts[$name]->yAxis = new stdClass();
-            $this->charts[$name]->yAxis->plotLines  = $params['yAxisPlotLines'];
+            $this->charts[$name]->yAxis->plotLines = $params['yAxisPlotLines'];
         }
 
         // Y axis title options
         if (isset($params['yAxisTitleText'])) {
             App::import('Vendor', 'HighCharts.HighRollerStyle', TRUE, array(), 'lib/HighRollerStyle.php');
             App::import('Vendor', 'HighCharts.HighRollerAxisTitle', TRUE, array(), 'lib/HighRollerAxisTitle.php');
-            if(!isset($this->charts[$name]->yAxis)) {
-		$this->charts[$name]->yAxis = new HighRollerAxisTitle();
-  	    }
+            if (!isset($this->charts[$name]->yAxis)) {
+                $this->charts[$name]->yAxis = new HighRollerAxisTitle();
+            }
             $this->charts[$name]->yAxis->title = new stdClass();
             $this->charts[$name]->yAxis->title->text = $params['yAxisTitleText'];
         }
         if (isset($params['yAxisTitleAlign'])) {
-            $this->charts[$name]->yAxis->title->align  = $params['yAxisTitleAlign'];
+            $this->charts[$name]->yAxis->title->align = $params['yAxisTitleAlign'];
         }
         if (isset($params['yAxisTitleStyleFont'])) {
             $this->charts[$name]->yAxis->title->style->font = $params['yAxisTitleStyleFont'];
         }
         if (isset($params['yAxisTitleRotation'])) {
-            $this->charts[$name]->yAxis->title->rotation  = $params['yAxisTitleRotation'];
+            $this->charts[$name]->yAxis->title->rotation = $params['yAxisTitleRotation'];
         }
         if (isset($params['yAxisTitleX'])) {
-            $this->charts[$name]->yAxis->title->x  = $params['yAxisTitleX'];
+            $this->charts[$name]->yAxis->title->x = $params['yAxisTitleX'];
         }
         if (isset($params['yAxisTitleY'])) {
-            $this->charts[$name]->yAxis->title->y  = $params['yAxisTitleY'];
+            $this->charts[$name]->yAxis->title->y = $params['yAxisTitleY'];
         }
 
         // Autostep settings
-        if (isset($params['enableAutoStep']) && $params['enableAutoStep'] === TRUE ) {
+        if (isset($params['enableAutoStep']) && $params['enableAutoStep'] === TRUE) {
             $this->charts[$name]->enableAutoStep();
         }
 
         // Credits settings
-        if (isset($params['creditsEnabled']) && $params['creditsEnabled'] === FALSE ) {
+        if (isset($params['creditsEnabled']) && $params['creditsEnabled'] === FALSE) {
             $this->charts[$name]->credits = new stdClass();
             $this->charts[$name]->credits->enabled = FALSE;
-        }
-        else {
-            if(isset($params['creditsText'])) {
+        } else {
+            if (isset($params['creditsText'])) {
                 $this->charts[$name]->credits = new stdClass();
                 $this->charts[$name]->credits->text = $params['creditsText'];
             }
-            if(isset($params['creditsURL'])) {
+            if (isset($params['creditsURL'])) {
                 $this->charts[$name]->credits->href = $params['creditsURL'];
             }
         }
 
         // exporting options
-        if(isset($params['exportingEnabled']) && $params['exportingEnabled'] === TRUE) {
+        if (isset($params['exportingEnabled']) && $params['exportingEnabled'] === TRUE) {
             $this->charts[$name]->exporting = new stdClass();
-            $this->charts[$name]->exporting->enabled = TRUE;            
+            $this->charts[$name]->exporting->enabled = TRUE;
         }
     }
 
@@ -609,7 +628,8 @@ class HighChartsComponent extends Component {
      * Wrapper for HighRoller addData()
      * @param array $data An array of values.
      */
-    public function addChartData($data) {
+    public function addChartData($data)
+    {
         if (isset($data)) {
             $this->highroller->addData($data);
         }
@@ -620,9 +640,11 @@ class HighChartsComponent extends Component {
      *
      * @return HighRollerSeriesData object
      */
-    public function addChartSeries() {
+    public function addChartSeries()
+    {
         return new HighRollerSeriesData();
-     }
+    }
 
 }
+
 ?>
