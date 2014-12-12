@@ -1,0 +1,26 @@
+{
+    "name": "destinydriven/cakephp-highcharts-plugin",
+    "description": "CakePHP Highcharts Plugin",
+    "version": "2.0.1",
+    "type": "cakephp-plugin",
+    "keywords": ["cakephp", "highcharts", "javascript charts"],
+    "homepage": "https://github.com/destinydriven/cakephp-highcharts-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kurn La Montagne",
+            "role": "Author"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/destinydriven/cakephp-highcharts-plugin/issues",
+        "source": "https://github.com/destinydriven/cakephp-highcharts-plugin"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "composer/installers": "*"
+    },
+    "extra": {
+        "installer-name": "Highcharts   "
+    }
+}
