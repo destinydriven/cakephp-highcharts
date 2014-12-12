@@ -10,29 +10,39 @@ Please send your comments and suggestions to d3stinydriv3n[at]gmail.com
 
 For those of you who simply want take a quick look at this plugin's features,  demos are available at:
 
-<http://destinydrivenlive.com/highcharts/high_charts/high_charts_demo>
+<http://destinydrivenlive.com/highcharts/highcharts/highcharts_demo>
 
 ## Usage ##
 
-Deploy the plugin in your `app/Plugin/HighCharts` directory. If you're using
+_[GIT Submodule]_
+Deploy the plugin in your `app/Plugin/Highcharts` directory. If you're using
 Git, run this while in your app folder:
-
+```bash
 	git init
-	git submodule add git://github.com/destinydriven/cakephp-high-charts-plugin.git Plugin/HighCharts
+	git submodule add git://github.com/destinydriven/cakephp-highcharts-plugin.git Plugin/Highcharts
 	git submodule init
 	git submodule update
+```
 
-Or visit <http://github.com/destinydriven/cakephp-high-charts-plugin>
-and download the plugin manually to your `app/Plugin/HighCharts/` folder.
+_[GIT Clone]_
+
+In your Plugin directory type
+
+```bash
+git clone git://github.com/destinydriven/cakephp-highcharts-plugin.git Highcharts
+```
+
+Or visit <http://github.com/destinydriven/cakephp-highcharts-plugin>
+and download the plugin manually to your `app/Plugin/Highcharts/` folder.
 
 Since CakePHP 2.0 it is necessary to activate the plugin in your application. To do so,
-edit `app/Config/bootstrap.php` and add the line `CakePlugin::load('HighCharts');` at the
+edit `app/Config/bootstrap.php` and add the line `CakePlugin::load('Highcharts');` at the
 bottom. If you already have `CakePlugin::loadAll();` then you may skip this step.
 
 You're done. Check the demo charts included in the plugin to see how to generate
 individual chart types. Open the demos in your browser:
 
-	[your app root]/high_charts/high_charts_demo
+	[your app root]/highcharts/highcharts_demo
 
 Be sure to first check out the Minimalist Demo for tips on how to quickly set up Highcharts Plugin in your own projects.
 The Minimalist Demos also demonstrate theme usage where you can add predefined customizations to your charts by simply
@@ -46,16 +56,16 @@ The other examples provide tons of customization options which you may not want 
 
 Implementing Highcharts to your app would simply include adding the Highcharts component to your controller. (See examples for more details)
 
-	public $components = array('HighCharts.HighCharts');
+	public $components = array('Highcharts.Highcharts');
 
-Through the inclusion of the component, the HighCharts helper is automatically made available to your views.
+Through the inclusion of the component, the Highcharts helper is automatically made available to your views.
 
 ## Special Dependency Note ##
 
 This plugin depends on jQuery (<http://jquery.com>) so you would need to ensure that it is loaded in your layout or the
 view in which you want to display your charts. An example of how to load jQuery in your layout is available in:
 
-	HighCharts/View/Layouts/chart.demo.ctp
+	Highcharts/View/Layouts/chart.demo.ctp
 
 	<?php
 		...
@@ -98,7 +108,7 @@ Obviously, this plugin is using Highcharts Free, freely available for non-commer
 
 This plugin also utilizes HighRoller (an object-oriented PHP wrapper for Highcharts)
 <http://www.highroller.io/>
-HighRoller is also available on Github and is licenced under  the Apache 2.0 license.
+HighRoller is also available on Github and is licensed under  the Apache 2.0 license.
 <https://github.com/jmaclabs/HighRoller>
 
 # Special Thanks To: #
@@ -111,7 +121,7 @@ HighRoller is also available on Github and is licenced under  the Apache 2.0 lic
 ## Additional Resources ##
 It might be instructive to take a look at the HighRoller README file (Plugin Vendor's Folder) to get a better idea of how it all works
 Additionally, if you are looking to extend this plugin, a good place to start would be the Highcharts API Reference
-<http://www.api.highcharts.com/highcharts/>
+<http://api.highcharts.com/highcharts/>
 
 ## Licence ##
 

@@ -1,11 +1,11 @@
 <?php
 
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  *
- * @property HighChartsComponent $HighCharts
+ * @property HighchartsComponent $Highcharts
  *
- *    Copyright (C) 2012 Kurn La Montagne / destinydriven
+ *    Copyright (C) 2014 Kurn La Montagne / destinydriven
  *    <https://github.com/destinydriven>
  *
  *    Multi-licensed under:
@@ -14,27 +14,27 @@
  *        GPL <http://www.gnu.org/licenses/gpl.html>
  *        Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
-class SingleSeriesDemoController extends HighChartsAppController
+class SingleSeriesDemoController extends HighchartsAppController
 {
     public $name = 'SingleSeriesDemo';
-    public $components = array('HighCharts.HighCharts');
+    public $components = array('Highcharts.Highcharts');
     public $helpers = array('Html');
     public $uses = array();
-    public $layout = 'HightCharts.chart.demo';
+    public $layout = 'Highcharts.chart.demo';
 
     public $chartData = array(7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6);
 
-    public $HighCharts = null;
+    public $Highcharts = null;
 
     public function area()
     {
 
         $chartName = 'Area Chart';
 
-        $mychart = $this->HighCharts->create($chartName, 'area');
+        $mychart = $this->Highcharts->create($chartName, 'area');
 
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'areawrapper',  // div to display chart inside
@@ -116,14 +116,14 @@ class SingleSeriesDemoController extends HighChartsAppController
                 // autostep options
                 'enableAutoStep' => FALSE,
 
-                // credits setting  [HighCharts.com  displayed on chart]
+                // credits setting  [Highcharts.com  displayed on chart]
                 'creditsEnabled' => FALSE,
                 'creditsText' => 'Example.com',
                 'creditsURL' => 'http://example.com'
             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Tokyo')
             ->addData($this->chartData);
@@ -137,9 +137,9 @@ class SingleSeriesDemoController extends HighChartsAppController
 
         $chartName = 'AreaSpline Chart';
 
-        $mychart = $this->HighCharts->create($chartName, 'areaspline');
+        $mychart = $this->Highcharts->create($chartName, 'areaspline');
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'areasplinewrapper',  // div to display chart inside
@@ -217,7 +217,7 @@ class SingleSeriesDemoController extends HighChartsAppController
             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Tokyo')
             ->addData($this->chartData);
@@ -231,9 +231,9 @@ class SingleSeriesDemoController extends HighChartsAppController
 
         $chartName = 'Bar Chart';
 
-        $mychart = $this->HighCharts->create($chartName, 'bar');
+        $mychart = $this->Highcharts->create($chartName, 'bar');
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'barwrapper',  // div to display chart inside
@@ -311,7 +311,7 @@ class SingleSeriesDemoController extends HighChartsAppController
             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Tokyo')
             ->addData($this->chartData);
@@ -325,9 +325,9 @@ class SingleSeriesDemoController extends HighChartsAppController
 
         $chartName = 'Column Chart';
 
-        $mychart = $this->HighCharts->create($chartName, 'column');
+        $mychart = $this->Highcharts->create($chartName, 'column');
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'columnwrapper',  // div to display chart inside
@@ -404,7 +404,7 @@ class SingleSeriesDemoController extends HighChartsAppController
             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Tokyo')
             ->addData($this->chartData);
@@ -417,9 +417,9 @@ class SingleSeriesDemoController extends HighChartsAppController
     {
         $chartName = 'Line Chart';
 
-        $mychart = $this->HighCharts->create($chartName, 'line');
+        $mychart = $this->Highcharts->create($chartName, 'line');
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'linewrapper',  // div to display chart inside
@@ -497,7 +497,7 @@ class SingleSeriesDemoController extends HighChartsAppController
             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Tokyo')
             ->addData($this->chartData);
@@ -610,10 +610,10 @@ class SingleSeriesDemoController extends HighChartsAppController
 
         $chartName = 'Pie Chart';
 
-        $pieChart = $this->HighCharts->create($chartName, 'pie');
+        $pieChart = $this->Highcharts->create($chartName, 'pie');
 
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'piewrapper',  // div to display chart inside
@@ -653,7 +653,7 @@ class SingleSeriesDemoController extends HighChartsAppController
             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Brands')
             ->addData($chartData);
@@ -687,10 +687,10 @@ class SingleSeriesDemoController extends HighChartsAppController
 
         $chartName = 'Pie Chart';
 
-        $pieChart = $this->HighCharts->create($chartName, 'pie');
+        $pieChart = $this->Highcharts->create($chartName, 'pie');
 
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'piewrapper',  // div to display chart inside
@@ -730,7 +730,7 @@ class SingleSeriesDemoController extends HighChartsAppController
             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Browser Share')
             ->addData($pieData);
@@ -741,9 +741,9 @@ class SingleSeriesDemoController extends HighChartsAppController
     public function scatter()
     {
         $chartName = 'Scatter Chart';
-        $mychart = $this->HighCharts->create($chartName, 'scatter');
+        $mychart = $this->Highcharts->create($chartName, 'scatter');
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'scatterwrapper',  // div to display chart inside
@@ -821,7 +821,7 @@ class SingleSeriesDemoController extends HighChartsAppController
             )
         );
 
-        $series1 = $this->HighCharts->addChartSeries();
+        $series1 = $this->Highcharts->addChartSeries();
 
         $series1->addName('Tokyo')
             ->addData($this->chartData);
@@ -835,10 +835,10 @@ class SingleSeriesDemoController extends HighChartsAppController
 
         $chartName = 'Spline Chart';
 
-        $mychart = $this->HighCharts->create($chartName, 'spline');
+        $mychart = $this->Highcharts->create($chartName, 'spline');
 
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo' => 'splinewrapper',  // div to display chart inside
@@ -916,7 +916,7 @@ class SingleSeriesDemoController extends HighChartsAppController
             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Tokyo')
             ->addData($this->chartData);

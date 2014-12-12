@@ -1,8 +1,8 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  *
- *    Copyright (C) 2012 Kurn La Montagne / destinydriven
+ *    Copyright (C) 2014 Kurn La Montagne / destinydriven
  *    <https://github.com/destinydriven>
  *
  *    Multi-licensed under:
@@ -13,11 +13,11 @@
  */
 ?>
 <div class="chart">
-    <p>Pie Chart</p>
+        <h4>Pie Chart</h4>
 
-    <div id="piewrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
-    <div class="clear"></div>
+        <div id="piewrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
+        <div class="clear"></div>
 
-    <?php echo $this->HighCharts->render($chartName); ?>
+        <?php echo $this->Highcharts->render($chartName); ?>
 
 </div>

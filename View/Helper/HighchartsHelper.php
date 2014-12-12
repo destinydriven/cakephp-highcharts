@@ -1,8 +1,8 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  * 
- * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
+ * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
  *	<https://github.com/destinydriven> 
  * 
  * 	Multi-licensed under:
@@ -11,7 +11,7 @@
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
  * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
-class HighChartsHelper extends AppHelper {
+class HighchartsHelper extends AppHelper {
     public $helpers = array('Html', 'Session');
     public $charts = null;
     public $chart_name = '';
@@ -32,23 +32,23 @@ class HighChartsHelper extends AppHelper {
     }
 
     public function afterRender($viewFile) {
-        CakeSession::delete('HighChartsPlugin.Charts');
+        CakeSession::delete('HighchartsPlugin.Charts');
     }
     
     public function beforeLayout($viewFile) {       
         parent::beforeLayout($viewFile);
         
-        $js = array('/high_charts/js/highcharts');        
+        $js = array('/highcharts/js/highcharts');        
         $theme = $this->_getTheme($this->chart_name);        
         $exportingEnabled = $this->_checkExporting($this->chart_name);
         $drillDownEnabled = $this->_checkDrillDown($this->chart_name);
         
         if($exportingEnabled){
-                $js[] = '/high_charts/js/modules/exporting';
+                $js[] = '/highcharts/js/modules/exporting';
         }
 
         if($drillDownEnabled) {
-            array_push($js, '/high_charts/js/modules/drilldown');
+            array_push($js, '/highcharts/js/modules/drilldown');
         }
         
         switch ($theme){
@@ -57,14 +57,14 @@ class HighChartsHelper extends AppHelper {
             case 'dark-blue':                      
             case 'dark-green':                
             case 'skies':
-                $js[] = '/high_charts/js/themes/'.$theme;
+                $js[] = '/highcharts/js/themes/'.$theme;
                 break;
             default:
-               // $js[] = '/high_charts/js/themes/highroller';
+               // $js[] = '/highcharts/js/themes/highroller';
                 break;
         }
         
-        $this->Html->css('high_charts/css/highroller');
+        $this->Html->css('highcharts/css/highroller');
         $this->Html->script( $js, FALSE);
         return true;
     }
@@ -74,7 +74,7 @@ class HighChartsHelper extends AppHelper {
         if ($read === true) {
             return $this->charts;
         } else{
-            $this->charts = CakeSession::read('HighChartsPlugin.Charts');
+            $this->charts = CakeSession::read('HighchartsPlugin.Charts');
             $read = true;
             return $this->charts;
         }
@@ -101,7 +101,7 @@ class HighChartsHelper extends AppHelper {
         $this->chart_name = $name;
 
         if (!isset($this->charts[$name])) {
-            trigger_error(sprintf(__('Chart: "%s" could not be found. Ensure that Chart Name is the same string that is passed to $this->HighCharts->render() in your view.', true), $name), E_USER_ERROR);
+            trigger_error(sprintf(__('Chart: "%s" could not be found. Ensure that Chart Name is the same string that is passed to $this->Highcharts->render() in your view.', $this->chart_name), null), E_USER_ERROR);
             return;
         }
 

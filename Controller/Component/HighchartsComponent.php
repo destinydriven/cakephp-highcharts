@@ -1,8 +1,8 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  *
- *  Copyright (C) 2012 Kurn La Montagne / destinydriven
+ *  Copyright (C) 2014 Kurn La Montagne / destinydriven
  *  <https://github.com/destinydriven>
  *
  *  Multi-licensed under:
@@ -11,43 +11,43 @@
  *      GPL <http://www.gnu.org/licenses/gpl.html>
  *      Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
-App::import('Vendor', 'HighCharts.HighRoller', true, array(), 'lib/HighRoller.php');
+App::import('Vendor', 'Highcharts.HighRoller', true, array(), 'lib/HighRoller.php');
 
-App::import('Vendor', 'HighCharts.HighRollerChart', true, array(), 'lib/HighRollerChart.php');
+App::import('Vendor', 'Highcharts.HighRollerChart', true, array(), 'lib/HighRollerChart.php');
 
-App::import('Vendor', 'HighCharts.HighRollerTitle', true, array(), 'lib/HighRollerTitle.php');
+App::import('Vendor', 'Highcharts.HighRollerTitle', true, array(), 'lib/HighRollerTitle.php');
 
-App::import('Vendor', 'HighCharts.HighRollerSeries', true, array(), 'lib/HighRollerSeries.php');
+App::import('Vendor', 'Highcharts.HighRollerSeries', true, array(), 'lib/HighRollerSeries.php');
 
-App::import('Vendor', 'HighCharts.HighRollerStyle', true, array(), 'lib/HighRollerStyle.php');
+App::import('Vendor', 'Highcharts.HighRollerStyle', true, array(), 'lib/HighRollerStyle.php');
 
-App::import('Vendor', 'HighCharts.HighRollerFormatter', true, array(), 'lib/HighRollerFormatter.php');
+App::import('Vendor', 'Highcharts.HighRollerFormatter', true, array(), 'lib/HighRollerFormatter.php');
 
-App::import('Vendor', 'HighCharts.HighRollerOptions', true, array(), 'lib/HighRollerOptions.php');
+App::import('Vendor', 'Highcharts.HighRollerOptions', true, array(), 'lib/HighRollerOptions.php');
 
-App::import('Vendor', 'HighCharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php');
+App::import('Vendor', 'Highcharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php');
 
-App::import('Vendor', 'HighCharts.HighRollerPlotOptionsByChartType', TRUE, array(), 'lib/HighRollerPlotOptionsByChartType.php');
+App::import('Vendor', 'Highcharts.HighRollerPlotOptionsByChartType', TRUE, array(), 'lib/HighRollerPlotOptionsByChartType.php');
 
-App::import('Vendor', 'HighCharts.HighRollerOptionsGlobal', true, array(), 'lib/HighRollerOptionsGlobal.php');
+App::import('Vendor', 'Highcharts.HighRollerOptionsGlobal', true, array(), 'lib/HighRollerOptionsGlobal.php');
 
-App::import('Vendor', 'HighCharts.HighRollerSeriesData', true, array(), 'HighRollerSeriesData.php');
+App::import('Vendor', 'Highcharts.HighRollerSeriesData', true, array(), 'HighRollerSeriesData.php');
 
-App::import('Vendor', 'HighCharts.HighRollerDataLabels', TRUE, array(), 'lib/HighRollerDataLabels.php');
+App::import('Vendor', 'Highcharts.HighRollerDataLabels', TRUE, array(), 'lib/HighRollerDataLabels.php');
 
-App::import('Vendor', 'HighCharts.HighRollerSeriesOptions', TRUE, array(), 'lib/HighRollerSeriesOptions.php');
+App::import('Vendor', 'Highcharts.HighRollerSeriesOptions', TRUE, array(), 'lib/HighRollerSeriesOptions.php');
 
-App::import('Vendor', 'HighCharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php');
+App::import('Vendor', 'Highcharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php');
 
-App::import('Vendor', 'HighCharts.HighRollerToolTip', TRUE, array(), 'lib/HighRollerToolTip.php');
+App::import('Vendor', 'Highcharts.HighRollerToolTip', TRUE, array(), 'lib/HighRollerToolTip.php');
 
-class HighChartsComponent extends Component
+class HighchartsComponent extends Component
 {
 
     public $components = array('Session');
 
     public $controller;
-    public $defaultSettings = array('title' => 'HighCharts Sample Title');
+    public $defaultSettings = array('title' => 'Highcharts Sample Title');
     public $settings = array();
     public $charts = array();
 
@@ -71,8 +71,8 @@ class HighChartsComponent extends Component
 
     public function initialize(Controller $controller)
     {
-        if (!isset($this->controller->helpers['HighCharts.HighCharts'])) {
-            $this->controller->helpers[] = 'HighCharts.HighCharts';
+        if (!isset($this->controller->helpers['Highcharts.Highcharts'])) {
+            $this->controller->helpers[] = 'Highcharts.Highcharts';
         }
         $_settings = $this->defaultSettings;
 
@@ -85,7 +85,7 @@ class HighChartsComponent extends Component
 
     public function beforeRender(Controller $controller)
     {
-        $this->Session->write('HighChartsPlugin.Charts', $this->charts);
+        $this->Session->write('HighchartsPlugin.Charts', $this->charts);
     }
 
     /**
@@ -103,55 +103,55 @@ class HighChartsComponent extends Component
         }
         switch ($type) {
             case 'area':
-                App::import('Vendor', 'HighCharts.HighRollerAreaChart', true, array(), 'HighRollerAreaChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerAreaChart', true, array(), 'HighRollerAreaChart.php');
                 $this->$name = new HighRollerAreaChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
                 break;
             case 'areaspline':
-                App::import('Vendor', 'HighCharts.HighRollerAreasplineChart', true, array(), 'HighRollerAreaSplineChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerAreasplineChart', true, array(), 'HighRollerAreaSplineChart.php');
                 $this->$name = new HighRollerAreaSplineChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
                 break;
             case 'bar':
-                App::import('Vendor', 'HighCharts.HighRollerBarChart', true, array(), 'HighRollerBarChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerBarChart', true, array(), 'HighRollerBarChart.php');
                 $this->$name = new HighRollerBarChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
                 break;
             case 'column':
-                App::import('Vendor', 'HighCharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
                 $this->$name = new HighRollerColumnChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
                 break;
             case 'line':
-                App::import('Vendor', 'HighCharts.HighRollerLineChart', true, array(), 'HighRollerLineChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerLineChart', true, array(), 'HighRollerLineChart.php');
                 $this->$name = new HighRollerLineChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
                 break;
             case 'pie':
-                App::import('Vendor', 'HighCharts.HighRollerPieChart', true, array(), 'HighRollerPieChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerPieChart', true, array(), 'HighRollerPieChart.php');
                 $this->$name = new HighRollerPieChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
                 break;
             case 'scatter':
-                App::import('Vendor', 'HighCharts.HighRollerScatterChart', true, array(), 'HighRollerScatterChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerScatterChart', true, array(), 'HighRollerScatterChart.php');
                 $this->$name = new HighRollerScatterChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
                 break;
             case 'spline':
-                App::import('Vendor', 'HighCharts.HighRollerSplineChart', true, array(), 'HighRollerSplineChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerSplineChart', true, array(), 'HighRollerSplineChart.php');
                 $this->$name = new HighRollerSplineChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
                 break;
             default:
-                App::import('Vendor', 'HighCharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
+                App::import('Vendor', 'Highcharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
                 $this->$name = new HighRollerColumnChart();
                 $this->charts[$name] =& $this->$name;
                 return $this->$name;
@@ -575,8 +575,8 @@ class HighChartsComponent extends Component
 
         // Y axis title options
         if (isset($params['yAxisTitleText'])) {
-            App::import('Vendor', 'HighCharts.HighRollerStyle', TRUE, array(), 'lib/HighRollerStyle.php');
-            App::import('Vendor', 'HighCharts.HighRollerAxisTitle', TRUE, array(), 'lib/HighRollerAxisTitle.php');
+            App::import('Vendor', 'Highcharts.HighRollerStyle', TRUE, array(), 'lib/HighRollerStyle.php');
+            App::import('Vendor', 'Highcharts.HighRollerAxisTitle', TRUE, array(), 'lib/HighRollerAxisTitle.php');
             if (!isset($this->charts[$name]->yAxis)) {
                 $this->charts[$name]->yAxis = new HighRollerAxisTitle();
             }
@@ -650,4 +650,3 @@ class HighChartsComponent extends Component
 
 }
 
-?>
