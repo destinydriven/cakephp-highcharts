@@ -1,8 +1,8 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  * 
- * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
+ * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
  *	<https://github.com/destinydriven> 
  * 
  * 	Multi-licensed under:
@@ -11,14 +11,15 @@
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
  * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
+App::uses('HighchartsAppController', 'Highcharts.Controller');
  
 /**
- * @property HighChartsController $HighCharts
+ * @property HighchartsController $Highcharts
  */
-class HighChartsDemoController extends HighChartsAppController {
-    public $name = 'HighChartsDemo';
-    public $components = array('HighCharts.HighCharts');
-    public $helpers = array('HighCharts.HighCharts');
+class HighchartsDemoController extends HighchartsAppController {
+    public $name = 'HighchartsDemo';
+    public $components = array('Highcharts.Highcharts');
+    public $helpers = array('Highcharts.Highcharts');
     public $uses = array();
     public $layout = 'chart.demo';
 

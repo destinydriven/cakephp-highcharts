@@ -1,9 +1,9 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  * 
- * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
- *	<https://github.com/destinydriven> 
+ * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
+ * 	<https://github.com/destinydriven> 
  * 
  * 	Multi-licensed under:
  * 		MPL <http://www.mozilla.org/MPL/MPL-1.1.html>
@@ -13,11 +13,11 @@
  */
 ?>
 <div class="chart">
-	<p>Scatter Chart</p>
-	
-	<div id="scatterwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
-    <div class="clear"></div>	
-	
-	<?php echo $this->HighCharts->render('Scatter Chart'); ?>
+        <h4>Scatter Chart</h4>
+
+        <div id="scatterwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
+        <div class="clear"></div>	
+
+        <?php echo $this->Highcharts->render('Scatter Chart'); ?>
 
 </div>

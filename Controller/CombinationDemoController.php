@@ -1,8 +1,8 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  * 
- * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
+ * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
  *	<https://github.com/destinydriven> 
  * 
  * 	Multi-licensed under:
@@ -11,10 +11,10 @@
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
  * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
-class CombinationDemoController extends HighChartsAppController {
+class CombinationDemoController extends HighchartsAppController {
     public $name = 'CombinationDemo';
-    public $components = array('HighCharts.HighCharts');
-    public $helpers = array('HighCharts.HighCharts');
+    public $components = array('Highcharts.Highcharts');
+    public $helpers = array('Highcharts.Highcharts');
     public $uses = array();
     public $layout = 'chart.demo';
 
@@ -36,9 +36,9 @@ class CombinationDemoController extends HighChartsAppController {
                          );
 				
 	$chartName = 'Combination Chart';
-	$mychart = $this->HighCharts->create( $chartName,'column' );
+	$mychart = $this->Highcharts->create( $chartName,'column' );
 	
-	$this->HighCharts->setChartParams
+	$this->Highcharts->setChartParams
             (
                 $chartName,
                 array
@@ -58,27 +58,27 @@ class CombinationDemoController extends HighChartsAppController {
                 ) 
             );
 	
-        $janeSeries = $this->HighCharts->addChartSeries();
+        $janeSeries = $this->Highcharts->addChartSeries();
         $janeSeries->type = 'column';
         $janeSeries->addName('Jane')
             ->addData($janeData);
 
-        $johnSeries = $this->HighCharts->addChartSeries();
+        $johnSeries = $this->Highcharts->addChartSeries();
         $johnSeries->type = 'column';
         $johnSeries->addName('John')
             ->addData($johnData);		
 
-        $joeSeries  = $this->HighCharts->addChartSeries();
+        $joeSeries  = $this->Highcharts->addChartSeries();
         $joeSeries->type = 'column';
         $joeSeries->addName('Joe')
             ->addData($joeData);		
 
-        $avgSeries  = $this->HighCharts->addChartSeries();
+        $avgSeries  = $this->Highcharts->addChartSeries();
         $avgSeries->type = 'spline';
         $avgSeries->addName('Average')
             ->addData($avgData);
 
-        $pieSeries  = $this->HighCharts->addChartSeries();
+        $pieSeries  = $this->Highcharts->addChartSeries();
         $pieSeries->type = 'pie';
         $pieSeries->center = array(200,150);
 

@@ -1,8 +1,8 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  *
- * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
+ * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
  *	<https://github.com/destinydriven>
  *
  * 	Multi-licensed under:
@@ -11,9 +11,9 @@
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
  * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
-class MinimalistDemoController extends HighChartsAppController {
+class MinimalistDemoController extends HighchartsAppController {
     public $name = 'MinimalistDemo';
-    public $components = array('HighCharts.HighCharts');
+    public $components = array('Highcharts.Highcharts');
     public $uses = array();
     public $layout = 'chart.demo';
 
@@ -24,9 +24,9 @@ class MinimalistDemoController extends HighChartsAppController {
 
         $chartName = 'Column Chart';
 
-        $mychart = $this->HighCharts->create( $chartName, 'column');
+        $mychart = $this->Highcharts->create( $chartName, 'column');
 
-        $this->HighCharts->setChartParams (
+        $this->Highcharts->setChartParams (
                         $chartName,
                         array
                         (
@@ -46,7 +46,7 @@ class MinimalistDemoController extends HighChartsAppController {
                         )
                 );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Example Online Store')
             ->addData($chartData);
@@ -66,10 +66,10 @@ class MinimalistDemoController extends HighChartsAppController {
 function(){ return '<b>'+ this.x +'</b><br/>'+ 'Population in 2008: '+ Highcharts.numberFormat(this.y, 1) +' millions';}
 EOF;
 
-    $mychart = $this->HighCharts->create( $chartName, 'column' );
+    $mychart = $this->Highcharts->create( $chartName, 'column' );
 
 
-    $this->HighCharts->setChartParams (
+    $this->Highcharts->setChartParams (
         $chartName,
         array(
             'renderTo'                                  => 'columnwrapper',  // div to display chart inside
@@ -114,7 +114,7 @@ EOF;
             )
     );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Population')
             ->addData($chartData);
@@ -140,9 +140,9 @@ EOF;
 
         $chartName = 'Pie Chart';
 
-        $pieChart = $this->HighCharts->create( $chartName, 'pie' );
+        $pieChart = $this->Highcharts->create( $chartName, 'pie' );
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
                                             $chartName,
                                             array
                                             (
@@ -156,7 +156,7 @@ EOF;
                                             )
         );
 
-        $series = $this->HighCharts->addChartSeries();
+        $series = $this->Highcharts->addChartSeries();
 
         $series->addName('Browser Share')
             ->addData($chartData);
@@ -175,9 +175,9 @@ EOF;
 
         $chartName = 'Spline Chart with Crosshairs';
 
-        $mychart = $this->HighCharts->create( $chartName, 'spline' );
+        $mychart = $this->Highcharts->create( $chartName, 'spline' );
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
                                             $chartName,
                                             array(
                                                 'renderTo'				=> 'splinewrapper',  // div to display chart inside
@@ -242,8 +242,8 @@ EOF;
                                             )
                                     );
 
-        $series1 = $this->HighCharts->addChartSeries();
-        $series2 = $this->HighCharts->addChartSeries();
+        $series1 = $this->Highcharts->addChartSeries();
+        $series2 = $this->Highcharts->addChartSeries();
 
         $series1->addName('Tokyo')
             ->addData($chartData1);
@@ -270,9 +270,9 @@ EOF;
 function() { return '<b>'+ this.series.name +'</b><br/>'+ this.x +': '+ this.y +'°C';}
 EOF;
 
-        $mychart = $this->HighCharts->create( $chartName, 'line' );
+        $mychart = $this->Highcharts->create( $chartName, 'line' );
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
                         $chartName,
                         array (
                                 'renderTo'				=> 'linewrapper',  // div to display chart inside
@@ -326,8 +326,8 @@ EOF;
 
             );
 
-        $series1 = $this->HighCharts->addChartSeries();
-        $series2 = $this->HighCharts->addChartSeries();
+        $series1 = $this->Highcharts->addChartSeries();
+        $series2 = $this->Highcharts->addChartSeries();
 
         $series1->addName('Tokyo')
             ->addData($chartData1);

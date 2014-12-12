@@ -1,8 +1,8 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  *
- * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
+ * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
  *	<https://github.com/destinydriven>
  *
  * 	Multi-licensed under:
@@ -11,9 +11,9 @@
  * 		GPL <http://www.gnu.org/licenses/gpl.html>
  * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
-class StackedDemoController extends HighChartsAppController {
+class StackedDemoController extends HighchartsAppController {
     public $name = 'StackedDemo';
-    public $components = array('HighCharts.HighCharts');
+    public $components = array('Highcharts.Highcharts');
     public $uses = array();
     public $layout = 'chart.demo';
 
@@ -23,18 +23,18 @@ class StackedDemoController extends HighChartsAppController {
     public $jillData = array( 3,0,4,4,3 );
 
     /**
-     * HighCharts component
+     * Highcharts component
      *
-     * @var HighChartsComponent
+     * @var HighchartsComponent
      */
-    public $HighCharts = null;
+    public $Highcharts = null;
 
     public function bar() {
         $chartName = 'Stacked Bar Chart';
 
-        $mychart = $this->HighCharts->create( $chartName, 'bar' );
+        $mychart = $this->Highcharts->create( $chartName, 'bar' );
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo'		=> 'barwrapper',  // div to display chart inside
@@ -53,9 +53,9 @@ class StackedDemoController extends HighChartsAppController {
             )
     );
 
-        $johnSeries = $this->HighCharts->addChartSeries();
-        $janeSeries = $this->HighCharts->addChartSeries();
-        $joeSeries  = $this->HighCharts->addChartSeries();
+        $johnSeries = $this->Highcharts->addChartSeries();
+        $janeSeries = $this->Highcharts->addChartSeries();
+        $joeSeries  = $this->Highcharts->addChartSeries();
 
         $johnSeries->addName('John')
             ->addData($this->johnData);
@@ -73,7 +73,7 @@ class StackedDemoController extends HighChartsAppController {
 
         $chartName = 'Stacked Column Chart';
 
-        $mychart = $this->HighCharts->create(
+        $mychart = $this->Highcharts->create(
                         $chartName,
                         array(
                             'type' => 'column',
@@ -82,7 +82,7 @@ class StackedDemoController extends HighChartsAppController {
                     );
 
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
                 $chartName,
                 array(
                     'renderTo'			=> 'columnwrapper',  // div to display chart inside
@@ -101,9 +101,9 @@ class StackedDemoController extends HighChartsAppController {
                 )
         );
 
-        $johnSeries = $this->HighCharts->addChartSeries();
-        $janeSeries = $this->HighCharts->addChartSeries();
-        $joeSeries  = $this->HighCharts->addChartSeries();
+        $johnSeries = $this->Highcharts->addChartSeries();
+        $janeSeries = $this->Highcharts->addChartSeries();
+        $joeSeries  = $this->Highcharts->addChartSeries();
 
         $johnSeries->addName('John')
             ->addData($this->johnData);
@@ -121,9 +121,9 @@ class StackedDemoController extends HighChartsAppController {
 
         $chartName = 'Stacked Percentage Column Chart';
 
-        $mychart = $this->HighCharts->create( $chartName, 'column' );
+        $mychart = $this->Highcharts->create( $chartName, 'column' );
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo'				=> 'columnwrapper',  // div to display chart inside
@@ -142,9 +142,9 @@ class StackedDemoController extends HighChartsAppController {
             )
         );
 
-        $johnSeries = $this->HighCharts->addChartSeries();
-        $janeSeries = $this->HighCharts->addChartSeries();
-        $joeSeries  = $this->HighCharts->addChartSeries();
+        $johnSeries = $this->Highcharts->addChartSeries();
+        $janeSeries = $this->Highcharts->addChartSeries();
+        $joeSeries  = $this->Highcharts->addChartSeries();
 
         $johnSeries->addName('John')
             ->addData($this->johnData);
@@ -161,9 +161,9 @@ class StackedDemoController extends HighChartsAppController {
     public function grouped_column() {
         $chartName = 'Stacked Grouped Column Chart';
 
-        $mychart = $this->HighCharts->create( $chartName, 'column' );
+        $mychart = $this->Highcharts->create( $chartName, 'column' );
 
-        $this->HighCharts->setChartParams(
+        $this->Highcharts->setChartParams(
             $chartName,
             array(
                 'renderTo'			=> 'columnwrapper',  // div to display chart inside
@@ -171,7 +171,7 @@ class StackedDemoController extends HighChartsAppController {
                 'chartHeight'			=> 750,
                 'chartBackgroundColorLinearGradient' 	=> array(0,0,0,300),
                 'chartBackgroundColorStops'		=> array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
-                'title'					=> 'Total fruit consumtion, grouped by gender',
+                'title'					=> 'Total fruit consumption, grouped by gender',
                 'subtitle'				=> 'Source: World Bank',
                 'xAxisLabelsEnabled' 		=> TRUE,
                 'xAxisCategories'       	=> array( 'Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas' ),
@@ -182,10 +182,10 @@ class StackedDemoController extends HighChartsAppController {
             )
         );
 
-        $johnSeries = $this->HighCharts->addChartSeries();
-        $janeSeries = $this->HighCharts->addChartSeries();
-        $joeSeries  = $this->HighCharts->addChartSeries();
-        $jillSeries = $this->HighCharts->addChartSeries();
+        $johnSeries = $this->Highcharts->addChartSeries();
+        $janeSeries = $this->Highcharts->addChartSeries();
+        $joeSeries  = $this->Highcharts->addChartSeries();
+        $jillSeries = $this->Highcharts->addChartSeries();
 
         $johnSeries->addName('John')
             ->addData($this->johnData)

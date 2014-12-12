@@ -1,8 +1,8 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  * 
- * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
+ * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
  *	<https://github.com/destinydriven> 
  * 
  * 	Multi-licensed under:
@@ -17,7 +17,7 @@
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title>
-		<?php echo __('CakePHP HighCharts plugin demos / tests'); ?>
+		<?php echo __('CakePHP Highcharts plugin demos / tests'); ?>
 		<?php echo $title_for_layout; ?>
 	</title>
 	<?php
@@ -33,21 +33,21 @@
 <body>
 	<div id="container">
 		<div id="header">
-			<h1><?php echo __('HighCharts Plugin Demos / Tests'); ?></h1>
+			<h1><?php echo __('Highcharts Plugin Demos / Tests'); ?></h1>
 		</div>
 		<div id="content">
 			<?php $this->Session->flash(); ?>
 			<?php
 			
-			if ($this->request->params['controller'] != 'high_charts_demo' && $this->request->params['action'] != 'index')
+			if ($this->request->params['controller'] != 'highcharts_demo' && $this->request->params['action'] != 'index')
 			{
 				echo $this->Html->link
 					(
 						'<< Back to index',
 						array
 						(
-							'plugin'	=> 'high_charts',
-							'controller'	=> 'high_charts_demo',
+							'plugin'	=> 'highcharts',
+							'controller'	=> 'highcharts_demo',
 							'action'	=> 'index'
 						)
 					);

@@ -1,9 +1,9 @@
 <?php
 /**
- *  CakePHP HighCharts Plugin
+ *  CakePHP Highcharts Plugin
  * 
- * 	Copyright (C) 2012 Kurn La Montagne / destinydriven
- *	<https://github.com/destinydriven> 
+ * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
+ * 	<https://github.com/destinydriven> 
  * 
  * 	Multi-licensed under:
  * 		MPL <http://www.mozilla.org/MPL/MPL-1.1.html>
@@ -13,11 +13,11 @@
  */
 ?>
 <div class="chart">
-	<p>Spline Chart with Cross Hairs</p>
-	
-	<div id="splinewrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
-    <div class="clear"></div>	
-	
-	<?php echo $this->HighCharts->render('Spline Chart with Crosshairs'); ?>
+        <h4>Spline Chart with Cross Hairs</h4>
+
+        <div id="splinewrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
+        <div class="clear"></div>	
+
+        <?php echo $this->Highcharts->render('Spline Chart with Crosshairs'); ?>
 
 </div>
