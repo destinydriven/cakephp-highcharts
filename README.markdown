@@ -15,6 +15,7 @@ For those of you who simply want take a quick look at this plugin's features,  d
 ## Usage ##
 
 _[GIT Submodule]_
+
 Deploy the plugin in your `app/Plugin/Highcharts` directory. If you're using
 Git, run this while in your app folder:
 ```bash
@@ -32,8 +33,7 @@ In your Plugin directory type
 git clone git://github.com/destinydriven/cakephp-highcharts-plugin.git Highcharts
 ```
 
-Or visit <http://github.com/destinydriven/cakephp-highcharts-plugin>
-and download the plugin manually to your `app/Plugin/Highcharts/` folder.
+Or download the plugin manually to your `app/Plugin/Highcharts/` folder.
 
 Since CakePHP 2.0 it is necessary to activate the plugin in your application. To do so,
 edit `app/Config/bootstrap.php` and add the line `CakePlugin::load('Highcharts');` at the
@@ -93,7 +93,7 @@ Of course, you may also use a copy of the jQuery library from your app/webroot/j
 
 This plugin is NOT compatible with CakePHP 1.3.* versions.
 
-This plugin has been tested with CakePHP 2.3.2 and so far works without issue.
+This plugin has been tested with CakePHP 2.5.7 and so far works without issue.
 
 
 ## Contributing ##
