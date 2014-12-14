@@ -21,6 +21,9 @@
         "composer/installers": "*"
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        },
         "installer-name": "Highcharts"
     }
 }
