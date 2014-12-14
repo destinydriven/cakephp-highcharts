@@ -2,7 +2,6 @@
     "name": "destinydriven/cakephp-highcharts-plugin",
     "description": "CakePHP Highcharts Plugin",
     "version": "2.0.1",
-    "minimum-stability" : "master",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "highcharts", "javascript charts"],
     "homepage": "https://github.com/destinydriven/cakephp-highcharts-plugin",
