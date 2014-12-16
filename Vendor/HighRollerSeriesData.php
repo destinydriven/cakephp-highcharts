@@ -28,6 +28,8 @@ class HighRollerSeriesData
     public $name;
     public $id;
     public $data = array();
+    public $innerSize;
+    public $size;
 
     public function addName($name)
     {
@@ -58,6 +60,29 @@ class HighRollerSeriesData
         $this->id = $id;
         return $this;
     }
+
+    /**
+     * @param mixed $size
+     * @return HighRollerSeriesData $this
+     */
+    public function addSize($size)
+    {
+        $this->size = $size;
+        return $this;
+    }
+
+    /**
+     * @param mixed $innerSize
+     * @return HighRollerSeriesData $this
+     */
+    public function addInnerSize($innerSize)
+    {
+        $this->innerSize = $innerSize;
+        return $this;
+    }
+
+
+
 
 }
 
