@@ -73,7 +73,7 @@
         <td></td>
     </tr>
     <tr>
-        <td><?php echo $this->Html->link('Pie w/ drill down', array('plugin' => 'high_charts', 'controller' => 'single_series_demo', 'action' => 'pie_drill_down')); ?></td>
+        <td><?php echo $this->Html->link('Donut', array('plugin' => 'high_charts', 'controller' => 'single_series_demo', 'action' => 'donut')); ?></td>
         <td><?php echo $this->Html->link('Scatter', array('plugin' => 'high_charts', 'controller' => 'single_series_demo', 'action' => 'scatter')); ?></td>
         <td></td>
         <td></td>
@@ -81,8 +81,16 @@
         <td></td>
     </tr>
     <tr>
-        <td><?php echo $this->Html->link('Scatter', array('plugin' => 'high_charts', 'controller' => 'multi_series_demo', 'action' => 'scatter')); ?></td>
+        <td><?php echo $this->Html->link('Pie w/ drill down', array('plugin' => 'high_charts', 'controller' => 'single_series_demo', 'action' => 'pie_drill_down')); ?></td>
         <td><?php echo $this->Html->link('Spline', array('plugin' => 'high_charts', 'controller' => 'single_series_demo', 'action' => 'spline')); ?></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><?php echo $this->Html->link('Scatter', array('plugin' => 'high_charts', 'controller' => 'multi_series_demo', 'action' => 'scatter')); ?></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
