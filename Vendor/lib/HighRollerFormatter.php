@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,13 +22,12 @@
  * limitations under the License.
  *
  */
- 
 class HighRollerFormatter {
 
-  public $formatter;
-  
-  public function __construct(){
-    $this->formatter = "";
-  }
+        public $formatter;
+
+        public function __construct() {
+                $this->formatter = "";
+        }
 
 }

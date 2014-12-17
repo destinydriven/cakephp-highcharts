@@ -25,6 +25,7 @@
 class HighRollerChartAnimation {
 
   public function __construct(){
+          
   }
 
 }

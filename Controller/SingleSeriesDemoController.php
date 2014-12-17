@@ -512,7 +512,7 @@ class SingleSeriesDemoController extends HighchartsAppController
         $dataJson = '[{"name":"MSIE","y":55.11,"color":"#7cb5ec"},{"name":"Firefox","y":21.63,"color":"#434348"},{"name":"Chrome","y":11.94,"color":"#90ed7d"},{"name":"Safari","y":7.15,"color":"#f7a35c"},{"name":"Opera","y":2.14,"color":"#8085e9"}]';
         $drillJson = '[{"name":"MSIE 6.0","y":10.85,"color":"rgba(175,232,255,1)"},{"name":"MSIE 7.0","y":7.35,"color":"rgba(162,219,255,1)"},{"name":"MSIE 8.0","y":33.06,"color":"rgba(149,206,255,1)"},{"name":"MSIE 9.0","y":2.81,"color":"rgba(136,193,248,1)"},{"name":"Firefox 2.0","y":0.2,"color":"rgba(118,118,123,1)"},{"name":"Firefox 3.0","y":0.83,"color":"rgba(107,107,112,1)"},{"name":"Firefox 3.5","y":1.58,"color":"rgba(97,97,102,1)"},{"name":"Firefox 3.6","y":13.12,"color":"rgba(87,87,92,1)"},{"name":"Firefox 4.0","y":5.43,"color":"rgba(77,77,82,1)"},{"name":"Chrome 5.0","y":0.12,"color":"rgba(195,255,176,1)"},{"name":"Chrome 6.0","y":0.19,"color":"rgba(188,255,169,1)"},{"name":"Chrome 7.0","y":0.12,"color":"rgba(182,255,163,1)"},{"name":"Chrome 8.0","y":0.36,"color":"rgba(175,255,156,1)"},{"name":"Chrome 9.0","y":0.32,"color":"rgba(169,255,150,1)"},{"name":"Chrome 10.0","y":9.91,"color":"rgba(163,255,144,1)"},{"name":"Chrome 11.0","y":0.5,"color":"rgba(156,249,137,1)"},{"name":"Chrome 12.0","y":0.22,"color":"rgba(150,243,131,1)"},{"name":"Safari 5.0","y":4.55,"color":"rgba(255,214,143,1)"},{"name":"Safari 4.0","y":1.42,"color":"rgba(255,206,135,1)"},{"name":"Safari Win 5.0","y":0.23,"color":"rgba(255,199,128,1)"},{"name":"Safari 4.1","y":0.21,"color":"rgba(255,192,121,1)"},{"name":"Safari/Maxthon","y":0.2,"color":"rgba(255,184,113,1)"},{"name":"Safari 3.1","y":0.19,"color":"rgba(255,177,106,1)"},{"name":"Safari 4.1","y":0.14,"color":"rgba(254,170,99,1)"},{"name":"Opera 9.x","y":0.12,"color":"rgba(179,184,255,1)"},{"name":"Opera 10.x","y":0.37,"color":"rgba(162,167,255,1)"},{"name":"Opera 11.x","y":1.65,"color":"rgba(145,150,250,1)"}]';
 
-        $chartName = 'Pie Chart';
+        $chartName = 'Donut Chart';
 
         $pieChart = $this->Highcharts->create($chartName, 'pie');
 
@@ -520,7 +520,7 @@ class SingleSeriesDemoController extends HighchartsAppController
         $this->Highcharts->setChartParams(
             $chartName,
             array(
-                'renderTo' => 'piewrapper',  // div to display chart inside
+                'renderTo' => 'donutwrapper',  // div to display chart inside
                 'chartWidth' => 1024,
                 'chartHeight' => 768,
                 'chartMarginTop' => 60,

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,20 +22,19 @@
  * limitations under the License.
  *
  */
-
 class HighRollerXAxis {
 
-  public $labels;
-  public $title;
-  public $categories = array();
-  public $plotLines = array();    // @TODO instantiating a new plotLines object isn't working, setting as an array
-  public $formatter;
+        public $labels;
+        public $title;
+        public $categories = array();
+        public $plotLines = array();    // @TODO instantiating a new plotLines object isn't working, setting as an array
+        public $formatter;
 
-  public function __construct(){
-    $this->labels = new HighRollerXAxisLabels();
-    $this->title = new HighRollerAxisTitle();
-    $this->dateTimeLabelFormats = new HighRollerDateTimeLabelFormats();
-    $this->formatter = new HighRollerFormatter();
-  }
+        public function __construct() {
+                $this->labels = new HighRollerXAxisLabels();
+                $this->title = new HighRollerAxisTitle();
+                $this->dateTimeLabelFormats = new HighRollerDateTimeLabelFormats();
+                $this->formatter = new HighRollerFormatter();
+        }
 
 }

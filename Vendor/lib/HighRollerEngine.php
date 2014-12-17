@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,13 +22,12 @@
  * limitations under the License.
  *
  */
- 
 class HighRollerEngine {
 
-  public $type;
+        public $type;
 
-  public function __construct(){
-    $this->type = "jquery";
-  }
+        public function __construct() {
+                $this->type = "jquery";
+        }
 
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 10/9/11
@@ -21,11 +22,10 @@
  * limitations under the License.
  *
  */
- 
 class HighRollerDateTimeLabelFormats {
 
-  public function __construct(){
-
-  }
+        public function __construct() {
+                
+        }
 
 }

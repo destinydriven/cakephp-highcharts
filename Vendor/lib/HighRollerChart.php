@@ -25,11 +25,10 @@
 class HighRollerChart {
 
   public $renderTo;
-//  public $animation;
 
   public function __construct(){
     $this->renderTo = null;
-//    $this->animation = new HighRollerChartAnimation();
+//  $this->animation = new HighRollerChartAnimation();
   }
 
 }
