@@ -45,26 +45,26 @@ class HighRoller
         $this->drilldown->series = new HighRollerSeries();
     }
 
-    /** returns a javascript script tag with path to your HighCharts library source
+    /** returns a javascript script tag with path to your Highcharts library source
      * @static
      * @param $location - path to your highcharts JS
      * @return string - html script tag markup with your source location
      */
-    public static function setHighChartsLocation($location)
+    public static function setHighchartsLocation($location)
     {
-        return $scriptTag = "<!-- High Roller - High Charts Location-->
+        return $scriptTag = "<!-- High Roller - Highcharts Location-->
   <script type='text/javascript' src='" . $location . "'></script>";
 
     }
 
-    /** returns a javascript script tag with path to your HighCharts library THEME source
+    /** returns a javascript script tag with path to your Highcharts library THEME source
      * @static
      * @param $location - path to your highcharts theme file
      * @return string - html script tag markup with your source location
      */
-    public static function setHighChartsThemeLocation($location)
+    public static function setHighchartsThemeLocation($location)
     {
-        return $scriptTag = "<!-- High Roller - High Charts Theme Location-->
+        return $scriptTag = "<!-- High Roller - Highcharts Theme Location-->
   <script type='text/javascript' src='" . $location . "'></script>";
 
     }
@@ -82,7 +82,7 @@ class HighRoller
     }
 
     /** add data to plot in your chart
-     * @param $chartdata - array, data provided in 1 of 3 HighCharts supported array formats (array, assoc array or mult-dimensional array)
+     * @param $chartdata - array, data provided in 1 of 3 Highcharts supported array formats (array, assoc array or mult-dimensional array)
      * @return void
      */
     public function addData($chartdata)
@@ -94,7 +94,7 @@ class HighRoller
     }
 
     /** add series to your chart
-     * @param $chartdata - array, data provided in 1 of 3 HighCharts supported array formats (array, assoc array or mult-dimensional array)
+     * @param $chartdata - array, data provided in 1 of 3 Highcharts supported array formats (array, assoc array or mult-dimensional array)
      * @return void
      */
     public function addSeries($chartData)
@@ -184,5 +184,3 @@ class HighRoller
     }
 
 }
-
-?>

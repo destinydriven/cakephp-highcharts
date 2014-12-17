@@ -81,9 +81,4 @@ class HighRollerSeriesData
         return $this;
     }
 
-
-
-
 }
-
-?>

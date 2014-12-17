@@ -26,9 +26,8 @@ class HighRollerSeriesOptions {
 
   public $dataLabels;
 
-  function __construct(){
+  public function __construct(){
     $this->dataLabels = new HighRollerDataLabels();
   }
 
 }
-?>

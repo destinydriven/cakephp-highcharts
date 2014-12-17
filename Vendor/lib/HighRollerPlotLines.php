@@ -24,10 +24,8 @@
  
 class HighRollerPlotLines {
 
-  function __construct(){
+  public function __construct(){
     $this->label = new HighRollerAxisLabel();
   }
 
 }
-?>
-

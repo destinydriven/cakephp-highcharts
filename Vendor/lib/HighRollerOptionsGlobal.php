@@ -26,9 +26,8 @@ class HighRollerOptionsGlobal {
 
   public $useUTC;
 
-  function __construct(){
+  public function __construct(){
     $this->useUTC = true;
   }
 
 }
-?>

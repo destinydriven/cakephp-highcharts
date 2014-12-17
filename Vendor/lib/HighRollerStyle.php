@@ -24,8 +24,7 @@
  
 class HighRollerStyle {
 
-  function __construct(){
+  public function __construct(){
 
   }
 }
-?>

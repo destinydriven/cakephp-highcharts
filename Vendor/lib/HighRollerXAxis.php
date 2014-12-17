@@ -30,7 +30,7 @@ class HighRollerXAxis {
   public $plotLines = array();    // @TODO instantiating a new plotLines object isn't working, setting as an array
   public $formatter;
 
-  function __construct(){
+  public function __construct(){
     $this->labels = new HighRollerXAxisLabels();
     $this->title = new HighRollerAxisTitle();
     $this->dateTimeLabelFormats = new HighRollerDateTimeLabelFormats();
@@ -38,4 +38,3 @@ class HighRollerXAxis {
   }
 
 }
-?>

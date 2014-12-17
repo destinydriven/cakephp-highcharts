@@ -27,9 +27,8 @@ class HighRollerLegend {
   public $style;
   public $backgroundColor = null;
 
-  function __construct(){
+  public function __construct(){
     $this->style = new HighRollerStyle();
   }
 
 }
-?>

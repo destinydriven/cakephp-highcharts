@@ -27,10 +27,9 @@ class HighRollerPlotOptionsByChartType {
   public $dataLabels;
   public $formatter;
 
-  function __construct($type){
+  public function __construct($type){
     $this->dataLabels = new HighRollerDataLabels();
     $this->formatter = new HighRollerFormatter();
   }
 
 }
-?>

@@ -24,10 +24,9 @@
 
 class HighRollerSplineChart extends HighRoller {
 
-  function __construct(){
+  public function __construct(){
     parent::__construct();
     $this->chart->type = 'spline';
   }
 
 }
-?>

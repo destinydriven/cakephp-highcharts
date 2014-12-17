@@ -26,9 +26,8 @@ class HighRollerFormatter {
 
   public $formatter;
   
-  function __construct(){
+  public function __construct(){
     $this->formatter = "";
   }
 
 }
-?>

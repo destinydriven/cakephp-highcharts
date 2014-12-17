@@ -26,7 +26,7 @@ class HighRollerPlotOptions {
 
   public $series;
 
-  function __construct($chartType){
+  public function __construct($chartType){
     $this->series = new HighRollerSeriesOptions();
     if($chartType == 'area'){ $this->area = null; }
     else if($chartType == 'bar'){ $this->bar = null; }
@@ -38,4 +38,3 @@ class HighRollerPlotOptions {
   }
 
 }
-?>

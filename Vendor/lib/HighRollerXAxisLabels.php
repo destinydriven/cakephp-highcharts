@@ -26,9 +26,8 @@ class HighRollerXAxisLabels {
 
   public $style;
 
-  function __construct(){
+  public function __construct(){
     $this->style = new HighRollerStyle();
   }
 
 }
-?>

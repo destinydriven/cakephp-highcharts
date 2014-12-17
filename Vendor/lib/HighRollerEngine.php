@@ -26,9 +26,8 @@ class HighRollerEngine {
 
   public $type;
 
-  function __construct(){
+  public function __construct(){
     $this->type = "jquery";
   }
 
 }
-?>

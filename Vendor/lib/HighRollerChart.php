@@ -27,10 +27,9 @@ class HighRollerChart {
   public $renderTo;
 //  public $animation;
 
-  function __construct(){
+  public function __construct(){
     $this->renderTo = null;
 //    $this->animation = new HighRollerChartAnimation();
   }
 
 }
-?>

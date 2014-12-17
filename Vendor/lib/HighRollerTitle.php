@@ -26,9 +26,8 @@ class HighRollerTitle {
 
   public $text;
 
-  function __construct(){
+  public function __construct(){
     $this->text = null;
   }
   
 }
-?>

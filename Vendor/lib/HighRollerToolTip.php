@@ -26,9 +26,9 @@ class HighRollerToolTip {
 
   public $backgroundColor = null;
 
-  function __construct(){
+  public function __construct(){
 
   }
 
 }
-?>
+
