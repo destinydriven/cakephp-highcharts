@@ -67,6 +67,8 @@ class StackedDemoController extends HighchartsAppController {
                 $mychart->addSeries($johnSeries);
                 $mychart->addSeries($janeSeries);
                 $mychart->addSeries($joeSeries);
+                
+                $this->set(compact('chartName'));
         }
 
         public function column() {

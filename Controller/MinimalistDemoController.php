@@ -160,6 +160,8 @@ EOF;
                         ->addData($chartData);
 
                 $pieChart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function spline_cross() {
