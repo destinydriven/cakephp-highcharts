@@ -374,5 +374,49 @@ EOF;
                 
                 $this->set(compact('chartName'));
         }
+        
+        public function donut3d() {
+                
+                $chartData = array(
+                    array('Bananas', 8),
+                    array('Kiwi', 3),
+                    array('Mixed Nuts', 1),
+                    array('Oranges', 6),
+                    array('Apples', 8),
+                    array('Pears', 4),
+                    array('Mangoes', 4),
+                    array('Guavas', 1),
+                    array('Grapes', 1)
+                );
+                
+                $chartName = 'Donut 3D Chart';
+
+                $donut3dChart = $this->Highcharts->create($chartName, 'pie');
+
+                $this->Highcharts->setChartParams($chartName, array(
+                    'renderTo' => 'donut3dwrapper', // div to display chart inside
+                    'chartWidth' => 1024,
+                    'chartHeight' => 768,
+                    'options3d' => array(
+                        'enabled' => true,
+                        'alpha' => 45,
+                    ),
+                    'title' => 'Content of Highsoft\'s weekly fruit delivery',
+                    'subtitle' => '3D Donut in Highcharts',
+                    )
+                );
+
+                $series = $this->Highcharts->addChartSeries();
+
+                $series->addName('Delivered amount')
+                        ->addData($chartData)
+                        ->addDepth(45)
+                        ->addInnerSize(100)
+                        ->addSize('50%');
+
+                $donut3dChart->addSeries($series);               
+
+                $this->set(compact('chartName'));
+        }
 
 }

@@ -69,7 +69,7 @@
                         <td class="multi"><?php echo $this->Html->link('Pie', array('plugin' => 'highcharts', 'controller' => 'multi_series_demo', 'action' => 'pie')); ?></td>
                         <td class="stacked"></td>
                         <td class="minimal"></td>
-                        <td class="other"></td>
+                        <td class="other"><?php echo $this->Html->link('Donut 3D', array('plugin' => 'highcharts', 'controller' => 'mixed_charts_demo', 'action' => 'donut3d')); ?></td>
                         <td class="combo"></td>
                 </tr>
                 <tr>

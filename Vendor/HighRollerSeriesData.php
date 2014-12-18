@@ -72,5 +72,14 @@ class HighRollerSeriesData {
                 $this->innerSize = $innerSize;
                 return $this;
         }
+        
+/**
+ * @param mixed $depth
+ * @return HighRollerSeriesData $this
+ */
+        public function addDepth($depth) {
+                $this->depth = $depth;
+                return $this;
+        }
 
 }
