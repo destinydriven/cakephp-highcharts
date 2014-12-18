@@ -453,6 +453,9 @@ class HighchartsComponent extends Component {
                 if (isset($params['plotOptionsLineDataLabelsFormatter'])) {
                         $this->charts[$name]->plotOptions->line->dataLabels->formatter = $params['plotOptionsColumnDataLabelsFormatter'];
                 }
+                if (isset($params['plotOptionsPieDataLabelsFormat'])) {
+                        $this->charts[$name]->plotOptions->pie->dataLabels->format = $params['plotOptionsPieDataLabelsFormat'];
+                }
                 if (isset($params['plotOptionsLineEnableMouseTracking'])) {
                         $this->charts[$name]->plotOptions->line->enableMouseTracking = $params['plotOptionsLineEnableMouseTracking'];
                 }
@@ -470,6 +473,11 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->plotOptions = new stdClass();
                         $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
                         $this->charts[$name]->plotOptions->pie->allowPointSelect = $params['plotOptionsPieAllowPointSelect'];
+                }
+                 if (isset($params['plotOptionsPieDepth'])) {
+                        $this->charts[$name]->plotOptions = new stdClass();
+                        $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->pie->depth = $params['plotOptionsPieDepth'];
                 }
 
                 // X axis options
@@ -624,10 +632,19 @@ class HighchartsComponent extends Component {
                 if (isset($params['options3d']['enabled']) && $params['options3d']['enabled'] === true) {
                         $this->charts[$name]->chart->options3d = new stdClass();
                         $this->charts[$name]->chart->options3d->enabled = true;
-                        $this->charts[$name]->chart->options3d->alpha = $params['options3d']['alpha'];
-                        $this->charts[$name]->chart->options3d->beta = $params['options3d']['beta'];
-                        $this->charts[$name]->chart->options3d->depth = $params['options3d']['depth'];
-                        $this->charts[$name]->chart->options3d->viewDistance = $params['options3d']['viewDistance'];
+                        
+                        if (isset($params['options3d']['alpha'])) {
+                                $this->charts[$name]->chart->options3d->alpha = $params['options3d']['alpha'];
+                        }
+                        if (isset($params['options3d']['beta'])) {
+                                $this->charts[$name]->chart->options3d->beta = $params['options3d']['beta'];
+                        }
+                        if (isset($params['options3d']['depth'])) {
+                                $this->charts[$name]->chart->options3d->depth = $params['options3d']['depth'];
+                        }
+                        if (isset($params['options3d']['viewDistance'])) {
+                                $this->charts[$name]->chart->options3d->viewDistance = $params['options3d']['viewDistance'];
+                        }
                 }
         }
 

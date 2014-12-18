@@ -62,7 +62,7 @@ class MixedChartsDemoController extends HighchartsAppController {
                     'title' => 'Monthly Sales Summary - Line',
                     'yAxisTitleText' => 'Units Sold',
                     'xAxisCategories' => array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
-                    'creditsEnabled' => FALSE
+                    'creditsEnabled' => false
                         )
                 );
 
@@ -85,7 +85,7 @@ class MixedChartsDemoController extends HighchartsAppController {
                     'title' => 'Browser Usage Statistics',
                     'creditsText' => 'Example.com',
                     'creditsURL' => 'http://example.com',
-                    'plotOptionsShowInLegend' => TRUE
+                    'plotOptionsShowInLegend' => true
                         )
                 );
 
@@ -135,20 +135,20 @@ EOF;
                     'chartBackgroundColorLinearGradient' => array(0, 0, 0, 300),
                     'chartBackgroundColorStops' => array(array(0, 'rgb(217, 217, 217)'), array(1, 'rgb(255, 255, 255)')),
                     'title' => 'Live Random Data',
-                    'legendEnabled' => FALSE,
-                    'exportingEnabled' => FALSE,
-                    'creditsEnabled' => FALSE,
-                    'tooltipEnabled' => TRUE,
+                    'legendEnabled' => false,
+                    'exportingEnabled' => false,
+                    'creditsEnabled' => false,
+                    'tooltipEnabled' => false,
                     'tooltipBackgroundColorLinearGradient' => array(0, 0, 0, 60),
                     'tooltipBackgroundColorStops' => array(array(0, '#FFFFFF'), array(1, '#E0E0E0')),
-                    'tooltipEnabled' => TRUE,
+                    'tooltipEnabled' => true,
                     'tooltipFormatter' => $tooltipFormatFunction,
                     'xAxisType' => 'datetime',
                     'xAxisTickPixelInterval' => 150,
                     'yAxisTitleText' => 'Value',
                     'yAxisPlotLines' => array(array('color' => '#808080', 'width' => 1, 'value' => 0)),
                     /* autostep options */
-                    'enableAutoStep' => FALSE
+                    'enableAutoStep' => false
                         )
                 );
 
@@ -250,16 +250,16 @@ EOF;
                     'subtitle' => 'Click the columns to view versions. Click again to view brands.',
                     'plotOptionsColumnCursor' => 'pointer',
                     'plotOptionsColumnPointEventsClick' => $pointEventsClick,
-                    'plotOptionsColumnDataLabelsEnabled' => TRUE,
+                    'plotOptionsColumnDataLabelsEnabled' => true,
                     'plotOptionsColumnDataLabelsColor' => $colors[0],
                     'plotOptionsColumnDataLabelsFormatter' => $dataLabelsFormatter,
-                    'legendEnabled' => TRUE,
-                    'exportingEnabled' => FALSE,
-                    'creditsEnabled' => FALSE,
-                    'tooltipEnabled' => TRUE,
+                    'legendEnabled' => true,
+                    'exportingEnabled' => false,
+                    'creditsEnabled' => false,
+                    'tooltipEnabled' => true,
                     'tooltipBackgroundColorLinearGradient' => array(0, 0, 0, 60),
                     'tooltipBackgroundColorStops' => array(array(0, '#FFFFFF'), array(1, '#E0E0E0')),
-                    'tooltipEnabled' => TRUE,
+                    'tooltipEnabled' => true,
                     'tooltipFormatter' => $tooltipFormatFunction,
                     'xAxisCategories' => $categories,
                     'yAxisTitleText' => 'Total percent market share'
@@ -300,21 +300,77 @@ EOF;
                         'depth' => 50,
                         'viewDistance' => 25
                     ),
-                    'xAxisLabelsEnabled' => TRUE,
-                    //'xAxisCategories' => array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
+                    'xAxisLabelsEnabled' => true,
                     'yAxisTitleText' => 'Units',
-                    'enableAutoStep' => FALSE,
-                    'creditsEnabled' => FALSE,
-                    //'chartTheme' => 'skies'
+                    'enableAutoStep' => false,
+                    'creditsEnabled' => false,
+                    )
+                );
+
+                $series = $this->Highcharts->addChartSeries();
+
+                $series->addName('3D Series')
+                        ->addData($chartData);
+
+                $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
+        }
+        
+        public function pie3d() {
+                
+                $chartData = array(
+                    array(
+                        'name' => 'Chrome',
+                        'y' => 45.0,
+                        'sliced' => true,
+                        'selected' => true
+                    ),
+                    array('IE', 26.8),
+                    array('Firefox', 12.8),
+                    array('Safari', 8.5),
+                    array('Opera', 6.2),
+                    array('Others', 0.7)
+                );
+                
+                $dataLabelsFormat = <<<EOF
+function(){return this.point.name; }
+EOF;
+                
+                $tooltipFormatFunction = <<<EOF
+function(){return this.y +'%'; }
+EOF;
+
+                $chartName = 'Pie 3D Chart';
+
+                $pie3dChart = $this->Highcharts->create($chartName, 'pie');
+
+                $this->Highcharts->setChartParams($chartName, array(
+                    'renderTo' => 'pie3dwrapper', // div to display chart inside
+                    'chartWidth' => 1000,
+                    'chartHeight' => 750,
+                    'options3d' => array(
+                        'enabled' => true,
+                        'alpha' => 45,
+                        'beta' => 0,
+                    ),
+                    'plotOptionsPieDepth' => 45,   // this is needed for the 3D effect
+                    'plotOptionsShowInLegend' => true, 
+                    'plotOptionsPieAllowPointSelect' => true,
+                    'plotOptionsPieDataLabelsEnabled' => true,
+                    'plotOptionsPieDataLabelsFormat' => $dataLabelsFormat,
+                    'tooltipFormatter' => $tooltipFormatFunction,
+                    'title' => 'Browser Usage Statistics',                                      
+                    'creditsEnabled' => false
                         )
                 );
 
                 $series = $this->Highcharts->addChartSeries();
 
-                $series->addName('Example 3D Column')
+                $series->addName('Browser Share')
                         ->addData($chartData);
 
-                $mychart->addSeries($series);
+                $pie3dChart->addSeries($series);
                 
                 $this->set(compact('chartName'));
         }
