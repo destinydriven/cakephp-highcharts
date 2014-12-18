@@ -27,7 +27,9 @@ class HighRollerPlotOptions {
         public $series;
 
         public function __construct($chartType) {
+                
                 $this->series = new HighRollerSeriesOptions();
+                
                 if ($chartType == 'area') {
                         $this->area = null;
                 } else if ($chartType == 'bar') {
@@ -42,6 +44,27 @@ class HighRollerPlotOptions {
                         $this->scatter = null;
                 } else if ($chartType == 'spline') {
                         $this->spline = null;
+                }
+                else if ($chartType == 'gauge') {
+                        $this->gauge = null;
+                }
+                else if ($chartType == 'heatmap') {
+                        $this->heatmap = null;
+                }
+                else if ($chartType == 'bubble') {
+                        $this->bubble = null;
+                }
+                else if ($chartType == 'funnel') {
+                        $this->funnel = null;
+                }
+                else if ($chartType == 'pyramid') {
+                        $this->pyramid = null;
+                }
+                else if ($chartType == 'boxplot') {
+                        $this->boxplot = null;
+                }
+                else if ($chartType == 'waterfall') {
+                        $this->waterfall = null;
                 }
         }
 

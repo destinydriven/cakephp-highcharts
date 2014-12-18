@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Author: jmac
- * Date: 9/21/11
- * Time: 1:04 PM
- * Desc: HighRoller Chart Class
+ * Author: destinydriven
+ * Date: 12/18/14
+ * Time: 11:35 AM
+ * Desc: HighRoller Pyramid Chart SubClass
  *
- *  Licensed to Gravity.com under one or more contributor license agreements.
+ * Licensed to Gravity.com under one or more contributor license agreements.
  * See the NOTICE file distributed with this work for additional information
  * regarding copyright ownership.  Gravity.com licenses this file to you use
  * under the Apache License, Version 2.0 (the License); you may not this
@@ -22,13 +22,11 @@
  * limitations under the License.
  *
  */
-class HighRollerChart {
-
-        public $renderTo;
+class HighRollerPyramidChart extends HighRoller {
 
         public function __construct() {
-                $this->renderTo = null;
-            //  $this->animation = new HighRollerChartAnimation();
+                parent::__construct();
+                $this->chart->type = 'pyramid';
         }
 
 }

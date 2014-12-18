@@ -146,6 +146,48 @@ class HighchartsComponent extends Component {
                                 $this->charts[$name] = & $this->$name;
                                 $chart =  $this->$name;
                                 break;
+                        case 'gauge':
+                                App::import('Vendor', 'Highcharts.HighRollerGaugeChart', true, array(), 'HighRollerGaugeChart.php');
+                                $this->$name = new HighRollerGaugeChart();
+                                $this->charts[$name] = & $this->$name;
+                                $chart =  $this->$name;
+                                break;
+                        case 'pyramid':
+                                App::import('Vendor', 'Highcharts.HighRollerPyramidChart', true, array(), 'HighRollerPyramidChart.php');
+                                $this->$name = new HighRollerPyramidChart();
+                                $this->charts[$name] = & $this->$name;
+                                $chart =  $this->$name;
+                                break;
+                        case 'heatmap':
+                                App::import('Vendor', 'Highcharts.HighRollerHeatMapChart', true, array(), 'HighRollerHeatMapChart.php');
+                                $this->$name = new HighRollerHeatMapChart();
+                                $this->charts[$name] = & $this->$name;
+                                $chart =  $this->$name;
+                                break;
+                        case 'boxplot':
+                                App::import('Vendor', 'Highcharts.HighRollerBoxPlotChart', true, array(), 'HighRollerBoxPlotChart.php');
+                                $this->$name = new HighRollerBoxPlotChart();
+                                $this->charts[$name] = & $this->$name;
+                                $chart =  $this->$name;
+                                break;
+                        case 'funnel':
+                                App::import('Vendor', 'Highcharts.HighRollerFunnelChart', true, array(), 'HighRollerFunnelChart.php');
+                                $this->$name = new HighRollerFunnelChart();
+                                $this->charts[$name] = & $this->$name;
+                                $chart =  $this->$name;
+                                break;
+                        case 'bubble':
+                                App::import('Vendor', 'Highcharts.HighRollerBubbleChart', true, array(), 'HighRollerBubbleChart.php');
+                                $this->$name = new HighRollerBubbleChart();
+                                $this->charts[$name] = & $this->$name;
+                                $chart =  $this->$name;
+                                break;
+                        case 'waterfall':
+                                App::import('Vendor', 'Highcharts.HighRollerWaterfallChart', true, array(), 'HighRollerWaterfallChart.php');
+                                $this->$name = new HighRollerWaterfallChart();
+                                $this->charts[$name] = & $this->$name;
+                                $chart =  $this->$name;
+                                break;
                         default:
                                 App::import('Vendor', 'Highcharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
                                 $this->$name = new HighRollerColumnChart();
@@ -474,10 +516,15 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
                         $this->charts[$name]->plotOptions->pie->allowPointSelect = $params['plotOptionsPieAllowPointSelect'];
                 }
-                 if (isset($params['plotOptionsPieDepth'])) {
+                if (isset($params['plotOptionsPieDepth'])) {
                         $this->charts[$name]->plotOptions = new stdClass();
                         $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
                         $this->charts[$name]->plotOptions->pie->depth = $params['plotOptionsPieDepth'];
+                }
+                if (isset($params['plotOptionsPieInnerSize'])) {
+                        $this->charts[$name]->plotOptions = new stdClass();
+                        $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->pie->innerSize = $params['plotOptionsPieInnerSize'];
                 }
 
                 // X axis options
