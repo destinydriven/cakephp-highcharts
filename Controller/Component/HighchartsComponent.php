@@ -595,6 +595,9 @@ class HighchartsComponent extends Component {
                 if (isset($params['yAxisMin'])) {
                         $this->charts[$name]->yAxis->min = $params['yAxisMin'];
                 }
+                if (isset($params['yAxisMax'])) {
+                        $this->charts[$name]->yAxis->max = $params['yAxisMax'];
+                }
                 if (isset($params['yAxisMaxPadding'])) {
                         $this->charts[$name]->yAxis->maxPadding = $params['yAxisMaxPadding'];
                 }
@@ -616,15 +619,45 @@ class HighchartsComponent extends Component {
                 if (isset($params['yAxisMinorTickLength'])) {
                         $this->charts[$name]->yAxis->minorTickLength = $params['yAxisMinorTickLength'];
                 }
+                if (isset($params['yAxisMinorTickColor'])) {
+                        $this->charts[$name]->yAxis->minorTickColor = $params['yAxisMinorTickColor'];
+                }
                 if (isset($params['yAxisTickLength'])) {
                         $this->charts[$name]->yAxis->tickLength = $params['yAxisTickLength'];
+                }
+                if (isset($params['yAxisTickWidth'])) {
+                        $this->charts[$name]->yAxis->tickWidth = $params['yAxisTickWidth'];
+                }
+                if (isset($params['yAxisTickColor'])) {
+                        $this->charts[$name]->yAxis->tickColor = $params['yAxisTickColor'];
                 }
                 if (isset($params['yAxisMinorTickWidth'])) {
                         $this->charts[$name]->yAxis->minorTickWidth = $params['yAxisMinorTickWidth'];
                 }
+                if (isset($params['yAxisMinorTickPosition'])) {
+                        $this->charts[$name]->yAxis->minorTickPosition = $params['yAxisMinorTickPosition'];
+                }
+                if (isset($params['yAxisTickPixelInterval'])) {
+                        $this->charts[$name]->yAxis->tickPixelInterval = $params['yAxisTickPixelInterval'];
+                }
                 if (isset($params['yAxisPlotLines'])) {
                         $this->charts[$name]->yAxis = new stdClass();
                         $this->charts[$name]->yAxis->plotLines = $params['yAxisPlotLines'];
+                }
+                
+                // Y axis plot bands
+                /* This yAxis plotBands property is not working. */                 
+                if (isset($params['yAxisPlotBands']['from'])) {
+                        $this->charts[$name]->yAxis->plotBands = new stdClass();
+                        $this->charts[$name]->yAxis->plotBands->from = $params['yAxisPlotBands']['from'];
+                }
+                if (isset($params['yAxisPlotBands']['to'])) {
+                        $this->charts[$name]->yAxis->plotBands = new stdClass();
+                        $this->charts[$name]->yAxis->plotBands->to = $params['yAxisPlotBands']['to'];
+                }
+                if (isset($params['yAxisPlotBands']['color'])) {
+                        $this->charts[$name]->yAxis->plotBands = new stdClass();
+                        $this->charts[$name]->yAxis->plotBands->color = $params['yAxisPlotBands']['color'];
                 }
 
                 // Y axis title options
@@ -695,6 +728,16 @@ class HighchartsComponent extends Component {
                         if (isset($params['options3d']['viewDistance'])) {
                                 $this->charts[$name]->chart->options3d->viewDistance = $params['options3d']['viewDistance'];
                         }
+                }
+                
+                // pane options
+                if (isset($params['paneStartAngle'])) {
+                        $this->charts[$name]->pane = new stdClass();
+                        $this->charts[$name]->pane->startAngle = $params['paneStartAngle'];
+                }
+                if (isset($params['paneEndAngle'])) {
+                        $this->charts[$name]->pane = new stdClass();
+                        $this->charts[$name]->pane->endAngle = $params['paneEndAngle'];
                 }
         }
 

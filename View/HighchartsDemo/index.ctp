@@ -77,7 +77,7 @@
                         <td class="multi"><?php echo $this->Html->link('Scatter', array('plugin' => 'highcharts', 'controller' => 'multi_series_demo', 'action' => 'scatter')); ?></td>
                         <td class="stacked"></td>
                         <td class="minimal"></td>
-                        <td class="other"></td>
+                        <td class="other"><?php echo $this->Html->link('Angular Gauge', array('plugin' => 'highcharts', 'controller' => 'mixed_charts_demo', 'action' => 'angular_gauge')); ?></td>
                         <td class="combo"></td>
                 </tr>
                 <tr>

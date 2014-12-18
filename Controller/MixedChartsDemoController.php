@@ -418,5 +418,97 @@ EOF;
 
                 $this->set(compact('chartName'));
         }
+        
+        public function angular_gauge() {
+                
+                $chartData = array(80);
+                
+                $chartName = 'Speedometer';
+
+                $angularGauge = $this->Highcharts->create($chartName, 'gauge');
+
+                $this->Highcharts->setChartParams($chartName, array(
+                    'renderTo' => 'gaugewrapper', // div to display chart inside
+                    'chartWidth' => 1024,
+                    'chartHeight' => 768,
+                    'plotBackgroundColor' => null,
+                    'plotBackgroundImage' => null,
+                    'plotBorderWidth' => 0,
+                    'plotShadow' => false,                    
+                    'title' => 'Speedometer',
+                    'subtitle' => 'Feed the Need for Speed',
+                    //'paneStartAngle' => -150,
+                   // 'paneEndAngle' => 150,
+                    'paneBackground' => array(
+                        array(
+                            'backgroundColor' => array(
+                                'linearGradient' => array('x1' => 0, 'y1' => 0, 'x2' => 0, 'y2' => 1),
+                                'stops' => array(0 => '#FFF', 1 => '#333'),
+                                ),
+                            'borderWidth' => 0,
+                            'outerRadius' => '109%'
+                            ),
+                        array(
+                            'backgroundColor' => array(
+                                'linearGradient' => array('x1' => 0, 'y1' => 0, 'x2' => 0, 'y2' => 1),
+                                'stops' => array(0 => '#333', 1 => '#FFF'),
+                                ),
+                            'borderWidth' => 1,
+                            'outerRadius' => '107%'
+                            ),
+                        array(
+                            'backgroundColor' => '#DDD',
+                            'borderWidth' => 0,
+                            'outerRadius' => '105%',
+                            'innerRadius' => '103%'
+                            )
+                        ), 
+                    // the value axis
+                    'yAxisMin' => 0,
+                    'yAxisMax' => 200,
+                    'yAxisMinorTickInterval' => 'auto',
+                    'yAxisMinorTickWidth' => 1,
+                    'yAxisMinorTickLength' => 10,
+                    'yAxisMinorTickPosition' => 'inside',
+                    'yAxisMinorTickColor' => '#666',
+                    
+                    'yAxiTickPixelInterval' => 30,
+                    'yAxisTickWidth' => 2,
+                    'yAxisTickPosition' => 'inside',
+                    'yAxisTickLength' => 10,
+                    'yAxisTickColor' => '#666',
+                    'yAxisLabels' => array('step' => 2, 'rotation' => 'auto'),
+                    'yAxisTitleText' => 'km/h',
+                    'yAxisPlotBands' => array(
+                        array(
+                            'from' => 0,
+                            'to' => 120, 
+                            'color' => '#55BF3B' // green
+                             
+                        ),
+                        array(
+                            'from' => 120,
+                            'to' => 160, 
+                            'color' => '#DDDF0D' // yellow
+                        ),
+                        array(
+                            'from' => 160,
+                            'to' => 200, 
+                            'color' => '#DF5353'  // red
+                        )
+                     )
+                    )
+                   );
+               
+
+                $series = $this->Highcharts->addChartSeries();
+
+                $series->addName('Speed')
+                        ->addData($chartData);
+
+                $angularGauge->addSeries($series);               
+
+                $this->set(compact('chartName'));
+        }
 
 }
