@@ -18,6 +18,6 @@
         <div id="linewrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
         <div class="clear"></div>		
 
-        <?php echo $this->Highcharts->render('Line Chart'); ?>
+        <?php echo $this->Highcharts->render($chartName); ?>
 
 </div>

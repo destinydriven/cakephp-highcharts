@@ -17,20 +17,20 @@
 
         <div id="linewrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
 
-        <?php echo $this->Highcharts->render('Line Chart'); ?>	
+        <?php echo $this->Highcharts->render($chartNameOne); ?>	
 
 </div>
 <div class="chart">
 
         <div id="columnwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
 
-        <?php echo $this->Highcharts->render('Column Chart'); ?>
+        <?php echo $this->Highcharts->render($chartNameTwo); ?>
 
 </div>
 <div class="chart">
 
         <div id="piewrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
 
-        <?php echo $this->Highcharts->render('Pie Chart'); ?>
+        <?php echo $this->Highcharts->render($chartNameThree); ?>
 
 </div>

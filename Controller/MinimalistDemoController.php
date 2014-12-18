@@ -52,6 +52,8 @@ class MinimalistDemoController extends HighchartsAppController {
                         ->addData($chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function column_rotated() {
@@ -117,6 +119,8 @@ EOF;
                         ->addData($chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function pie() {
@@ -239,6 +243,8 @@ EOF;
 
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
+                
+                $this->set(compact('chartName'));
         }
 
         public function line() {
@@ -314,6 +320,8 @@ EOF;
 
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
+                
+                $this->set(compact('chartName'));
         }
 
 }

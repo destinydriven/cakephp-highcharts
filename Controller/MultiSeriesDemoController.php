@@ -127,6 +127,8 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
                 $mychart->addSeries($series3);
+                
+                $this->set(compact('chartName'));
         }
 
         public function areaspline() {
@@ -229,6 +231,8 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
                 $mychart->addSeries($series3);
+                
+                $this->set(compact('chartName'));
         }
 
         public function bar() {
@@ -331,6 +335,8 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
                 $mychart->addSeries($series3);
+                
+                $this->set(compact('chartName'));
         }
 
         public function column() {
@@ -430,6 +436,8 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
                 $mychart->addSeries($series3);
+                
+                $this->set(compact('chartName'));
         }
 
         public function line() {
@@ -532,6 +540,8 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
                 $mychart->addSeries($series3);
+                
+                $this->set(compact('chartName'));
         }
 
         public function pie() {
@@ -592,6 +602,8 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 $series->addName('Browser Share')
                         ->addData($chartData);
                 $pieChart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function scatter() {
@@ -694,6 +706,8 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
                 $mychart->addSeries($series3);
+                
+                $this->set(compact('chartName'));
         }
 
         public function spline() {
@@ -796,6 +810,8 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 $mychart->addSeries($series1);
                 $mychart->addSeries($series2);
                 $mychart->addSeries($series3);
+                
+                $this->set(compact('chartName'));
         }
 
 }

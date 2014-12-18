@@ -18,6 +18,6 @@
         <div id="column_drilldown" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
         <div class="clear"></div>	
 
-        <?php echo $this->Highcharts->render('Browser Brands'); ?>
+        <?php echo $this->Highcharts->render($chartName); ?>
 
 </div>

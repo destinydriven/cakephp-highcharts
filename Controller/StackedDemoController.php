@@ -111,6 +111,8 @@ class StackedDemoController extends HighchartsAppController {
                 $mychart->addSeries($johnSeries);
                 $mychart->addSeries($janeSeries);
                 $mychart->addSeries($joeSeries);
+                
+                $this->set(compact('chartName'));
         }
 
         public function percent_column() {
@@ -150,6 +152,8 @@ class StackedDemoController extends HighchartsAppController {
                 $mychart->addSeries($johnSeries);
                 $mychart->addSeries($janeSeries);
                 $mychart->addSeries($joeSeries);
+                
+                $this->set(compact('chartName'));
         }
 
         public function grouped_column() {
@@ -200,6 +204,8 @@ class StackedDemoController extends HighchartsAppController {
                 $mychart->addSeries($janeSeries);
                 $mychart->addSeries($joeSeries);
                 $mychart->addSeries($jillSeries);
+                
+                $this->set(compact('chartName'));
         }
 
 }

@@ -103,6 +103,8 @@ class MixedChartsDemoController extends HighchartsAppController {
                 $mychartOne->addSeries($seriesOne);
                 $mychartTwo->addSeries($seriesTwo);
                 $mychartThree->addSeries($seriesThree);
+                
+                $this->set(compact('chartNameOne', 'chartNameTwo', 'chartNameThree'));
         }
 
         public function spline_live() {
@@ -156,6 +158,8 @@ EOF;
                         ->addData($chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function column_drilldown() {
@@ -269,6 +273,8 @@ EOF;
                         ->addColor('white');
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
 }

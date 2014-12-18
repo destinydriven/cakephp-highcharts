@@ -113,6 +113,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                         ->addData($this->chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function areaspline() {
@@ -193,6 +195,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                         ->addData($this->chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function bar() {
@@ -273,6 +277,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                         ->addData($this->chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function column() {
@@ -353,6 +359,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                         ->addData($this->chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function line() {
@@ -433,6 +441,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                         ->addData($this->chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function donut() {
@@ -706,6 +716,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                         ->addData($pieData);
 
                 $pieChart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
         public function scatter() {
@@ -786,6 +798,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                         ->addData($this->chartData);
 
                 $mychart->addSeries($series1);
+                
+                $this->set(compact('chartName'));
         }
 
         public function spline() {
@@ -866,6 +880,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                         ->addData($this->chartData);
 
                 $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
         }
 
 }

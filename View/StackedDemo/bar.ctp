@@ -18,6 +18,6 @@
         <div id="barwrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
         <div class="clear"></div>	
 
-        <?php echo $this->Highcharts->render('Stacked Bar Chart'); ?>
+        <?php echo $this->Highcharts->render($chartName); ?>
 
 </div>
