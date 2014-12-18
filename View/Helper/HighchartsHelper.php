@@ -1,9 +1,10 @@
 <?php
+
 /**
  *  CakePHP Highcharts Plugin
  * 
  * 	Copyright (C) 2014 Kurn La Montagne / destinydriven
- *	<https://github.com/destinydriven> 
+ * 	<https://github.com/destinydriven> 
  * 
  * 	Multi-licensed under:
  * 		MPL <http://www.mozilla.org/MPL/MPL-1.1.html>
@@ -12,114 +13,115 @@
  * 		Apache License, Version 2.0 <http://www.apache.org/licenses/LICENSE-2.0.html>
  */
 class HighchartsHelper extends AppHelper {
-    public $helpers = array('Html', 'Session');
-    public $charts = null;
-    public $chart_name = '';
 
-    /**
-     * Constructor.
-     * 
-     * @param View
-     * @param $options array
-     */
-    public function __construct(View $View, $options = array()) {
-        parent::__construct($View, $options);
-        $this->charts = $this->_getCharts();
-    }	
+        public $helpers = array('Html', 'Session');
+        public $charts = null;
+        public $chart_name = '';
 
-    public function beforeRender($viewFile) {
-        return true;
-    }
-
-    public function afterRender($viewFile) {
-        CakeSession::delete('HighchartsPlugin.Charts');
-    }
-    
-    public function beforeLayout($viewFile) {       
-        parent::beforeLayout($viewFile);
-        
-        $js = array('/highcharts/js/highcharts');        
-        $theme = $this->_getTheme($this->chart_name);        
-        $exportingEnabled = $this->_checkExporting($this->chart_name);
-        $drillDownEnabled = $this->_checkDrillDown($this->chart_name);
-        
-        if($exportingEnabled){
-                $js[] = '/highcharts/js/modules/exporting';
+/**
+ * Constructor
+ * 
+ * @param View
+ * @param $options array
+ */
+        public function __construct(View $View, $options = array()) {
+                parent::__construct($View, $options);
+                $this->charts = $this->_getCharts();
         }
 
-        if($drillDownEnabled) {
-            array_push($js, '/highcharts/js/modules/drilldown');
-        }
-        
-        switch ($theme){
-            case 'gray':               
-            case 'grid':                 
-            case 'dark-blue':                      
-            case 'dark-green':                
-            case 'skies':
-                $js[] = '/highcharts/js/themes/'.$theme;
-                break;
-            default:
-               // $js[] = '/highcharts/js/themes/highroller';
-                break;
-        }
-        
-        $this->Html->css('highcharts/css/highroller');
-        $this->Html->script( $js, FALSE);
-        return true;
-    }
-
-    protected function _getCharts() {
-        static $read = false;
-        if ($read === true) {
-            return $this->charts;
-        } else{
-            $this->charts = CakeSession::read('HighchartsPlugin.Charts');
-            $read = true;
-            return $this->charts;
-        }
-    }
-    
-    protected function _getTheme($name) {
-        if(isset($name) && (!empty($this->charts[$name]->chart->className))){
-           return $this->charts[$name]->chart->className;
-        } else {
-            return null;
-        }
-    }
-    
-     protected function _checkExporting($name) {
-        if(isset($this->charts[$name]->exporting->enabled) && ($this->charts[$name]->exporting->enabled  == TRUE)){
-           return $this->charts[$name]->exporting->enabled;
-        } else {
-            return FALSE;
-        }
-    }
-
-    public function render($name) {
-        
-        $this->chart_name = $name;
-
-        if (!isset($this->charts[$name])) {
-            trigger_error(sprintf(__('Chart: "%s" could not be found. Ensure that Chart Name is the same string that is passed to $this->Highcharts->render() in your view.', $this->chart_name), null), E_USER_ERROR);
-            return;
+        public function beforeRender($viewFile) {
+                return true;
         }
 
-        $_jsonOptions = $this->charts[$name]->getChartOptionsObject();
+        public function afterRender($viewFile) {
+                CakeSession::delete('HighchartsPlugin.Charts');
+        }
 
-        // fix issue with quotes ("") wrapping js functions in json
-        $jsonOptions = preg_replace('/"(\(?function.+?}(\)\(\))?)"/', '$1', $_jsonOptions);
+        public function beforeLayout($viewFile) {
+                parent::beforeLayout($viewFile);
 
-        // this section from HighRoller::renderChart()		
-        $options = new HighRollerOptions();	
+                $js = array('/highcharts/js/highcharts');
+                $theme = $this->_getTheme($this->chart_name);
+                $exportingEnabled = $this->_checkExporting($this->chart_name);
+                $drillDownEnabled = $this->_checkDrillDown($this->chart_name);
 
-        // prepare PHP vars for chartJS script
-        $json_options = json_encode($options);
-        $chart_title = $this->charts[$name]->title->text;
-        $chart_type = $this->charts[$name]->chart->type;
-        $renderTo = $this->charts[$name]->chart->renderTo;
+                if ($exportingEnabled) {
+                        $js[] = '/highcharts/js/modules/exporting';
+                }
 
-        $chartJS = <<<EOF
+                if ($drillDownEnabled) {
+                        array_push($js, '/highcharts/js/modules/drilldown');
+                }
+
+                switch ($theme) {
+                        case 'gray':
+                        case 'grid':
+                        case 'dark-blue':
+                        case 'dark-green':
+                        case 'skies':
+                                $js[] = '/highcharts/js/themes/' . $theme;
+                                break;
+                        default:
+                                // $js[] = '/highcharts/js/themes/highroller';
+                                break;
+                }
+
+                $this->Html->css('highcharts/css/highroller');
+                $this->Html->script($js, false);
+                return true;
+        }
+
+        protected function _getCharts() {
+                static $read = false;
+                if ($read === true) {
+                        return $this->charts;
+                } else {
+                        $this->charts = CakeSession::read('HighchartsPlugin.Charts');
+                        $read = true;
+                        return $this->charts;
+                }
+        }
+
+        protected function _getTheme($name) {
+                if (isset($name) && (!empty($this->charts[$name]->chart->className))) {
+                        return $this->charts[$name]->chart->className;
+                } else {
+                        return null;
+                }
+        }
+
+        protected function _checkExporting($name) {
+                if (isset($this->charts[$name]->exporting->enabled) && ($this->charts[$name]->exporting->enabled == true)) {
+                        return $this->charts[$name]->exporting->enabled;
+                } else {
+                        return false;
+                }
+        }
+
+        public function render($name) {
+
+                $this->chart_name = $name;
+
+                if (!isset($this->charts[$name])) {
+                        trigger_error(sprintf(__('Chart: "%s" could not be found. Ensure that Chart Name is the same string that is passed to $this->Highcharts->render() in your view.', $this->chart_name), null), E_USER_ERROR);
+                        return;
+                }
+
+                $_jsonOptions = $this->charts[$name]->getChartOptionsObject();
+
+                // fix issue with quotes ("") wrapping js functions in json
+                $jsonOptions = preg_replace('/"(\(?function.+?}(\)\(\))?)"/', '$1', $_jsonOptions);
+
+                // this section from HighRoller::renderChart()		
+                $options = new HighRollerOptions();
+
+                // prepare PHP vars for chartJS script
+                $json_options = json_encode($options);
+                $chart_title = $this->charts[$name]->title->text;
+                $chart_type = $this->charts[$name]->chart->type;
+                $renderTo = $this->charts[$name]->chart->renderTo;
+
+                $chartJS = <<<EOF
 $(document).ready(function() {
     // HIGHROLLER - HIGHCHARTS UTC OPTIONS 
     Highcharts.setOptions(
@@ -144,18 +146,17 @@ $(document).ready(function() {
 });
 EOF;
 
-        $out = trim($chartJS);
+                $out = trim($chartJS);
 
-        return $this->Html->scriptBlock($this->output($out), array('defer' => FALSE));	
-    }
-
-    private function _checkDrillDown($chart_name)
-    {
-        if(isset($this->charts[$chart_name]->drilldown->series) && count($this->charts[$chart_name]->drilldown->series) > 0){
-            return TRUE;
-        } else {
-            return FALSE;
+                return $this->Html->scriptBlock($this->output($out), array('defer' => false));
         }
-    }
+
+        private function _checkDrillDown($chart_name) {
+                if (isset($this->charts[$chart_name]->drilldown->series) && count($this->charts[$chart_name]->drilldown->series) > 0) {
+                        return false;
+                } else {
+                        return true;
+                }
+        }
 
 }
