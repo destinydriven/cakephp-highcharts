@@ -28,21 +28,21 @@ App::import('Vendor', 'Highcharts.HighRollerFormatter', true, array(), 'lib/High
 
 App::import('Vendor', 'Highcharts.HighRollerOptions', true, array(), 'lib/HighRollerOptions.php');
 
-App::import('Vendor', 'Highcharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php');
+App::import('Vendor', 'Highcharts.HighRollerPlotOptions', true, array(), 'lib/HighRollerPlotOptions.php');
 
-App::import('Vendor', 'Highcharts.HighRollerPlotOptionsByChartType', TRUE, array(), 'lib/HighRollerPlotOptionsByChartType.php');
+App::import('Vendor', 'Highcharts.HighRollerPlotOptionsByChartType', true, array(), 'lib/HighRollerPlotOptionsByChartType.php');
 
 App::import('Vendor', 'Highcharts.HighRollerOptionsGlobal', true, array(), 'lib/HighRollerOptionsGlobal.php');
 
 App::import('Vendor', 'Highcharts.HighRollerSeriesData', true, array(), 'HighRollerSeriesData.php');
 
-App::import('Vendor', 'Highcharts.HighRollerDataLabels', TRUE, array(), 'lib/HighRollerDataLabels.php');
+App::import('Vendor', 'Highcharts.HighRollerDataLabels', true, array(), 'lib/HighRollerDataLabels.php');
 
-App::import('Vendor', 'Highcharts.HighRollerSeriesOptions', TRUE, array(), 'lib/HighRollerSeriesOptions.php');
+App::import('Vendor', 'Highcharts.HighRollerSeriesOptions', true, array(), 'lib/HighRollerSeriesOptions.php');
 
-App::import('Vendor', 'Highcharts.HighRollerPlotOptions', TRUE, array(), 'lib/HighRollerPlotOptions.php');
+App::import('Vendor', 'Highcharts.HighRollerPlotOptions', true, array(), 'lib/HighRollerPlotOptions.php');
 
-App::import('Vendor', 'Highcharts.HighRollerToolTip', TRUE, array(), 'lib/HighRollerToolTip.php');
+App::import('Vendor', 'Highcharts.HighRollerToolTip', true, array(), 'lib/HighRollerToolTip.php');
 
 class HighchartsComponent extends Component {
 
@@ -371,7 +371,7 @@ class HighchartsComponent extends Component {
                 }
 
                 // tooltip options
-                if (isset($params['tooltipEnabled']) && $params['tooltipEnabled'] === TRUE) {
+                if (isset($params['tooltipEnabled']) && $params['tooltipEnabled'] === true) {
                         if (isset($params['tooltipBackgroundColorLinearGradient'])) {
                                 $this->charts[$name]->tooltip = new HighRollerToolTip(); // TOOLTIP FORMATTER
                                 $this->charts[$name]->tooltip->backgroundColor = new stdClass();
@@ -509,7 +509,7 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->labels->formatter = new HighRollerFormatter(); // LABELS FORMATTER
                         $this->charts[$name]->dataLabels->formatter = new HighRollerFormatter(); // LABELS FORMATTER
 
-                        if ($params['xAxisLabelsEnabled'] === FALSE) {
+                        if ($params['xAxisLabelsEnabled'] === false) {
                                 $this->charts[$name]->xAxis->labels->enabled = new stdClass();
                                 $this->charts[$name]->xAxis->labels->enabled = $params['xAxisLabelsEnabled'];
                         } else {
@@ -571,8 +571,8 @@ class HighchartsComponent extends Component {
 
                 // Y axis title options
                 if (isset($params['yAxisTitleText'])) {
-                        App::import('Vendor', 'Highcharts.HighRollerStyle', TRUE, array(), 'lib/HighRollerStyle.php');
-                        App::import('Vendor', 'Highcharts.HighRollerAxisTitle', TRUE, array(), 'lib/HighRollerAxisTitle.php');
+                        App::import('Vendor', 'Highcharts.HighRollerStyle', true, array(), 'lib/HighRollerStyle.php');
+                        App::import('Vendor', 'Highcharts.HighRollerAxisTitle', true, array(), 'lib/HighRollerAxisTitle.php');
                         if (!isset($this->charts[$name]->yAxis)) {
                                 $this->charts[$name]->yAxis = new HighRollerAxisTitle();
                         }
@@ -596,14 +596,14 @@ class HighchartsComponent extends Component {
                 }
 
                 // Autostep settings
-                if (isset($params['enableAutoStep']) && $params['enableAutoStep'] === TRUE) {
+                if (isset($params['enableAutoStep']) && $params['enableAutoStep'] === true) {
                         $this->charts[$name]->enableAutoStep();
                 }
 
                 // Credits settings
-                if (isset($params['creditsEnabled']) && $params['creditsEnabled'] === FALSE) {
+                if (isset($params['creditsEnabled']) && $params['creditsEnabled'] === false) {
                         $this->charts[$name]->credits = new stdClass();
-                        $this->charts[$name]->credits->enabled = FALSE;
+                        $this->charts[$name]->credits->enabled = false;
                 } else {
                         if (isset($params['creditsText'])) {
                                 $this->charts[$name]->credits = new stdClass();
@@ -613,11 +613,21 @@ class HighchartsComponent extends Component {
                                 $this->charts[$name]->credits->href = $params['creditsURL'];
                         }
                 }
-
+                
                 // exporting options
-                if (isset($params['exportingEnabled']) && $params['exportingEnabled'] === TRUE) {
+                if (isset($params['exportingEnabled']) && $params['exportingEnabled'] === true) {
                         $this->charts[$name]->exporting = new stdClass();
-                        $this->charts[$name]->exporting->enabled = TRUE;
+                        $this->charts[$name]->exporting->enabled = true;
+                }
+                
+                // 3D options
+                if (isset($params['options3d']['enabled']) && $params['options3d']['enabled'] === true) {
+                        $this->charts[$name]->chart->options3d = new stdClass();
+                        $this->charts[$name]->chart->options3d->enabled = true;
+                        $this->charts[$name]->chart->options3d->alpha = $params['options3d']['alpha'];
+                        $this->charts[$name]->chart->options3d->beta = $params['options3d']['beta'];
+                        $this->charts[$name]->chart->options3d->depth = $params['options3d']['depth'];
+                        $this->charts[$name]->chart->options3d->viewDistance = $params['options3d']['viewDistance'];
                 }
         }
 

@@ -53,7 +53,7 @@
                         <td class="multi"><?php echo $this->Html->link('Column', array('plugin' => 'highcharts', 'controller' => 'multi_series_demo', 'action' => 'column')); ?></td>
                         <td class="stacked"><?php echo $this->Html->link('Percentage Column', array('plugin' => 'highcharts', 'controller' => 'stacked_demo', 'action' => 'percent_column')); ?></td>
                         <td class="minimal"><?php echo $this->Html->link('Spline with Crosshairs (Dark-blue)', array('plugin' => 'highcharts', 'controller' => 'minimalist_demo', 'action' => 'spline_cross')); ?></td>
-                        <td class="other"></td>
+                        <td class="other"><?php echo $this->Html->link('Column 3D', array('plugin' => 'highcharts', 'controller' => 'mixed_charts_demo', 'action' => 'column3d')); ?></td>
                         <td class="combo"></td>
                 </tr>
                 <tr>

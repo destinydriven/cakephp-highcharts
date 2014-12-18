@@ -43,10 +43,15 @@ class HighchartsHelper extends AppHelper {
                 $js = array('/highcharts/js/highcharts');
                 $theme = $this->_getTheme($this->chart_name);
                 $exportingEnabled = $this->_checkExporting($this->chart_name);
+                $options3dEnabled = $this->_checkOptions3d($this->chart_name);
                 $drillDownEnabled = $this->_checkDrillDown($this->chart_name);
 
                 if ($exportingEnabled) {
                         $js[] = '/highcharts/js/modules/exporting';
+                }
+                
+                if ($options3dEnabled) {
+                        $js[] = '/highcharts/js/highcharts-3d.js';
                 }
 
                 if ($drillDownEnabled) {
@@ -93,6 +98,14 @@ class HighchartsHelper extends AppHelper {
         protected function _checkExporting($name) {
                 if (isset($this->charts[$name]->exporting->enabled) && ($this->charts[$name]->exporting->enabled == true)) {
                         return $this->charts[$name]->exporting->enabled;
+                } else {
+                        return false;
+                }
+        }
+        
+        protected function _checkOptions3d($name) {
+                if (isset($this->charts[$name]->chart->options3d->enabled) && ($this->charts[$name]->chart->options3d->enabled == true)) {
+                        return $this->charts[$name]->chart->options3d->enabled;
                 } else {
                         return false;
                 }

@@ -276,5 +276,47 @@ EOF;
                 
                 $this->set(compact('chartName'));
         }
+        
+        public function column3d() {
+                
+                $chartData = array(
+                    29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4
+                );
+
+                $chartName = 'Column 3D Chart';
+
+                $mychart = $this->Highcharts->create($chartName, 'column');
+
+                $this->Highcharts->setChartParams($chartName, array(
+                    'renderTo' => 'column3dwrapper', // div to display chart inside
+                    'chartWidth' => 1000,
+                    'chartHeight' => 750,
+                    'title' => '3D Column Chart Demo',
+                    'subtitle' => 'Source: World Bank',
+                    'options3d' => array(
+                        'enabled' => true,
+                        'alpha' => 15,
+                        'beta' => 15,
+                        'depth' => 50,
+                        'viewDistance' => 25
+                    ),
+                    'xAxisLabelsEnabled' => TRUE,
+                    //'xAxisCategories' => array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
+                    'yAxisTitleText' => 'Units',
+                    'enableAutoStep' => FALSE,
+                    'creditsEnabled' => FALSE,
+                    //'chartTheme' => 'skies'
+                        )
+                );
+
+                $series = $this->Highcharts->addChartSeries();
+
+                $series->addName('Example 3D Column')
+                        ->addData($chartData);
+
+                $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
+        }
 
 }
