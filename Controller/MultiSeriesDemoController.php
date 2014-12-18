@@ -813,5 +813,76 @@ class MultiSeriesDemoController extends HighchartsAppController {
                 
                 $this->set(compact('chartName'));
         }
+        
+        public function bubble() {
+                
+                $chartData1 = array(
+                    array(97, 36, 79), 
+                    array(94, 74, 60), 
+                    array(68, 76, 58), 
+                    array(64, 87, 56),
+                    array(68, 27, 73),
+                    array(74, 99, 42),
+                    array(7, 93, 87),
+                    array(51, 69, 40),
+                    array(38, 23, 33),
+                    array(57, 86, 31)
+                );
+                $chartData2 = array(
+                    array(97, 69, 95), 
+                    array(85, 81, 22), 
+                    array(25, 86, 23), 
+                    array(58, 39, 96),
+                    array(89, 78, 39),
+                    array(67, 79, 99),
+                    array(28, 62, 81),
+                    array(92, 59, 74),
+                    array(78, 49, 85),
+                    array(93, 26, 75)
+                );
+                $chartData3 = array(
+                    array(70, 55, 33), 
+                    array(45, 68., 21), 
+                    array(89, 66, 23), 
+                    array(79, 17, 51),
+                    array(17, 59, 27),
+                    array(48, 78, 84),
+                    array(45, 58, 95),
+                    array(18, 66, 65),
+                    array(39, 71, 80),
+                    array(18, 93, 55)
+                );
+
+                $chartName = 'Bubble Chart';
+                
+                $mychart = $this->Highcharts->create($chartName, 'bubble');
+                
+                $this->Highcharts->setChartParams($chartName, array(
+                    'renderTo' => 'bubblewrap', // div to display chart inside (I couldn't resist . . . lol)
+                    'zoomType' => 'xy',
+                    'chartWidth' => 800,
+                    'chartHeight' => 600,                    
+                    'title' => 'Highcharts Bubbles',
+                    'subtitle' => 'A Totally Bubblicious Experience'
+                    )
+                );
+
+                $series1 = $this->Highcharts->addChartSeries();
+                $series2 = $this->Highcharts->addChartSeries();
+                $series3 = $this->Highcharts->addChartSeries();
+
+                $series1->addName('Series 1')
+                        ->addData($chartData1);
+                $series2->addName('Series 2')
+                        ->addData($chartData2);
+                $series3->addName('Series 3')
+                        ->addData($chartData3);
+
+                $mychart->addSeries($series1);
+                $mychart->addSeries($series2);
+                $mychart->addSeries($series3);
+                
+                $this->set(compact('chartName'));
+        }
 
 }

@@ -90,7 +90,7 @@
                 </tr>
                 <tr>
                         <td class="single"><?php echo $this->Html->link('Spline', array('plugin' => 'highcharts', 'controller' => 'single_series_demo', 'action' => 'spline')); ?></td>
-                        <td class="multi"></td>
+                         <td class="multi"><?php echo $this->Html->link('Bubble', array('plugin' => 'highcharts', 'controller' => 'multi_series_demo', 'action' => 'bubble')); ?></td>
                         <td class="stacked"></td>
                         <td class="minimal"></td>
                         <td class="other"></td>

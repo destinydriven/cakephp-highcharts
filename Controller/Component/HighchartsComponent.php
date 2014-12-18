@@ -334,6 +334,9 @@ class HighchartsComponent extends Component {
                 if (isset($params['chartTheme'])) {
                         $this->charts[$name]->chart->className = $params['chartTheme'];
                 }
+                if (isset($params['zoomType'])) {
+                        $this->charts[$name]->chart->zoomType = $params['zoomType'];
+                }
 
                 // title options
                 if (isset($params['title'])) {

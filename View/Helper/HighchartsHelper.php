@@ -40,7 +40,7 @@ class HighchartsHelper extends AppHelper {
         public function beforeLayout($viewFile) {
                 parent::beforeLayout($viewFile);
 
-                $js = array('/highcharts/js/highcharts');
+                $js = array('/highcharts/js/highcharts', '/highcharts/js/highcharts-more');
                 $theme = $this->_getTheme($this->chart_name);
                 $exportingEnabled = $this->_checkExporting($this->chart_name);
                 $options3dEnabled = $this->_checkOptions3d($this->chart_name);
