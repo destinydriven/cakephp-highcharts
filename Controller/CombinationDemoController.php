@@ -1,5 +1,4 @@
 <?php
-
 /**
  *  CakePHP Highcharts Plugin
  * 
@@ -92,6 +91,73 @@ class CombinationDemoController extends HighchartsAppController {
 
                 $mychart->addSeries($avgSeries);
                 $mychart->addSeries($pieSeries);
+                
+                $this->set(compact('chartName'));
+        }
+        
+        public function combo_dual_axes() {
+                
+                $rainfallData = array(49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4);
+                $temperatureData = array(7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6);
+                
+                $leftYaxis = new stdClass();
+                $leftYaxis->labels->style->color = "#89A54E";
+                $leftYaxis->title->text = "Temperature";
+                $leftYaxis->title->style->color = "#89A54E";              
+                
+                $rightYaxis = new stdClass();
+                $rightYaxis->title->text = "Rainfall";
+                $rightYaxis->title->style->color = "#4572A7";
+                $rightYaxis->labels->style->color = "#4572A7";
+                $rightYaxis->opposite = true;
+
+                $chartName = 'Combo Dual Axes - Spline and Column';
+                
+                $mychart = $this->Highcharts->create($chartName, 'column');
+                
+                $mychart->yAxis = array($leftYaxis, $rightYaxis);             
+                
+                $this->Highcharts->setChartParams ($chartName, array(
+                    'renderTo' => 'combowrapper', // div to display chart inside
+                    'chartWidth' => 1000,
+                    'chartHeight' => 750,
+                    'zoomType' => 'xy',
+                    'xAxisCategories' => array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
+                    'tooltipShared' => true,
+                    'legendLayout' => 'vertical',
+                    'legendAlign' => 'left',
+                    'legendX' => 120,
+                    'legendVerticalAlign' => 'top',
+                    'legendY' => 100,
+                    'legendFloating' => true,
+                    'legendBackgroundColor' => '#FFFFFF', 
+                    'title' => 'Average Monthly Temperature and Rainfall in Tokyo',
+                    'subtitle' => 'Source: WorldClimate.com',
+                    'enableAutoStep' => TRUE,
+                    'creditsEnabled' => FALSE
+                        )
+                );            
+               
+                $rainfallSeries = $this->Highcharts->addChartSeries();
+                $rainfallSeries->type = 'column';
+                $rainfallSeries->tooltip->valueSuffix = ' mm';                
+                
+                $rainfallSeries->addName('Rainfall')
+                        ->addData($rainfallData)
+                        ->yAxis = 1; 
+
+                $temperatureSeries = $this->Highcharts->addChartSeries();
+                $temperatureSeries->type = 'spline';
+                $temperatureSeries->tooltip->valueSuffix = ' °C';
+                
+                $temperatureSeries->addName('Temperature')
+                        ->addData($temperatureData)
+                        ->yAxis = 0;
+
+                $mychart->addSeries($rainfallSeries);
+                $mychart->addSeries($temperatureSeries); 
+                  
+                $this->set(compact('chartName'));
         }
 
 }

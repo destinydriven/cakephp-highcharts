@@ -338,18 +338,6 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->chart->zoomType = $params['zoomType'];
                 }
                 
-                // dataLabels options
-                if (isset($params['dataLabelsEnabled'])) {
-                        $this->charts[$name]->series->dataLabels->enabled = $params['dataLabelsEnabled'];
-                }
-                if (isset($params['dataLabelsDistance'])) {
-                        $this->charts[$name]->series->dataLabels->distance = $params['dataLabelsDistance'];
-                }
-                if (isset($params['dataLabelsColor'])) {
-                        $this->charts[$name]->dataLabels->color = $params['dataLabelsColor'];
-                }
-                
-
                 // title options
                 if (isset($params['title'])) {
                         $this->charts[$name]->title->text = $params['title'];
@@ -383,11 +371,20 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->legend = new stdClass();
                         $this->charts[$name]->legend->enabled = $params['legendEnabled'];
                 }
+                if (isset($params['legendX'])) {
+                        $this->charts[$name]->legend->x = $params['legendX'];
+                }
+                if (isset($params['legendY'])) {
+                        $this->charts[$name]->legend->y = $params['legendY'];
+                }
                 if (isset($params['legendLayout'])) {
                         $this->charts[$name]->legend->layout = $params['legendLayout'];
                 }
                 if (isset($params['legendAlign'])) {
                         $this->charts[$name]->legend->align = $params['legendAlign'];
+                }
+                if (isset($params['legendFloating'])) {
+                        $this->charts[$name]->legend->floating = $params['legendFloating'];
                 }
                 if (isset($params['legendVerticalAlign'])) {
                         $this->charts[$name]->legend->verticalAlign = $params['legendVerticalAlign'];
@@ -620,15 +617,26 @@ class HighchartsComponent extends Component {
                                 }
                         }
                 }
-
-                // Y axis options
-                $this->charts[$name]->yAxis = new stdClass();
+                
+                               
+                // Y axis labels
+                if (isset($params['yAxisLabelsFormat'])) {
+                        $this->charts[$name]->yAxis->labels->format = $params['yAxisLabelsFormat'];
+                }
+                if (isset($params['yAxisLabelsStyleColor'])) {
+                        $this->charts[$name]->yAxis->labels->style->color = $params['yAxisLabelsStyleColor'];
+                }
+                
+                
                 if (isset($params['yAxisMin'])) {
                         $this->charts[$name]->yAxis->min = $params['yAxisMin'];
                 }
                 if (isset($params['yAxisMax'])) {
                         $this->charts[$name]->yAxis->max = $params['yAxisMax'];
                 }
+                if (isset($params['yAxisOpposite'])) {
+                        $this->charts[$name]->yAxis->opposite = $params['yAxisOpposite'];
+                }                
                 if (isset($params['yAxisMaxPadding'])) {
                         $this->charts[$name]->yAxis->maxPadding = $params['yAxisMaxPadding'];
                 }
@@ -706,6 +714,9 @@ class HighchartsComponent extends Component {
                 }
                 if (isset($params['yAxisTitleStyleFont'])) {
                         $this->charts[$name]->yAxis->title->style->font = $params['yAxisTitleStyleFont'];
+                }
+                if (isset($params['yAxisTitleStyleColor'])) {
+                        $this->charts[$name]->yAxis->title->style->color = $params['yAxisTitleStyleColor'];
                 }
                 if (isset($params['yAxisTitleRotation'])) {
                         $this->charts[$name]->yAxis->title->rotation = $params['yAxisTitleRotation'];

@@ -13,7 +13,7 @@
  */
 ?>
 <div class="chart">
-        <h4>Combination Column, Line and Pie</h4>
+        <h4>Combination - Dual Axes, Spline and Column</h4>
 
         <div id="combowrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
         <div class="clear"></div>	
