@@ -437,8 +437,8 @@ EOF;
                     'plotShadow' => false,                    
                     'title' => 'Speedometer',
                     'subtitle' => 'Feed the Need for Speed',
-                    //'paneStartAngle' => -150,
-                   // 'paneEndAngle' => 150,
+                    'paneStartAngle' => -150,
+                    'paneEndAngle' => 150,
                     'paneBackground' => array(
                         array(
                             'backgroundColor' => array(
