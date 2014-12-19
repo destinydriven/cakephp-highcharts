@@ -337,6 +337,18 @@ class HighchartsComponent extends Component {
                 if (isset($params['zoomType'])) {
                         $this->charts[$name]->chart->zoomType = $params['zoomType'];
                 }
+                
+                // dataLabels options
+                if (isset($params['dataLabelsEnabled'])) {
+                        $this->charts[$name]->series->dataLabels->enabled = $params['dataLabelsEnabled'];
+                }
+                if (isset($params['dataLabelsDistance'])) {
+                        $this->charts[$name]->series->dataLabels->distance = $params['dataLabelsDistance'];
+                }
+                if (isset($params['dataLabelsColor'])) {
+                        $this->charts[$name]->dataLabels->color = $params['dataLabelsColor'];
+                }
+                
 
                 // title options
                 if (isset($params['title'])) {
@@ -509,6 +521,16 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
                         $this->charts[$name]->plotOptions->pie->dataLabels->enabled = $params['plotOptionsPieDataLabelsEnabled'];
                 }
+                if (isset($params['plotOptionsPieDataLabelsDistance'])) {
+                        $this->charts[$name]->plotOptions = new stdClass();
+                        $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->pie->dataLabels->distance = $params['plotOptionsPieDataLabelsDistance'];
+                }
+                if (isset($params['plotOptionsPieDataLabelsColor'])) {
+                        $this->charts[$name]->plotOptions = new stdClass();
+                        $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->pie->dataLabels->color = $params['plotOptionsPieDataLabelsColor'];
+                }
                 if (isset($params['plotOptionsPieShowInLegend'])) {
                         $this->charts[$name]->plotOptions = new stdClass();
                         $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
@@ -529,6 +551,15 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
                         $this->charts[$name]->plotOptions->pie->innerSize = $params['plotOptionsPieInnerSize'];
                 }
+                if (isset($params['plotOptionsPieEndAngle'])) {
+                        $this->charts[$name]->plotOptions->pie->endAngle = new stdClass();
+                        $this->charts[$name]->plotOptions->pie->endAngle = $params['plotOptionsPieEndAngle'];
+                }
+                if (isset($params['plotOptionsPieStartAngle'])) {
+                        $this->charts[$name]->plotOptions->pie->startAngle = new stdClass();
+                        $this->charts[$name]->plotOptions->pie->startAngle = $params['plotOptionsPieStartAngle'];
+                }
+                
 
                 // X axis options
                 $this->charts[$name]->xAxis = new stdClass();
@@ -732,11 +763,11 @@ class HighchartsComponent extends Component {
                 
                 // pane options
                 if (isset($params['paneStartAngle'])) {
-                        $this->charts[$name]->pane = new stdClass();
+                        $this->charts[$name]->pane->startAngle = new stdClass();
                         $this->charts[$name]->pane->startAngle = $params['paneStartAngle'];
                 }
                 if (isset($params['paneEndAngle'])) {
-                        $this->charts[$name]->pane = new stdClass();
+                        $this->charts[$name]->pane->endAngle = new stdClass();
                         $this->charts[$name]->pane->endAngle = $params['paneEndAngle'];
                 }
         }

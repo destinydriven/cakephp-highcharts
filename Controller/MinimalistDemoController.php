@@ -325,5 +325,45 @@ EOF;
                 
                 $this->set(compact('chartName'));
         }
+        
+        public function semicircle_donut() {
+                
+                $chartData = array(
+                    array('name' => 'Chevy', 'y' => 93460, 'color' => 'rgba(135, 43, 36, 1)'),
+                    array('name' => 'Ford', 'y' => 154491, 'color' => 'rgba(38, 85, 182, 1)'),
+                    array('name' => 'Honda', 'y'=> 90080, 'color' => 'rgba(104, 135, 36, 1)' )
+                );                               
+
+                $chartName = 'Semicircle Donut';
+
+                $pieChart = $this->Highcharts->create($chartName, 'pie');
+
+                $this->Highcharts->setChartParams($chartName, array(
+                    'renderTo' => 'donutwrapper', // div to display chart inside
+                    'chartWidth' => 1024,
+                    'chartHeight' => 768,
+                    'plotOptionsPieStartAngle' => -90,
+                    'plotOptionsPieEndAngle' => 90,
+                    'plotOptionsPieDataLabelsEnabled' => true,
+                    'plotOptionsPieDataLabelsDistance' => -40,
+                    'plotOptionsPieDataLabelsColor' => '#FFF',
+                    
+                   
+                    'title' => 'Car Sales for December 2013 - 2014',
+                    'subtitle' => 'Source: Business Insider'                
+                    )
+                );
+
+                $series = $this->Highcharts->addChartSeries();
+
+                $series->addName('Car Manufacturers')
+                        ->addData($chartData)
+                        ->addSize('25%')
+                        ->addInnerSize('60%');
+
+                $pieChart->addSeries($series);
+
+                $this->set(compact('chartName'));
+        }
 
 }
