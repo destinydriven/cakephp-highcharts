@@ -510,5 +510,59 @@ EOF;
 
                 $this->set(compact('chartName'));
         }
+        
+        public function funnel() {
+
+                // anonymous Callback function to format the dataLabel
+                $dataLabelFormatFunction = <<<EOF
+function() { return '<b>' + {point.name} + '</b>'  + ({point.y:,.0f});}
+EOF;
+                
+                $funnelData = array(
+                    array('Website Visits', 15654),
+                    array('Downloads', 4064),
+                    array('Requested Price List', 1987),
+                    array('Invoice Sent', 976),
+                    array('Finalized', 846)
+                );
+
+                $chartName = 'Funnel Chart';
+
+                $funnelChart = $this->Highcharts->create($chartName, 'funnel');
+
+                $this->Highcharts->setChartParams($chartName, array(
+                    'renderTo' => 'funnelwrapper', // div to display chart inside
+                    'chartWidth' => 1024,
+                    'chartHeight' => 768,
+                    'title' => 'Sales Funnel',
+                   // 'titleX' => -50,
+                    //'titleY' => 20,
+                    'legendEnabled' => true,
+                    'plotOptionsReversed' => true,
+                    'plotOptionsSeriesDataLabelsFormat' => $dataLabelFormatFunction,
+                    'plotOptionsSeriesDataLabelsEnabled' => true,
+                    'plotOptionsSeriesDataLabelsSoftConnector' => true,
+                    'plotOptionsNeckWidth' => '30%',
+                    'plotOptionsNeckHeight' => '35%',
+                   // 'legendAlign' => 'center',
+                   // 'legendVerticalAlign ' => 'bottom',
+                   // 'legendItemStyle' => array('color' => '#222'),
+                  //  'legendBackgroundColorLinearGradient' => array(0, 0, 0, 25),
+                   // 'legendBackgroundColorStops' => array(array(0, 'rgb(217, 217, 217)'), array(1, 'rgb(255, 255, 255)')),
+                   // 'tooltipEnabled' => TRUE,
+                   // 'tooltipBackgroundColorLinearGradient' => array(0, 0, 0, 50), // triggers js error
+                  //  'tooltipBackgroundColorStops' => array(array(0, 'rgb(217, 217, 217)'), array(1, 'rgb(255, 255, 255)')),
+                        )
+                );
+
+                $series = $this->Highcharts->addChartSeries();
+
+                $series->addName('Unique Users')
+                        ->addData($funnelData);
+
+                $funnelChart->addSeries($series);
+                
+                $this->set(compact('chartName'));
+        }
 
 }

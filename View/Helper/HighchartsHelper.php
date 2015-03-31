@@ -40,7 +40,7 @@ class HighchartsHelper extends AppHelper {
         public function beforeLayout($viewFile) {
                 parent::beforeLayout($viewFile);
 
-                $js = array('/highcharts/js/highcharts', '/highcharts/js/highcharts-more');
+                $js = array('/highcharts/js/highcharts', '/highcharts/js/highcharts-more', '/highcharts/js/modules/funnel');
                 $theme = $this->_getTheme($this->chart_name);
                 $exportingEnabled = $this->_checkExporting($this->chart_name);
                 $options3dEnabled = $this->_checkOptions3d($this->chart_name);
@@ -165,6 +165,14 @@ EOF;
         }
 
         private function _checkDrillDown($chart_name) {
+                if (isset($this->charts[$chart_name]->drilldown->series) && count($this->charts[$chart_name]->drilldown->series) > 0) {
+                        return false;
+                } else {
+                        return true;
+                }
+        }
+        
+        private function _checkFunnel($chart_name) {
                 if (isset($this->charts[$chart_name]->drilldown->series) && count($this->charts[$chart_name]->drilldown->series) > 0) {
                         return false;
                 } else {

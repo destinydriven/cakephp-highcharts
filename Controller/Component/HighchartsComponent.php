@@ -483,6 +483,21 @@ class HighchartsComponent extends Component {
                 if (isset($params['plotOptionsColumnDataLabelsStyle'])) {
                         $this->charts[$name]->plotOptions->column->dataLabels->style = $params['plotOptionsColumnDataLabelsStyle'];
                 }
+                if (isset($params['plotOptionsSeriesDataLabelsEnabled'])) {
+                        $this->charts[$name]->plotOptions = new stdClass();
+                        $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->series->dataLabels->enabled = $params['plotOptionsSeriesDataLabelsEnabled'];
+                }
+                if (isset($params['plotOptionsSeriesDataLabelsFormat'])) {
+                        $this->charts[$name]->plotOptions = new stdClass();
+                        $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->series->dataLabels->format = $params['plotOptionsSeriesDataLabelsFormat'];
+                }
+                if (isset($params['plotOptionsSeriesDataLabelsSoftConnector'])) {
+                        $this->charts[$name]->plotOptions = new stdClass();
+                        $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->series->dataLabels->softConector = $params['plotOptionsSeriesDataLabelsSoftConnector'];
+                }
                 if (isset($params['plotOptionsSeriesStacking'])) {
                         $this->charts[$name]->plotOptions = new stdClass();
                         $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
@@ -505,7 +520,7 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->plotOptions->line->dataLabels->enabled = $params['plotOptionsLineDataLabelsEnabled'];
                 }
                 if (isset($params['plotOptionsLineDataLabelsFormatter'])) {
-                        $this->charts[$name]->plotOptions->line->dataLabels->formatter = $params['plotOptionsColumnDataLabelsFormatter'];
+                        $this->charts[$name]->plotOptions->line->dataLabels->formatter = $params['plotOptionsLineDataLabelsFormatter'];
                 }
                 if (isset($params['plotOptionsPieDataLabelsFormat'])) {
                         $this->charts[$name]->plotOptions->pie->dataLabels->format = $params['plotOptionsPieDataLabelsFormat'];
@@ -555,6 +570,19 @@ class HighchartsComponent extends Component {
                 if (isset($params['plotOptionsPieStartAngle'])) {
                         $this->charts[$name]->plotOptions->pie->startAngle = new stdClass();
                         $this->charts[$name]->plotOptions->pie->startAngle = $params['plotOptionsPieStartAngle'];
+                }
+                // Funnel Options
+                if (isset($params['plotOptionsNeckWidth'])) {
+                        $this->charts[$name]->plotOptions->funnel->neckWidth = new stdClass();
+                        $this->charts[$name]->plotOptions->funnel->neckWidth = $params['plotOptionsNeckWidth'];
+                }
+                if (isset($params['plotOptionsNeckHeight'])) {
+                        $this->charts[$name]->plotOptions->funnel->neckHeight = new stdClass();
+                        $this->charts[$name]->plotOptions->funnel->neckHeight = $params['plotOptionsNeckHeight'];
+                }
+                if (isset($params['plotOptionsReversed'])) {
+                        $this->charts[$name]->plotOptions->funnel->reversed = new stdClass();
+                        $this->charts[$name]->plotOptions->funnel->reversed = $params['plotOptionsReversed'];
                 }
                 
 
