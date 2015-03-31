@@ -38,7 +38,7 @@
                         <td class="stacked"><?php echo $this->Html->link('Grouped Column', array('plugin' => 'highcharts', 'controller' => 'stacked_demo', 'action' => 'grouped_column')); ?></td>
                         <td class="minimal"><?php echo $this->Html->link('Pie (Gray)', array('plugin' => 'highcharts', 'controller' => 'minimalist_demo', 'action' => 'pie')); ?></td>
                         <td class="other"><?php echo $this->Html->link('Spline with Live Data', array('plugin' => 'highcharts', 'controller' => 'mixed_charts_demo', 'action' => 'spline_live')); ?></td>
-                        <td class="combo"><?php echo $this->Html->link('Combo - Dual Axes, Spline and Column', array('plugin' => 'highcharts', 'controller' => 'combination_demo', 'action' => 'combo_dual_axes')); ?></td>
+                        <td class="combo"></td>
                 </tr>
                 <tr>
                         <td class="single"><?php echo $this->Html->link('Bar', array('plugin' => 'highcharts', 'controller' => 'single_series_demo', 'action' => 'bar')); ?></td>
@@ -85,7 +85,7 @@
                         <td class="multi"><?php echo $this->Html->link('Spline', array('plugin' => 'highcharts', 'controller' => 'multi_series_demo', 'action' => 'scatter')); ?></td>
                         <td class="stacked"></td>
                         <td class="minimal"></td>
-                        <td class="other"></td>
+                        <td class="other"><?php echo $this->Html->link('Funnel', array('plugin' => 'highcharts', 'controller' => 'mixed_charts_demo', 'action' => 'funnel')); ?></td>
                         <td class="combo"></td>
                 </tr>
                 <tr>
