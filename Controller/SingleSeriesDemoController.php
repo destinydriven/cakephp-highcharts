@@ -21,7 +21,23 @@ class SingleSeriesDemoController extends HighchartsAppController {
         public $helpers = array('Html');
         public $uses = array();
         public $layout = 'Highcharts.chart.demo';
+
         public $chartData = array(7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6);
+        public $columnrangechartData = array(
+                array(-9.7, 9.4),
+                array(-8.7, 6.5),
+                array(-3.5, 9.4),
+                array(-1.4, 19.9),
+                array(0.0, 22.6),
+                array(2.9, 29.5),
+                array(9.2, 30.7),
+                array(7.3, 26.5),
+                array(4.4, 18.0),
+                array(-3.1, 11.4),
+                array(-5.2, 10.4),
+                array(-13.5, 9.8)
+            );
+
         public $Highcharts = null;
 
         public function area() {
@@ -357,6 +373,90 @@ class SingleSeriesDemoController extends HighchartsAppController {
 
                 $series->addName('Tokyo')
                         ->addData($this->chartData);
+
+                $mychart->addSeries($series);
+                
+                $this->set(compact('chartName'));
+        }
+
+        public function columnrange() {
+
+                $chartName = 'Columnrange Chart';
+
+                $mychart = $this->Highcharts->create($chartName, 'columnrange');
+
+                $this->Highcharts->setChartParams($chartName, array(
+                    'renderTo' => 'columnrangewrapper', // div to display chart inside
+                    'inverted' => TRUE,
+                    //'chartWidth' => 800,
+                    //'chartHeight' => 600,
+                    'chartMarginTop' => 60,
+                    'chartMarginLeft' => 90,
+                    'chartMarginRight' => 30,
+                    'chartMarginBottom' => 110,
+                    'chartSpacingRight' => 10,
+                    'chartSpacingBottom' => 15,
+                    'chartSpacingLeft' => 0,
+                    'chartAlignTicks' => FALSE,
+                    'chartBackgroundColorLinearGradient' => array(0, 0, 0, 300),
+                    'chartBackgroundColorStops' => array(array(0, 'rgb(217, 217, 217)'), array(1, 'rgb(255, 255, 255)')),
+                    'title' => 'Temperature variation by month',
+                    'titleAlign' => 'left',
+                    'titleFloating' => TRUE,
+                    'titleStyleFont' => '18px Metrophobic, Arial, sans-serif',
+                    'titleStyleColor' => '#0099ff',
+                    'titleX' => 20,
+                    'titleY' => 20,
+                    'subtitle' => 'Observed in Vik i Sogn, Norway, 2009',
+                    'legendEnabled' => TRUE,
+                    'legendLayout' => 'horizontal',
+                    'legendAlign' => 'center',
+                    'legendVerticalAlign ' => 'bottom',
+                    'legendItemStyle' => array('color' => '#222'),
+                    'legendBackgroundColorLinearGradient' => array(0, 0, 0, 25),
+                    'legendBackgroundColorStops' => array(array(0, 'rgb(217, 217, 217)'), array(1, 'rgb(255, 255, 255)')),
+                    'tooltipEnabled' => FALSE,
+                    // 'tooltipBackgroundColorLinearGradient' => array(0,0,0,50),   // triggers js error
+                    // 'tooltipBackgroundColorStops' => array(array(0,'rgb(217, 217, 217)'),array(1,'rgb(255, 255, 255)')),
+                    //'plotOptionsLinePointStart'       => strtotime('-30 day') * 1000,
+                    //'plotOptionsLinePointInterval'    => 24 * 3600 * 1000,
+                    //'xAxisType'               => 'datetime',
+                    //'xAxisTickInterval'           => 10,
+                    //'xAxisStartOnTick'            => TRUE,
+                    //'xAxisTickmarkPlacement'      => 'on',
+                    //'xAxisTickLength'             => 10,
+                    //'xAxisMinorTickLength'        => 5,
+                    'xAxisLabelsEnabled' => TRUE,
+                    'xAxisLabelsAlign' => 'right',
+                    'xAxisLabelsStep' => 1,
+                    //'xAxisLabelsRotation'         => -35,
+                    //'xAxislabelsX' => 5,
+                    //'xAxisLabelsY' => 20,
+                    'xAxisCategories' => array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
+                    //'yAxisMin'                => 0,
+                    //'yAxisMaxPadding'         => 0.2,
+                    //'yAxisEndOnTick'          => FALSE,
+                    //'yAxisMinorGridLineWidth'         => 0,
+                    //'yAxisMinorTickInterval'      => 'auto',
+                    //'yAxisMinorTickLength'        => 1,
+                    //'yAxisTickLength'         => 2,
+                    //'yAxisMinorTickWidth'         => 1,
+                    'yAxisTitleText' => 'Temperature ( °C )',
+                    //'yAxisTitleAlign'             => 'high',
+                    //'yAxisTitleStyleFont'         => '14px Metrophobic, Arial, sans-serif',
+                    //'yAxisTitleRotation'          => 0,
+                    //'yAxisTitleX'             => 0,
+                    //'yAxisTitleY'             => -10,
+                    //'yAxisPlotLines'          => array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
+                    // autostep options
+                    'enableAutoStep' => FALSE
+                        )
+                );
+
+                $series = $this->Highcharts->addChartSeries();
+
+                $series->addName('Temperatures')
+                        ->addData($this->columnrangechartData);
 
                 $mychart->addSeries($series);
                 

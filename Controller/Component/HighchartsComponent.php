@@ -188,6 +188,12 @@ class HighchartsComponent extends Component {
                                 $this->charts[$name] = & $this->$name;
                                 $chart =  $this->$name;
                                 break;
+                        case 'columnrange':
+                                App::import('Vendor', 'Highcharts.HighRollerColumnrangeChart', true, array(), 'HighRollerColumnrangeChart.php');
+                                $this->$name = new HighRollerColumnrangeChart();
+                                $this->charts[$name] = & $this->$name;
+                                $chart =  $this->$name;
+                                break;
                         default:
                                 App::import('Vendor', 'Highcharts.HighRollerColumnChart', true, array(), 'HighRollerColumnChart.php');
                                 $this->$name = new HighRollerColumnChart();
@@ -250,6 +256,9 @@ class HighchartsComponent extends Component {
                 // chart options
                 if (isset($params['renderTo'])) {
                         $this->charts[$name]->chart->renderTo = $params['renderTo'];
+                }
+                if (isset($params['inverted'])) {
+                        $this->charts[$name]->chart->inverted = $params['inverted'];
                 }
                 if (isset($params['reflow'])) {
                         $this->charts[$name]->chart->reflow = $params['reflow'];

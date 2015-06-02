@@ -104,6 +104,14 @@
                         <td class="other"></td>
                         <td class="combo"></td>
                 </tr>
+                <tr>
+                    <td class="single"><?php echo $this->Html->link('Columnrange', array('plugin' => 'highcharts', 'controller' => 'single_series_demo', 'action' => 'columnrange')); ?></td>
+                    <td class="multi"></td>
+                        <td class="stacked"></td>
+                        <td class="minimal"></td>
+                        <td class="other"></td>
+                        <td class="combo"></td>
+                </tr>
         </tbody>
 </table>
 
