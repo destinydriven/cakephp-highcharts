@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,11 +22,10 @@
  * limitations under the License.
  *
  */
-
 class HighRollerSeries {
 
-  function __construct(){
-  }
+        public function __construct() {
+                
+        }
 
 }
-?>

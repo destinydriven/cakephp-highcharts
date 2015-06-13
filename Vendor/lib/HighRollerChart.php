@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,16 +22,13 @@
  * limitations under the License.
  *
  */
-
 class HighRollerChart {
 
-  public $renderTo;
-//  public $animation;
+        public $renderTo;
 
-  function __construct(){
-    $this->renderTo = null;
-//    $this->animation = new HighRollerChartAnimation();
-  }
+        public function __construct() {
+                $this->renderTo = null;
+            //  $this->animation = new HighRollerChartAnimation();
+        }
 
 }
-?>

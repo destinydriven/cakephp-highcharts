@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,14 +22,12 @@
  * limitations under the License.
  *
  */
-
 class HighRollerTitle {
 
-  public $text;
+        public $text;
 
-  function __construct(){
-    $this->text = null;
-  }
-  
+        public function __construct() {
+                $this->text = null;
+        }
+
 }
-?>

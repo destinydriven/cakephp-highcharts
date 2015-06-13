@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/14/11
@@ -21,14 +22,11 @@
  * limitations under the License.
  *
  */
-
 class HighRollerBarChart extends HighRoller {
 
-  function __construct(){
-    parent::__construct();
-    $this->chart->type = 'bar';
-
-  }
+        public function __construct() {
+                parent::__construct();
+                $this->chart->type = 'bar';
+        }
 
 }
-?>

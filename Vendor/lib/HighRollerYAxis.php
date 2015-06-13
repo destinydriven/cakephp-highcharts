@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,20 +22,18 @@
  * limitations under the License.
  *
  */
- 
 class HighRollerYAxis {
 
-  public $labels;
-  public $title;
-  public $plotLines = array();    // @TODO instantiating a new plotLines object isn't working, setting as an array
-  public $formatter;
+        public $labels;
+        public $title;
+        public $plotLines = array();    // @TODO instantiating a new plotLines object isn't working, setting as an array
+        public $formatter;
 
-  function __construct(){
-    $this->labels = new HighRollerAxisLabel();
-    $this->title = new HighRollerAxisTitle();
-    $this->plotLines = array();   // @TODO need to revisit why declaring this as an empty class or a hydrated class isn't working    $this->dateTimeLabelFormats = new HighRollerDateTimeLabelFormats();
-    $this->formatter = new HighRollerFormatter();
-  }
-  
+        public function __construct() {
+                $this->labels = new HighRollerAxisLabel();
+                $this->title = new HighRollerAxisTitle();
+                $this->plotLines = array();   // @TODO need to revisit why declaring this as an empty class or a hydrated class isn't working    $this->dateTimeLabelFormats = new HighRollerDateTimeLabelFormats();
+                $this->formatter = new HighRollerFormatter();
+        }
+
 }
-?>

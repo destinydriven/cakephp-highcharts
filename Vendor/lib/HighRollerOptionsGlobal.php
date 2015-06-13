@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,14 +22,12 @@
  * limitations under the License.
  *
  */
- 
 class HighRollerOptionsGlobal {
 
-  public $useUTC;
+        public $useUTC;
 
-  function __construct(){
-    $this->useUTC = true;
-  }
+        public function __construct() {
+                $this->useUTC = true;
+        }
 
 }
-?>

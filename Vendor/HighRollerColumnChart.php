@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/14/11
@@ -21,13 +22,11 @@
  * limitations under the License.
  *
  */
-
 class HighRollerColumnChart extends HighRoller {
 
-  function __construct(){
-    parent::__construct();
-    $this->chart->type = 'column';
-  }
+        public function __construct() {
+                parent::__construct();
+                $this->chart->type = 'column';
+        }
 
 }
-?>

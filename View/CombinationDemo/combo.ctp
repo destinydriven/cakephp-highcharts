@@ -13,11 +13,11 @@
  */
 ?>
 <div class="chart">
-        <p>Combination Column, Line and Pie</p>
+        <h4>Combination Column, Line and Pie</h4>
 
         <div id="combowrapper" style="display: block; float: left; width:90%; margin-bottom: 20px;"></div>
         <div class="clear"></div>	
 
-        <?php echo $this->Highcharts->render('Combination Chart'); ?>
+        <?php echo $this->Highcharts->render($chartName); ?>
 
 </div>

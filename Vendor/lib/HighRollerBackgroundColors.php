@@ -26,9 +26,9 @@ class HighRollerBackgroundColors {
 
   public $linearGradient;
   public $stops;
-  function __construct(){
+  
+  public function __construct(){
 
   }
   
 }
-?>

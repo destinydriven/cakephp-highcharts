@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/21/11
@@ -21,14 +22,12 @@
  * limitations under the License.
  *
  */
- 
 class HighRollerXAxisLabels {
 
-  public $style;
+        public $style;
 
-  function __construct(){
-    $this->style = new HighRollerStyle();
-  }
+        public function __construct() {
+                $this->style = new HighRollerStyle();
+        }
 
 }
-?>

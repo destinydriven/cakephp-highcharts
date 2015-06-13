@@ -22,167 +22,144 @@
  * limitations under the License.
  *
  */
-class HighRoller
-{
+class HighRoller {
 
-    public $chart;
-    public $title;
-//  public $legend;
-//  public $tooltip;
-//  public $plotOptions;
-    public $series = array();
+        public $chart;
+        public $title;
 
-    function __construct()
-    {
+        public $series = array();
 
-        $this->chart = new HighRollerChart();
-        $this->title = new HighRollerTitle();
-//    $this->legend = new HighRollerLegend();
-//    $this->tooltip = new HighRollerToolTip();
-//    $this->plotOptions = new HighRollerPlotOptions($this->chart->type);
-        $this->series = new HighRollerSeries();
-        $this->drilldown = new stdClass();
-        $this->drilldown->series = new HighRollerSeries();
-    }
+        public function __construct() {
 
-    /** returns a javascript script tag with path to your HighCharts library source
-     * @static
-     * @param $location - path to your highcharts JS
-     * @return string - html script tag markup with your source location
-     */
-    public static function setHighChartsLocation($location)
-    {
-        return $scriptTag = "<!-- High Roller - High Charts Location-->
+                $this->chart = new HighRollerChart();
+                $this->title = new HighRollerTitle();
+                $this->series = new HighRollerSeries();
+                $this->drilldown = new stdClass();
+                $this->drilldown->series = new HighRollerSeries();
+        }
+
+/** returns a javascript script tag with path to your Highcharts library source
+ * @static
+ * @param $location - path to your highcharts JS
+ * @return string - html script tag markup with your source location
+ */
+        public static function setHighchartsLocation($location) {
+                return $scriptTag = "<!-- High Roller - Highcharts Location-->
   <script type='text/javascript' src='" . $location . "'></script>";
+        }
 
-    }
-
-    /** returns a javascript script tag with path to your HighCharts library THEME source
-     * @static
-     * @param $location - path to your highcharts theme file
-     * @return string - html script tag markup with your source location
-     */
-    public static function setHighChartsThemeLocation($location)
-    {
-        return $scriptTag = "<!-- High Roller - High Charts Theme Location-->
+/** returns a javascript script tag with path to your Highcharts library THEME source
+ * @static
+ * @param $location - path to your highcharts theme file
+ * @return string - html script tag markup with your source location
+ */
+        public static function setHighchartsThemeLocation($location) {
+                return $scriptTag = "<!-- High Roller - Highcharts Theme Location-->
   <script type='text/javascript' src='" . $location . "'></script>";
-
-    }
-
-    /** returns chart object with newly set obj property name
-     * @param $objName - string, name of the HighRoller Object you're operating on
-     * @param $propertyName - string, name of the property you want to set, can be a new property name
-     * @param $value - mixed, value you wish to assign to the property
-     * @return HighRoller
-     */
-    public function setProperty($objName, $propertyName, $value)
-    {
-        $this->$objName->$propertyName = $value;
-        return $this;
-    }
-
-    /** add data to plot in your chart
-     * @param $chartdata - array, data provided in 1 of 3 HighCharts supported array formats (array, assoc array or mult-dimensional array)
-     * @return void
-     */
-    public function addData($chartdata)
-    {
-        if (!is_array($chartdata)) {
-            die("HighRoller::addData() - data format must be an array.");
-        }
-        $this->series = array($chartdata);
-    }
-
-    /** add series to your chart
-     * @param $chartdata - array, data provided in 1 of 3 HighCharts supported array formats (array, assoc array or mult-dimensional array)
-     * @return void
-     */
-    public function addSeries($chartData)
-    {
-        if (!is_object($chartData)) {
-            die("HighRoller::addSeries() - series input format must be an object.");
         }
 
-        if (is_object($this->series)) {   // if series is an object
-            $this->series = array($chartData);
-        } else if (is_array($this->series)) {                        // else
-            array_push($this->series, $chartData);
-        }
-    }
-
-
-    public function addDrillDownData($data)
-    {
-
-        if (!is_array($data)) {
-            die("HighRoller::addDrillDownData() - data format must be an array.");
+/** returns chart object with newly set obj property name
+ * @param $objName - string, name of the HighRoller Object you're operating on
+ * @param $propertyName - string, name of the property you want to set, can be a new property name
+ * @param $value - mixed, value you wish to assign to the property
+ * @return HighRoller
+ */
+        public function setProperty($objName, $propertyName, $value) {
+                $this->$objName->$propertyName = $value;
+                return $this;
         }
 
-        $this->drilldown->series = $data;
-
-    }
-
-
-    /** enable auto-step calc for xAxis labels for very large data sets.
-     * @return void
-     */
-    public function enableAutoStep()
-    {
-
-        if (is_array($this->series)) {
-            $count = count($this->series[0]->data);
-            $step = number_format(sqrt($count));
-            if ($count > 1000) {
-                $step = number_format(sqrt($count / $step));
-            }
-
-            $this->xAxis->labels->step = $step;
+/** add data to plot in your chart
+ * @param $chartdata - array, data provided in 1 of 3 Highcharts supported array formats (array, assoc array or mult-dimensional array)
+ * @return void
+ */
+        public function addData($chartdata) {
+                if (!is_array($chartdata)) {
+                        die("HighRoller::addData() - data format must be an array.");
+                }
+                $this->series = array($chartdata);
         }
 
-    }
+/** add series to your chart
+ * @param $series - array, data provided in 1 of 3 Highcharts supported array formats (array, assoc array or mult-dimensional array)
+ * @return void
+ */
+        public function addSeries($series) {
+                if (!is_object($series)) {
+                        die("HighRoller::addSeries() - series input format must be an object.");
+                }
 
-    /** returns new Highcharts javascript
-     * @return string - highcharts!
-     */
-    function renderChart($engine = 'jquery')
-    {
-        $options = new HighRollerOptions();   // change file/class name to new HighRollerGlobalOptions()
+                if (is_object($this->series)) {   // if series is an object
+                        $this->series = array($series);
+                } else if (is_array($this->series)) {                        // else
+                        array_push($this->series, $series);
+                }
+        }
 
-        if ($engine == 'mootools')
-            $chartJS = 'window.addEvent(\'domready\', function() {';
-        else
-            $chartJS = '$(document).ready(function() {';
+        public function addDrillDownData($data) {
 
-        $chartJS .= "\n\n    // HIGHROLLER - HIGHCHARTS UTC OPTIONS ";
+                if (!is_array($data)) {
+                        die("HighRoller::addDrillDownData() - data format must be an array.");
+                }
 
-        $chartJS .= "\n    Highcharts.setOptions(\n";
-        $chartJS .= "       " . json_encode($options) . "\n";
-        $chartJS .= "    );\n";
-        $chartJS .= "\n\n    // HIGHROLLER - HIGHCHARTS '" . $this->title->text . "' " . $this->chart->type . " chart";
-        $chartJS .= "\n    var " . $this->chart->renderTo . " = new Highcharts.Chart(\n";
-        $chartJS .= "       " . $this->getChartOptionsObject() . "\n";
-        $chartJS .= "    );\n";
-        $chartJS .= "\n  });\n";
-        return trim($chartJS);
-    }
+                $this->drilldown->series = $data;
+        }
 
-    /** returns valid Highcharts javascript object containing your HighRoller options, for manipulation between the markup script tags on your page`
-     * @return string - highcharts options object!
-     */
-    function getChartOptionsObject()
-    {
-        return trim(json_encode($this));
-    }
+/** enable auto-step calc for xAxis labels for very large data sets.
+ * @return void
+ */
+        public function enableAutoStep() {
 
-    /** returns new Highcharts.Chart() using your $varname
-     * @param $varname - name of your javascript object holding getChartOptionsObject()
-     * @return string - a new Highcharts.Chart() object with the highroller chart options object
-     */
-    function renderChartOptionsObject($varname)
-    {
-        return "new Highcharts.Chart(" . $varname . ")";
-    }
+                if (is_array($this->series)) {
+                        $count = count($this->series[0]->data);
+                        $step = number_format(sqrt($count));
+                        if ($count > 1000) {
+                                $step = number_format(sqrt($count / $step));
+                        }
+
+                        $this->xAxis->labels->step = $step;
+                }
+        }
+
+/** returns new Highcharts javascript
+ * @return string - highcharts!
+ */
+        public function renderChart($engine = 'jquery') {
+                $options = new HighRollerOptions();   // change file/class name to new HighRollerGlobalOptions()
+
+                if ($engine == 'mootools') {
+                        $chartJS = 'window.addEvent(\'domready\', function() {';
+                }
+                else {
+                        $chartJS = '$(document).ready(function() {';
+                }
+
+                $chartJS .= "\n\n    // HIGHROLLER - HIGHCHARTS UTC OPTIONS ";
+
+                $chartJS .= "\n    Highcharts.setOptions(\n";
+                $chartJS .= "       " . json_encode($options) . "\n";
+                $chartJS .= "    );\n";
+                $chartJS .= "\n\n    // HIGHROLLER - HIGHCHARTS '" . $this->title->text . "' " . $this->chart->type . " chart";
+                $chartJS .= "\n    var " . $this->chart->renderTo . " = new Highcharts.Chart(\n";
+                $chartJS .= "       " . $this->getChartOptionsObject() . "\n";
+                $chartJS .= "    );\n";
+                $chartJS .= "\n  });\n";
+                return trim($chartJS);
+        }
+
+/** returns valid Highcharts javascript object containing your HighRoller options, for manipulation between the markup script tags on your page`
+ * @return string - highcharts options object!
+ */
+        public function getChartOptionsObject() {
+                return trim(json_encode($this));
+        }
+
+/** returns new Highcharts.Chart() using your $varname
+ * @param $varname - name of your javascript object holding getChartOptionsObject()
+ * @return string - a new Highcharts.Chart() object with the highroller chart options object
+ */
+        public function renderChartOptionsObject($varname) {
+                return "new Highcharts.Chart(" . $varname . ")";
+        }
 
 }
-
-?>

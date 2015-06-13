@@ -48,7 +48,7 @@ A most humble line chart...
     <head>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <!-- HighRoller: set the location of Highcharts library -->
-    <?php echo HighRoller::setHighChartsLocation("/highcharts/highcharts.js");?>
+    <?php echo HighRoller::setHighchartsLocation("/highcharts/highcharts.js");?>
     </head>
 
     <body>
@@ -156,8 +156,8 @@ A very customised example using dates for xAxis labels, autostep, a custom Highc
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 
     <!-- HighRoller: set the location of Highcharts library -->
-    <?php echo HighRoller::setHighChartsLocation("/highcharts/highcharts.js");?>
-    <?php echo HighRoller::setHighChartsThemeLocation("/highcharts/themes/highroller.js");?>
+    <?php echo HighRoller::setHighchartsLocation("/highcharts/highcharts.js");?>
+    <?php echo HighRoller::setHighchartsThemeLocation("/highcharts/themes/highroller.js");?>
     </head>
 
     <body>

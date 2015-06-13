@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 9/24/11
@@ -21,16 +22,14 @@
  * limitations under the License.
  *
  */
-
 class HighRollerPlotOptionsByChartType {
 
-  public $dataLabels;
-  public $formatter;
+        public $dataLabels;
+        public $formatter;
 
-  function __construct($type){
-    $this->dataLabels = new HighRollerDataLabels();
-    $this->formatter = new HighRollerFormatter();
-  }
+        public function __construct($type) {
+                $this->dataLabels = new HighRollerDataLabels();
+                $this->formatter = new HighRollerFormatter();
+        }
 
 }
-?>

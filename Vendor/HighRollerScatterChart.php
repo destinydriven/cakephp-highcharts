@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: jmac
  * Date: 11/2/11
@@ -21,13 +22,11 @@
  * limitations under the License.
  *
  */
- 
 class HighRollerScatterChart extends HighRoller {
 
-  function __construct(){
-    parent::__construct();
-    $this->chart->type = 'scatter';
-  }
+        public function __construct() {
+                parent::__construct();
+                $this->chart->type = 'scatter';
+        }
 
 }
-?>
