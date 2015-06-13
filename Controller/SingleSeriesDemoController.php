@@ -118,6 +118,7 @@ class SingleSeriesDemoController extends HighchartsAppController {
                     'enableAutoStep' => FALSE,
                     // credits setting  [Highcharts.com  displayed on chart]
                     'creditsEnabled' => FALSE,
+                    'exportingEnabled' => FALSE,
                     'creditsText' => 'Example.com',
                     'creditsURL' => 'http://example.com'
                         )
@@ -283,6 +284,7 @@ class SingleSeriesDemoController extends HighchartsAppController {
                     //'yAxisTitleY' 		=> -10,
                     //'yAxisPlotLines' 		=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
                     // autostep options
+                    'exportingEnabled' => FALSE,
                     'enableAutoStep' => FALSE
                         )
                 );
@@ -449,7 +451,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                     //'yAxisTitleY'             => -10,
                     //'yAxisPlotLines'          => array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
                     // autostep options
-                    'enableAutoStep' => FALSE
+                    'enableAutoStep' => FALSE,
+                    'exportingEnabled' => FALSE,
                         )
                 );
 
@@ -585,6 +588,7 @@ class SingleSeriesDemoController extends HighchartsAppController {
                     'tooltipEnabled' => TRUE,
                     'tooltipBackgroundColorLinearGradient' => array(0, 0, 0, 50), // triggers js error
                     'tooltipBackgroundColorStops' => array(array(0, 'rgb(217, 217, 217)'), array(1, 'rgb(255, 255, 255)')),
+                    'exportingEnabled' => FALSE
                         )
                 );
 
@@ -807,6 +811,7 @@ class SingleSeriesDemoController extends HighchartsAppController {
                     'tooltipEnabled' => TRUE,
                     'tooltipBackgroundColorLinearGradient' => array(0, 0, 0, 50), // triggers js error
                     'tooltipBackgroundColorStops' => array(array(0, 'rgb(217, 217, 217)'), array(1, 'rgb(255, 255, 255)')),
+                    'exportingEnabled' => FALSE
                         )
                 );
 
@@ -970,7 +975,8 @@ class SingleSeriesDemoController extends HighchartsAppController {
                     //'yAxisTitleY' 			=> -10,
                     //'yAxisPlotLines' 			=> array( array('color' => '#808080', 'width' => 1, 'value' => 0 )),
                     // autostep options
-                    'enableAutoStep' => FALSE
+                    'enableAutoStep' => FALSE,
+                    'exportingEnabled' => FALSE
                         )
                 );
 

@@ -62,7 +62,8 @@ class MixedChartsDemoController extends HighchartsAppController {
                     'title' => 'Monthly Sales Summary - Line',
                     'yAxisTitleText' => 'Units Sold',
                     'xAxisCategories' => array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
-                    'creditsEnabled' => false
+                    'creditsEnabled' => false,
+                    'exportingEnabled' => true,
                         )
                 );
 
@@ -74,7 +75,8 @@ class MixedChartsDemoController extends HighchartsAppController {
                     'yAxisTitleText' => 'Y Axis Title Text',
                     'xAxisCategories' => array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'),
                     'creditsText' => 'Example.com',
-                    'creditsURL' => 'http://example.com'
+                    'creditsURL' => 'http://example.com',
+                    'exportingEnabled' => false,
                         )
                 );
 
@@ -85,7 +87,8 @@ class MixedChartsDemoController extends HighchartsAppController {
                     'title' => 'Browser Usage Statistics',
                     'creditsText' => 'Example.com',
                     'creditsURL' => 'http://example.com',
-                    'plotOptionsShowInLegend' => true
+                    'plotOptionsShowInLegend' => true,
+                    'exportingEnabled' => true,
                         )
                 );
 

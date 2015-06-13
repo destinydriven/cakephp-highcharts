@@ -40,15 +40,16 @@ class HighchartsHelper extends AppHelper {
         public function beforeLayout($viewFile) {
                 parent::beforeLayout($viewFile);
 
-                $js = array('/highcharts/js/highcharts', '/highcharts/js/highcharts-more', '/highcharts/js/modules/funnel');
+                $js = array(
+                    '/highcharts/js/highcharts', 
+                    '/highcharts/js/highcharts-more', 
+                    '/highcharts/js/modules/funnel', 
+                    '/highcharts/js/modules/exporting'
+                );
+                
                 $theme = $this->_getTheme($this->chart_name);
-                $exportingEnabled = $this->_checkExporting($this->chart_name);
                 $options3dEnabled = $this->_checkOptions3d($this->chart_name);
                 $drillDownEnabled = $this->_checkDrillDown($this->chart_name);
-
-                if ($exportingEnabled) {
-                        $js[] = '/highcharts/js/modules/exporting';
-                }
                 
                 if ($options3dEnabled) {
                         $js[] = '/highcharts/js/highcharts-3d.js';
@@ -67,7 +68,6 @@ class HighchartsHelper extends AppHelper {
                                 $js[] = '/highcharts/js/themes/' . $theme;
                                 break;
                         default:
-                                // $js[] = '/highcharts/js/themes/highroller';
                                 break;
                 }
 
@@ -92,14 +92,6 @@ class HighchartsHelper extends AppHelper {
                         return $this->charts[$name]->chart->className;
                 } else {
                         return null;
-                }
-        }
-
-        protected function _checkExporting($name) {
-                if (isset($this->charts[$name]->exporting->enabled) && ($this->charts[$name]->exporting->enabled == true)) {
-                        return $this->charts[$name]->exporting->enabled;
-                } else {
-                        return false;
                 }
         }
         

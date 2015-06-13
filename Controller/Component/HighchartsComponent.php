@@ -785,9 +785,13 @@ class HighchartsComponent extends Component {
                 }
                 
                 // exporting options
-                if (isset($params['exportingEnabled']) && $params['exportingEnabled'] === true) {
+                if (isset($params['exportingEnabled'])) {
                         $this->charts[$name]->exporting = new stdClass();
-                        $this->charts[$name]->exporting->enabled = true;
+                        if($params['exportingEnabled'] === true) {
+                            $this->charts[$name]->exporting->enabled = true;    
+                        } else {
+                             $this->charts[$name]->exporting->enabled = false;   
+                        }                        
                 }
                 
                 // 3D options
