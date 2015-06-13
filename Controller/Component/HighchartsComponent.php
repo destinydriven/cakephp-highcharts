@@ -481,6 +481,8 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->plotOptions->column->point->events->click = $params['plotOptionsColumnPointEventsClick'];
                 }
                 if (isset($params['plotOptionsColumnDataLabelsEnabled'])) {
+                        $this->charts[$name]->plotOptions->column = new stdClass();
+                        $this->charts[$name]->plotOptions->column->dataLabels = new stdClass();
                         $this->charts[$name]->plotOptions->column->dataLabels->enabled = $params['plotOptionsColumnDataLabelsEnabled'];
                 }
                 if (isset($params['plotOptionsColumnDataLabelsColor'])) {
@@ -495,16 +497,19 @@ class HighchartsComponent extends Component {
                 if (isset($params['plotOptionsSeriesDataLabelsEnabled'])) {
                         $this->charts[$name]->plotOptions = new stdClass();
                         $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->series->dataLabels = new stdClass();
                         $this->charts[$name]->plotOptions->series->dataLabels->enabled = $params['plotOptionsSeriesDataLabelsEnabled'];
                 }
                 if (isset($params['plotOptionsSeriesDataLabelsFormat'])) {
                         $this->charts[$name]->plotOptions = new stdClass();
                         $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->series->dataLabels = new stdClass();
                         $this->charts[$name]->plotOptions->series->dataLabels->format = $params['plotOptionsSeriesDataLabelsFormat'];
                 }
                 if (isset($params['plotOptionsSeriesDataLabelsSoftConnector'])) {
                         $this->charts[$name]->plotOptions = new stdClass();
                         $this->charts[$name]->plotOptions->series = new HighRollerPlotOptions($this->charts[$name]->chart->type);
+                        $this->charts[$name]->plotOptions->series->dataLabels = new stdClass();
                         $this->charts[$name]->plotOptions->series->dataLabels->softConector = $params['plotOptionsSeriesDataLabelsSoftConnector'];
                 }
                 if (isset($params['plotOptionsSeriesStacking'])) {
@@ -532,6 +537,7 @@ class HighchartsComponent extends Component {
                         $this->charts[$name]->plotOptions->line->dataLabels->formatter = $params['plotOptionsLineDataLabelsFormatter'];
                 }
                 if (isset($params['plotOptionsPieDataLabelsFormat'])) {
+                        $this->charts[$name]->plotOptions->pie = new HighRollerPlotOptionsByChartType($this->charts[$name]->chart->type);
                         $this->charts[$name]->plotOptions->pie->dataLabels->format = $params['plotOptionsPieDataLabelsFormat'];
                 }
                 if (isset($params['plotOptionsLineEnableMouseTracking'])) {
@@ -582,6 +588,7 @@ class HighchartsComponent extends Component {
                 }
                 // Funnel Options
                 if (isset($params['plotOptionsNeckWidth'])) {
+                        $this->charts[$name]->plotOptions->funnel = new stdClass();
                         $this->charts[$name]->plotOptions->funnel->neckWidth = new stdClass();
                         $this->charts[$name]->plotOptions->funnel->neckWidth = $params['plotOptionsNeckWidth'];
                 }
@@ -666,6 +673,7 @@ class HighchartsComponent extends Component {
                 
                 
                 if (isset($params['yAxisMin'])) {
+                        $this->charts[$name]->yAxis = new stdClass();
                         $this->charts[$name]->yAxis->min = $params['yAxisMin'];
                 }
                 if (isset($params['yAxisMax'])) {
@@ -815,6 +823,7 @@ class HighchartsComponent extends Component {
                 
                 // pane options
                 if (isset($params['paneStartAngle'])) {
+                        $this->charts[$name]->pane = new stdClass();
                         $this->charts[$name]->pane->startAngle = new stdClass();
                         $this->charts[$name]->pane->startAngle = $params['paneStartAngle'];
                 }
